@@ -1,4 +1,4 @@
-﻿namespace Pappion.Domain
+﻿namespace Pappion.Domain.Entities
 {
     public class Party
     {

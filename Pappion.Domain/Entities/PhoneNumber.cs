@@ -1,4 +1,4 @@
-﻿namespace Pappion.Domain
+﻿namespace Pappion.Domain.Entities
 {
     public class PhoneNumber
     {
@@ -8,6 +8,6 @@
         //n:1
         public Guid UserId { get; set; }
         public User User { get; set; }
-        
+
     }
 }

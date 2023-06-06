@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Pappion.Infrastructure;
+using Pappion.Infrastructure.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +17,8 @@ builder.Services.AddDbContext<PappionDbContext>(options =>
 
 });
 
-
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

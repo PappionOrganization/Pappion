@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Pappion.Domain;
+using Pappion.Domain.Entities;
 
 namespace Pappion.Infrastructure
 {

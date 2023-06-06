@@ -1,5 +1,4 @@
-﻿using Pappion.Domain;
-namespace Pappion.Domain
+﻿namespace Pappion.Domain.Entities
 {
     public class FavorImages
     {
