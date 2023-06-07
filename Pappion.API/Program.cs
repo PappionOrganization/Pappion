@@ -21,7 +21,9 @@ builder.Services.AddDbContext<PappionDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("Pappion.Infrastructure"));
 
 });
-//Додати медіатор
+builder.Services.AddScoped<IGenericRepository<Post>, GenericRepository<Post>>();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(IGenericRepository<>).Assembly));
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 

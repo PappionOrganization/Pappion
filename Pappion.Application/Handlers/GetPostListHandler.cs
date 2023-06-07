@@ -5,7 +5,7 @@ using Pappion.Infrastructure.Interfaces;
 
 namespace Pappion.Application.Handlers
 {
-    public class GetPostListHandler : IRequestHandler<GetPostListQuery, IEnumerable<Post>>
+    public class GetPostListHandler : IRequestHandler<GetPostListQuery, List<Post>>
     {
         private readonly IGenericRepository<Post> _genericRepository;
 
@@ -13,9 +13,9 @@ namespace Pappion.Application.Handlers
         {
             _genericRepository = genericRepository;
         }
-        public Task<IEnumerable<Post>> Handle(GetPostListQuery request, CancellationToken cancellationToken)
+        public async Task<List<Post>> Handle(GetPostListQuery request, CancellationToken cancellationToken)
         {
-            return Task.FromResult(_genericRepository.GetAll());
+            return await _genericRepository.GetAll();
         }
     }
 }

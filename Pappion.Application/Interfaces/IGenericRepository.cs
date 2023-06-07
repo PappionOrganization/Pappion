@@ -10,7 +10,7 @@ namespace Pappion.Infrastructure.Interfaces
     public interface IGenericRepository<T> where T : class
     {
         T GetById(Guid id);
-        IEnumerable<T> GetAll();
+        Task<List<T>> GetAll();
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
         IEnumerable<T> GetWhere(Expression<Func<T, bool>> predicate);
         void Add(T entity);

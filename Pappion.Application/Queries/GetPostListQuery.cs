@@ -8,5 +8,5 @@ using System.Threading.Tasks;
 
 namespace Pappion.Application.Queries
 {
-    public record GetPostListQuery() : IRequest<IEnumerable<Post>>;
+    public record GetPostListQuery() : IRequest<List<Post>>;
 }

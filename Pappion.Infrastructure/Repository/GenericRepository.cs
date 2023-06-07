@@ -34,9 +34,9 @@ namespace Pappion.Infrastructure.Repository
             return _table.Where(predicate).ToList();
         }
 
-        public IEnumerable<T> GetAll()
+        public Task<List<T>> GetAll()
         {
-            return _table.ToList();
+            return _table.ToListAsync();
         }
 
         public T GetById(Guid id)
