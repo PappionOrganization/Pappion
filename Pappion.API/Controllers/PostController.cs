@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Pappion.Application.Queries;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Dto;
 using Pappion.Infrastructure.Interfaces;
@@ -10,52 +12,43 @@ namespace Pappion.API.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
 
-        public PostController(IUnitOfWork unitOfWork, IMapper mapper)
+        public PostController(IMapper mapper, IMediator mediator)
         {
-            _unitOfWork = unitOfWork;
             _mapper = mapper;
+            _mediator = mediator;
         }
 
         [HttpGet("GetAll")]
-        public IActionResult GetAll()
+        public async Task<List<PostReadDto>> GetAll()
         {
-            IEnumerable<PostReadDto> postsReadDto = _mapper.Map<IEnumerable<PostReadDto>>(_unitOfWork.Post.GetAll());
-            return Ok(postsReadDto);
+            var posts = await _mediator.Send(new GetPostListQuery());
+            return _mapper.Map<List<PostReadDto>>(posts);
         }
 
-        [HttpGet("GetById/{id}")]
-        public IActionResult GetById(Guid id)
-        {
-            PostReadDto postReadDto = _mapper.Map<PostReadDto>(_unitOfWork.Post.GetById(id));
-            return Ok(postReadDto);
-        }
+        //[HttpGet("GetById/{id}")]
+        //public IActionResult GetById(Guid id)
+        //{
+        //    return Ok();
+        //}
 
-        [HttpDelete("Remove/{id}")]
-        public IActionResult Remove(Guid id) 
-        {
-            _unitOfWork.Post.Remove(id);
-            _unitOfWork.Save();
-            return Ok(true);
-        }
+        //[HttpDelete("Remove/{id}")]
+        //public IActionResult Remove(Guid id) 
+        //{
+        //    return Ok();
+        //}
 
-        [HttpPost("Add")]
-        public ActionResult<PostReadDto> Add(PostAddDto post)
-        {
-            Post addedPost = _mapper.Map<Post>(post);
-            _unitOfWork.Post.Add(addedPost);
-            _unitOfWork.Save();
-            return Ok(_mapper.Map<PostReadDto>(addedPost));
-        }
-        [HttpPut("Update")]
-        public ActionResult Update(PostReadDto post)
-        {
-            Post updatedPost = _mapper.Map<Post>(post);
-            _unitOfWork.Post.Update(updatedPost);
-            _unitOfWork.Save();
-            return Ok(_mapper.Map<PostReadDto>(updatedPost));
-        }
+        //[HttpPost("Add")]
+        //public ActionResult<PostReadDto> Add(PostAddDto post)
+        //{
+        //    return Ok();
+        //}
+        //[HttpPut("Update")]
+        //public ActionResult Update(PostReadDto post)
+        //{
+        //    return Ok();
+        //}
     }
 }

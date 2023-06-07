@@ -34,9 +34,9 @@ namespace Pappion.Infrastructure.Repository
             return _table.Where(predicate).ToList();
         }
 
-        public IEnumerable<T> GetAll()
+        public Task<List<T>> GetAll()
         {
-            return _table.ToList();
+            return _table.ToListAsync();
         }
 
         public T GetById(Guid id)
@@ -58,6 +58,10 @@ namespace Pappion.Infrastructure.Repository
         {
             _table.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
+        }
+        public int Save()
+        {
+            return _context.SaveChanges();
         }
     }
 }

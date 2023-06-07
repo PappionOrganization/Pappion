@@ -1,6 +1,11 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Pappion.Application.Handlers;
+using Pappion.Domain.Entities;
 using Pappion.Infrastructure;
 using Pappion.Infrastructure.Interfaces;
+using Pappion.Infrastructure.Repository;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +21,9 @@ builder.Services.AddDbContext<PappionDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("Pappion.Infrastructure"));
 
 });
+builder.Services.AddScoped<IGenericRepository<Post>, GenericRepository<Post>>();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(IGenericRepository<>).Assembly));
 
-builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
