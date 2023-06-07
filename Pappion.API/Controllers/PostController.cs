@@ -19,21 +19,21 @@ namespace Pappion.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
         {
             IEnumerable<PostReadDto> postsReadDto = _mapper.Map<IEnumerable<PostReadDto>>(_unitOfWork.Post.GetAll());
             return Ok(postsReadDto);
         }
 
-        [HttpGet("{id}")]
-        public IActionResult Get(Guid id)
+        [HttpGet("GetById/{id}")]
+        public IActionResult GetById(Guid id)
         {
-            IEnumerable<PostReadDto> postReadDto = _mapper.Map<IEnumerable<PostReadDto>>(_unitOfWork.Post.GetById(id));
+            PostReadDto postReadDto = _mapper.Map<PostReadDto>(_unitOfWork.Post.GetById(id));
             return Ok(postReadDto);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("Remove/{id}")]
         public IActionResult Remove(Guid id) 
         {
             _unitOfWork.Post.Remove(id);
@@ -41,7 +41,7 @@ namespace Pappion.API.Controllers
             return Ok(true);
         }
 
-        [HttpPost]
+        [HttpPost("Add")]
         public ActionResult<PostReadDto> Add(PostAddDto post)
         {
             Post addedPost = _mapper.Map<Post>(post);
@@ -49,7 +49,7 @@ namespace Pappion.API.Controllers
             _unitOfWork.Save();
             return Ok(_mapper.Map<PostReadDto>(addedPost));
         }
-        [HttpPut]
+        [HttpPut("Update")]
         public ActionResult Update(PostReadDto post)
         {
             Post updatedPost = _mapper.Map<Post>(post);

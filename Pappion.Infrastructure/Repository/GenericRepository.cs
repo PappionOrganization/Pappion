@@ -21,27 +21,27 @@ namespace Pappion.Infrastructure.Repository
         }
         public void Add(T entity)
         {
-            _context.Set<T>().Add(entity);
+            _table.Add(entity);
         }
 
         public void AddRange(IEnumerable<T> entities)
         {
-            _context.Set<T>().AddRange(entities);
+            _table.AddRange(entities);
         }
 
         public IEnumerable<T> Find(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
         {
-            return _context.Set<T>().Where(predicate).ToList();
+            return _table.Where(predicate).ToList();
         }
 
         public IEnumerable<T> GetAll()
         {
-            return _context.Set<T>().ToList();
+            return _table.ToList();
         }
 
         public T GetById(Guid id)
         {
-            return _context.Set<T>().Find(id);
+            return _table.Find(id);
         }
 
         public IEnumerable<T> GetWhere(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
