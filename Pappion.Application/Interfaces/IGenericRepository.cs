@@ -17,6 +17,7 @@ namespace Pappion.Infrastructure.Interfaces
         void AddRange(IEnumerable<T> entities);
         void Update(T entity);
         void Remove(Guid id);
+        int Save();
 
     }
 }
