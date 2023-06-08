@@ -20,7 +20,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and publish Docker image
-        working-directory: /src/Pappion.API
         run: |
           docker build . --file  Pappion.API/Dockerfile --tag pappion:$(date +%s)
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/pappion:${{ github.sha }}
