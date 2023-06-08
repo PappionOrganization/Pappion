@@ -3,7 +3,7 @@ name: Docker Publish
 on:
   push:
     branches:
-      - develop
+      - add-docker-build-action
 
 jobs:
   build-and-publish:
@@ -20,6 +20,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and publish Docker image
+        working-directory: Pappion.API
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/pappion:${{ github.sha }} .
+          docker build . --file Dockerfile --tag pappion:$(date +%s)
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/pappion:${{ github.sha }}
