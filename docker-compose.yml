@@ -1,0 +1,40 @@
+version: '3.4'
+
+networks:
+    pappion:
+
+services:
+    pappion.db:
+        container_name: pappion-db
+        image: mysql
+        ports: 
+            - 3306:3306
+            - 33060:33060
+        environment:
+            - MYSQL_ROOT_PASSWORD=yourStrong(!)Password
+        networks: 
+            - pappion
+        healthcheck:
+            test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+            timeout: 10s
+            retries: 20
+
+    pappion.api:
+        container_name: pappion-api
+        image: ${DOCKER_REGISTRY-}pappion-api
+        build:
+            context: .
+            dockerfile: pappion.API/Dockerfile
+        ports: 
+            - 8001:8001
+            - 8002:8002
+        depends_on: 
+            pappion.db:
+                condition: service_healthy
+        environment: 
+            - DatabaseConfiguration__Password=yourStrong(!)Password
+            - DatabaseConfiguration__Host=pappion-db
+            - DatabaseConfiguration__Database=pappion
+            - ASPNETCORE_ENVIRONMENT=Development
+        networks: 
+            - pappion
