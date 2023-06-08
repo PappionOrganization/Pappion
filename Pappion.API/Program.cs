@@ -1,13 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pappion.API.Configurations;
 using Pappion.API.Helpers;
-using Microsoft.Extensions.DependencyInjection;
-using Pappion.Application.Handlers;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure;
 using Pappion.Infrastructure.Interfaces;
 using Pappion.Infrastructure.Repository;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
