@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Pappion.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pappion.Infrastructure.Dto
+namespace Pappion.Infrastructure.Dto.Post
 {
     public class PostReadDto
     {

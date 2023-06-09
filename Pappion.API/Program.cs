@@ -6,6 +6,7 @@ using Pappion.Infrastructure;
 using Pappion.Infrastructure.Interfaces;
 using Pappion.Infrastructure.Repository;
 
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration
     .AddJsonFile("appsettings.json")
@@ -28,6 +29,8 @@ builder.Services.AddDbContext<PappionDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("Pappion.Infrastructure"));
 });
 builder.Services.AddScoped<IGenericRepository<Post>, GenericRepository<Post>>();
+builder.Services.AddScoped<IGenericRepository<User>, GenericRepository<User>>();
+builder.Services.AddScoped<IGenericRepository<Like>, GenericRepository<Like>>();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(IGenericRepository<>).Assembly));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

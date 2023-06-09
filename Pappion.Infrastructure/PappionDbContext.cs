@@ -338,6 +338,7 @@ namespace Pappion.Infrastructure
                 .HasForeignKey(pi => pi.ImageId)
                 .OnDelete(DeleteBehavior.NoAction);
             });
+            Seed.SeedData(modelBuilder);
         }   
     }
 }
