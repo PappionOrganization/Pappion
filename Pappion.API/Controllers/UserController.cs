@@ -58,12 +58,6 @@ namespace Pappion.API.Controllers
             await _mediator.Send(new UpdateUserCommand(user));
             return Ok();
         }
-        [HttpPost("SetLike")]
-        public async Task<IActionResult> Add(SetLikeDto setLikeDto)
-        {
-            Like like = _mapper.Map<Like>(setLikeDto);
-            await _mediator.Send(new SetLikeCommand(like));
-            return Ok();
-        }
+        
     }
 }
