@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Dto;
+using Pappion.Infrastructure.Dto.Post;
 using System.Diagnostics;
 
 namespace Pappion.Infrastructure.MapProfiles

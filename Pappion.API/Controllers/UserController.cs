@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Pappion.Application.Likes;
 using Pappion.Application.Users;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Dto;
+using Pappion.Infrastructure.Dto.Like;
+using Pappion.Infrastructure.Dto.User;
 
 namespace Pappion.API.Controllers
 {
@@ -54,6 +56,13 @@ namespace Pappion.API.Controllers
         {
             User user = _mapper.Map<User>(userReadDto);
             await _mediator.Send(new UpdateUserCommand(user));
+            return Ok();
+        }
+        [HttpPost("SetLike")]
+        public async Task<IActionResult> Add(SetLikeDto setLikeDto)
+        {
+            Like like = _mapper.Map<Like>(setLikeDto);
+            await _mediator.Send(new SetLikeCommand(like));
             return Ok();
         }
     }

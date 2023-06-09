@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Pappion.Application.Posts;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Dto;
+using Pappion.Infrastructure.Dto.Post;
 
 namespace Pappion.API.Controllers
 {

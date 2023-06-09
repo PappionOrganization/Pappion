@@ -30,6 +30,7 @@ builder.Services.AddDbContext<PappionDbContext>(options =>
 });
 builder.Services.AddScoped<IGenericRepository<Post>, GenericRepository<Post>>();
 builder.Services.AddScoped<IGenericRepository<User>, GenericRepository<User>>();
+builder.Services.AddScoped<IGenericRepository<Like>, GenericRepository<Like>>();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(IGenericRepository<>).Assembly));
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

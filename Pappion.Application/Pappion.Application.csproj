@@ -14,8 +14,4 @@
     <ProjectReference Include="..\Pappion.Domain\Pappion.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Notifications\" />
-  </ItemGroup>
-
 </Project>
