@@ -12,6 +12,9 @@ namespace Pappion.Infrastructure.MapProfiles
             CreateMap<Post, PostReadDto>();
             CreateMap<PostReadDto, Post>();
             CreateMap<PostAddDto, Post>();
+            CreateMap<User, UserReadDto>();
+            CreateMap<UserReadDto, User>();
+            CreateMap<UserAddDto, User>();
         }
     }
 }

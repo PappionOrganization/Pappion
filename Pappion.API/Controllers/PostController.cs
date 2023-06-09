@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Pappion.Application.Queries;
+using Pappion.Application.Posts;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Dto;
-using Pappion.Infrastructure.Interfaces;
 
 namespace Pappion.API.Controllers
 {
@@ -24,31 +23,38 @@ namespace Pappion.API.Controllers
         [HttpGet("GetAll")]
         public async Task<List<PostReadDto>> GetAll()
         {
-            var posts = await _mediator.Send(new GetPostListQuery());
+            List<Post> posts = await _mediator.Send(new GetPostListQuery());
             return _mapper.Map<List<PostReadDto>>(posts);
         }
 
-        //[HttpGet("GetById/{id}")]
-        //public IActionResult GetById(Guid id)
-        //{
-        //    return Ok();
-        //}
+        [HttpGet("GetById/{id}")]
+        public async Task<PostReadDto> GetById(Guid id)
+        {
+            Post post = await _mediator.Send(new GetPostQuery(id));
+            return _mapper.Map<PostReadDto>(post);
+        }
 
-        //[HttpDelete("Remove/{id}")]
-        //public IActionResult Remove(Guid id) 
-        //{
-        //    return Ok();
-        //}
+        [HttpDelete("Remove/{id}")]
+        public async Task<IActionResult> Remove(Guid id)
+        {
+            await _mediator.Send(new RemovePostCommand(id));
+            return Ok();
+        }
 
-        //[HttpPost("Add")]
-        //public ActionResult<PostReadDto> Add(PostAddDto post)
-        //{
-        //    return Ok();
-        //}
-        //[HttpPut("Update")]
-        //public ActionResult Update(PostReadDto post)
-        //{
-        //    return Ok();
-        //}
+        [HttpPost("Add")]
+        public async Task<IActionResult> Add(PostAddDto postAddDto)
+        {
+            Post post = _mapper.Map<Post>(postAddDto);
+            await _mediator.Send(new AddPostCommand(post));
+            return Ok();
+        }
+
+        [HttpPut("Update")]
+        public async Task<IActionResult> Update(PostReadDto postReadDto)
+        {
+            Post post = _mapper.Map<Post>(postReadDto);
+            await _mediator.Send(new UpdatePostCommand(post));
+            return Ok();
+        }
     }
 }

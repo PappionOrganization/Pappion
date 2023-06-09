@@ -19,12 +19,12 @@ namespace Pappion.Infrastructure.Repository
             _context = context;
             _table = _context.Set<T>();
         }
-        public void Add(T entity)
+        public async Task Add(T entity)
         {
             _table.Add(entity);
         }
 
-        public void AddRange(IEnumerable<T> entities)
+        public async Task AddRange(IEnumerable<T> entities)
         {
             _table.AddRange(entities);
         }
@@ -39,7 +39,7 @@ namespace Pappion.Infrastructure.Repository
             return _table.ToListAsync();
         }
 
-        public T GetById(Guid id)
+        public async Task<T> GetById(Guid id)
         {
             return _table.Find(id);
         }
@@ -49,12 +49,12 @@ namespace Pappion.Infrastructure.Repository
             throw new NotImplementedException();
         }
 
-        public void Remove(Guid id)
+        public async Task Remove(Guid id)
         {
             _table.Remove(_table.Find(id));
         }
 
-        public void Update(T entity)
+        public async Task Update(T entity)
         {
             _table.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
