@@ -10,17 +10,17 @@ namespace Pappion.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LikeController : ControllerBase
+    public class LikesController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
 
-        public LikeController(IMapper mapper, IMediator mediator)
+        public LikesController(IMapper mapper, IMediator mediator)
         {
             _mapper = mapper;
             _mediator = mediator;
         }
-        [HttpPost("SetLike")]
+        [HttpPost]
         public async Task<IActionResult> Add(SetLikeDto setLikeDto)
         {
             Like like = _mapper.Map<Like>(setLikeDto);
@@ -28,7 +28,7 @@ namespace Pappion.API.Controllers
             return Ok();
         }
 
-        [HttpDelete("RemoveLike/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveLike(Guid id)
         {
             await _mediator.Send(new RemoveLikeCommand(id));
