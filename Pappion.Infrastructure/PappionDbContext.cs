@@ -43,9 +43,9 @@ namespace Pappion.Infrastructure
                 entity.HasKey(u => u.Id);
                 entity.Property(u => u.Id).HasDefaultValueSql("(uuid())");
                 entity.Property(u => u .CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
-                entity.Property(u => u.FirstName).IsRequired().HasMaxLength(50);
-                entity.Property(u => u.LastName).IsRequired().HasMaxLength(50);
-                entity.Property(u => u.Email).IsRequired().HasMaxLength(50);
+                entity.Property(u => u.FirstName).IsRequired().HasMaxLength(100);
+                entity.Property(u => u.LastName).IsRequired().HasMaxLength(100);
+                entity.Property(u => u.Email).IsRequired().HasMaxLength(100);
                 entity.Property(u => u.Location).HasMaxLength(100);
                 entity.Property(u => u.Password).IsRequired().HasMaxLength(15);
 
@@ -67,7 +67,7 @@ namespace Pappion.Infrastructure
                 entity.Property(p => p.Id).HasDefaultValueSql("(uuid())");
                 entity.Property(p => p.CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
                 entity.Property(p => p.Date).IsRequired();
-                entity.Property(p => p.Title).IsRequired().HasMaxLength(30);
+                entity.Property(p => p.Title).IsRequired().HasMaxLength(100);
                 entity.Property(p => p.Description).IsRequired().HasMaxLength(2000);
 
                 entity.HasOne(p => p.Author)
@@ -82,7 +82,7 @@ namespace Pappion.Infrastructure
 
                 entity.Property(p => p.Id).HasDefaultValueSql("(uuid())");
                 entity.Property(p => p.CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
-                entity.Property(p => p.Title).IsRequired().HasMaxLength(30);
+                entity.Property(p => p.Title).IsRequired().HasMaxLength(100);
                 entity.Property(p => p.Description).IsRequired();
                 entity.Property(p => p.Location).HasMaxLength(100);
 
@@ -97,7 +97,7 @@ namespace Pappion.Infrastructure
                 entity.HasKey(f => f.Id);
                 entity.Property(f => f.Id).HasDefaultValueSql("(uuid())");
                 entity.Property(f => f.CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
-                entity.Property(f => f.Title).IsRequired().HasMaxLength(30);
+                entity.Property(f => f.Title).IsRequired().HasMaxLength(100);
                 entity.Property(f => f.Description).IsRequired();
                 entity.Property(f => f.Price).IsRequired();
                 entity.Property(f => f.Rating).IsRequired();

@@ -113,7 +113,7 @@ namespace Pappion.Infrastructure
                     Email= "bossofthegym@gmail.com",
                     Password = "password",
                     Rating = 2.5M,
-                    RoleId = roles[2].Id,
+                    RoleId = roles[1].Id,
                     ImageId = images[4].Id
                 },
 
@@ -161,8 +161,136 @@ namespace Pappion.Infrastructure
                     AuthorId = users[4].Id
                 },
             };
+            List<Favor> favors = new List<Favor>
+            
+            {
+                new Favor
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Масаж",
+                    Description = "Найкращі майстри масажу готові показати всі свої вміння на вашій задубілій спині.",
+                    Price = 50.5M,
+                    AuthorId = users[0].Id
+                    
+                },
+                new Favor
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Косметична процедура",
+                    Description = "Отримайте розкішну косметичну процедуру, яка підкреслить вашу природну красу і зробить вашу шкіру сяючою.",
+                    Price = 80.0M,
+                    AuthorId = users[0].Id
+                },
+                new Favor
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Персональний тренер",
+                    Description = "Досвідчений тренер допоможе вам досягнути ваших фітнес-цілей, розробивши індивідуальну тренувальну програму для вас.",
+                    Price = 70.2M,
+                    AuthorId = users[0].Id
+                },
+                new Favor
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Ретельна манікюр і педикюр",
+                    Description = "Розкішний манікюр і педикюр, який зробить ваші нігті і ніжки неймовірно чудовими і доглянутими.",
+                    Price = 45.8M,
+                    AuthorId = users[0].Id
+                },
+                new Favor
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Сеанс йоги",
+                    Description = "Розслабтеся і зосередьтеся на своєму тілі та розумі під час особистого сеансу йоги з досвідченим інструктором.",
+                    Price = 55.3M,
+                    AuthorId = users[0 ].Id
+                },
+            };
+            List<FavorTags> favorTags = new();
+            List<FavorImages> favorImages = new();
+            List<Party> parties = new List<Party>
+            {
+                new Party
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Джакузі з скінхедом",
+                    Description = "Приходьте до мене сьогодні в джакузі, тут весело. Про оплату потім.",
+                    AuthorId = users[4].Id,
+                    Date= DateTime.Now
+                },
+                new Party
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Вечірня прогулянка по місту",
+                    Description = "Хто хоче приєднатися до мене для вечірньої прогулянки по красивому місту? Разом ми зможемо насолодитися видами, побалакати і провести час весело. Приходьте!",
+                    AuthorId = users[0].Id,
+                    Date = DateTime.Now
+                },
+                new Party
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Вечірня прогулянка по місту",
+                    Description = "Хто хоче приєднатися до мене для вечірньої прогулянки по красивому місту? Разом ми зможемо насолодитися видами, побалакати і провести час весело. Приходьте!",
+                    AuthorId = users[1].Id,
+                    Date = DateTime.Now
+                },
+                new Party
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Вечірка вдома з настільними іграми",
+                    Description = "Хтось цікавиться проведенням вечірки вдома з настільними іграми? Я маю гарну колекцію ігор і шукаю компанію для веселого проведення вечора. Приєднуйтесь!",
+                    AuthorId = users[2].Id,
+                    Date = DateTime.Now
+                },
+                new Party
+                {
+                    Id = Guid.NewGuid(),
+                    Title = "Концерт Rammstein",
+                    Description = "Шукаю людей, які так само захоплені гуртом 'Rammstein' і хотіли б піти на їхній концерт. Разом буде набагато веселіше! Хто бажає долучитися?",
+                    AuthorId = users[3].Id,
+                    Date = DateTime.Now
+                }
+
+            };
+            List<PartyTags> partyTags = new();
+            List<PartyUsers> partyUsers = new();
+            List<PartyImages> partyImages = new();
             List<Like> likes = new();
             List<Comment> comments = new();
+            List<PhoneNumber> phoneNumbers = new List<PhoneNumber>
+            {
+                new PhoneNumber
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = users[0].Id,
+                    Phone = "+380687654587"
+                },
+                new PhoneNumber
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = users[1].Id,
+                    Phone = "+380988234901"
+                },
+                new PhoneNumber
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = users[2].Id,
+                    Phone = "+380660981292"
+                },
+                new PhoneNumber
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = users[3].Id,
+                    Phone = "+380508672351"
+                },
+                new PhoneNumber
+                {
+                    Id = Guid.NewGuid(),
+                    UserId = users[4].Id,
+                    Phone = "+380955647834"
+                }
+            };
+
 
             for (int i = 0; i < 5; i++)
             {
@@ -179,6 +307,20 @@ namespace Pappion.Infrastructure
                     {
                         Id = Guid.NewGuid(),
                         SenderId = users[i].Id,
+                        Text = $"{parties[i].Title} це звучить дуже цікаво! Я обов'язково прийду!",
+                        PartyId = parties[i].Id
+                    },
+                    new Comment
+                    {
+                        Id = Guid.NewGuid(),
+                        SenderId = users[i].Id,
+                        Text = $"{favors[i].Title} це дуже крута послуга! Раджу всім спробувати!",
+                        FavorId = favors[i].Id
+                    },
+                    new Comment
+                    {
+                        Id = Guid.NewGuid(),
+                        SenderId = users[i].Id,
                         Text = $"{users[i].FirstName} це дуже файний пацан! Стоп...",
                         UserId = users[i].Id
                     }
@@ -190,6 +332,18 @@ namespace Pappion.Infrastructure
                         Id = Guid.NewGuid(),
                         SenderId = users[i].Id,
                         PostId = posts[i].Id
+                    },
+                    new Like
+                    {
+                        Id = Guid.NewGuid(),
+                        SenderId = users[i].Id,
+                        FavorId = favors[i].Id
+                    },
+                    new Like
+                    {
+                        Id = Guid.NewGuid(),
+                        SenderId = users[i].Id,
+                        PartyId = parties[i].Id
                     },
                     new Like
                     {
@@ -220,6 +374,31 @@ namespace Pappion.Infrastructure
                     PostId = posts[i].Id,
                     ImageId = images[i].Id
                 });
+                favorTags.Add(new FavorTags
+                {
+                    FavorId = favors[i].Id,
+                    TagId = tags[i].Id
+                });
+                favorImages.Add(new FavorImages
+                {
+                    FavorId = favors[i].Id,
+                    ImageId = images[i].Id
+                });
+                partyTags.Add(new PartyTags
+                {
+                    PartyId = parties[i].Id,
+                    TagId = tags[i].Id
+                });
+                partyImages.Add(new PartyImages
+                {
+                    PartyId = parties[i].Id,
+                    ImageId = images[i].Id
+                });
+                partyUsers.Add(new PartyUsers
+                {
+                    PartyId = parties[i].Id,
+                    UserId = users[i].Id
+                });
             }
             modelBuilder.Entity<Image>()
                .HasData(images);
@@ -229,6 +408,10 @@ namespace Pappion.Infrastructure
                 .HasData(users);
             modelBuilder.Entity<Post>()
                 .HasData(posts);
+            modelBuilder.Entity<Favor>()
+                .HasData(favors);
+            modelBuilder.Entity<Party>()
+                .HasData(parties);
             modelBuilder.Entity<Like>()
                 .HasData(likes);
             modelBuilder.Entity<Comment>()
@@ -241,6 +424,18 @@ namespace Pappion.Infrastructure
                 .HasData(userTags);
             modelBuilder.Entity<PostImages>()
                 .HasData(postImages);
+            modelBuilder.Entity<FavorTags>()
+                .HasData(favorTags);
+            modelBuilder.Entity<FavorImages>()
+                .HasData(favorImages);
+            modelBuilder.Entity<PartyTags>()
+                .HasData(partyTags);
+            modelBuilder.Entity<PartyImages>()
+                .HasData(partyImages);
+            modelBuilder.Entity<PartyUsers>()
+                .HasData(partyUsers);
+            modelBuilder.Entity<PhoneNumber>()
+                .HasData(phoneNumbers);
 
         }
 

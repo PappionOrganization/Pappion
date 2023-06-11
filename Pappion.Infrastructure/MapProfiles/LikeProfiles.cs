@@ -7,7 +7,7 @@ namespace Pappion.Infrastructure.MapProfiles
     {
         public LikeProfiles()
         {
-            CreateMap<SetLikeDto, Like>();
+            CreateMap<Like, UserLikeReadDto>();
         }
     }
 }

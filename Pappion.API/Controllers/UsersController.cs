@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Pappion.Application.Likes;
 using Pappion.Application.Users;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Dto.Like;
