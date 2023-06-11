@@ -73,8 +73,7 @@ namespace Pappion.Infrastructure
                     Email= "harrypotter@gmail.com",
                     Password = "password",
                     Rating = 3.5M,
-                    RoleId = roles[0].Id,
-                    ImageId = images[0].Id
+                    RoleId = roles[0].Id
                 },
                 new User{
                     Id = Guid.NewGuid(),
@@ -83,8 +82,7 @@ namespace Pappion.Infrastructure
                     Email= "tatakae@gmail.com",
                     Password = "password",
                     Rating = 1.5M,
-                    RoleId = roles[1].Id,
-                    ImageId = images[1].Id
+                    RoleId = roles[1].Id
                 },
                 new User{
                     Id = Guid.NewGuid(),
@@ -93,8 +91,7 @@ namespace Pappion.Infrastructure
                     Email= "killing.monsters@gmail.com",
                     Password = "password",
                     Rating = 4.5M,
-                    RoleId = roles[2].Id,
-                    ImageId = images[2].Id
+                    RoleId = roles[2].Id
                 },
                 new User{
                     Id = Guid.NewGuid(),
@@ -103,8 +100,7 @@ namespace Pappion.Infrastructure
                     Email= "not.exist@gmail.com",
                     Password = "password",
                     Rating = 5.0M,
-                    RoleId = roles[1].Id,
-                    ImageId = images[3].Id
+                    RoleId = roles[1].Id
                 },
                 new User{
                     Id = Guid.NewGuid(),
@@ -113,14 +109,12 @@ namespace Pappion.Infrastructure
                     Email= "bossofthegym@gmail.com",
                     Password = "password",
                     Rating = 2.5M,
-                    RoleId = roles[1].Id,
-                    ImageId = images[4].Id
+                    RoleId = roles[1].Id
                 },
 
             };
             List<UserTags> userTags = new();
             List<PostTags> postTags = new();
-            List<PostImages> postImages = new();
             List<Post> posts = new()
         {
                 new Post
@@ -207,7 +201,6 @@ namespace Pappion.Infrastructure
                 },
             };
             List<FavorTags> favorTags = new();
-            List<FavorImages> favorImages = new();
             List<Party> parties = new List<Party>
             {
                 new Party
@@ -254,7 +247,6 @@ namespace Pappion.Infrastructure
             };
             List<PartyTags> partyTags = new();
             List<PartyUsers> partyUsers = new();
-            List<PartyImages> partyImages = new();
             List<Like> likes = new();
             List<Comment> comments = new();
             List<PhoneNumber> phoneNumbers = new List<PhoneNumber>
@@ -369,30 +361,15 @@ namespace Pappion.Infrastructure
                     PostId = posts[i].Id,
                     TagId = tags[i].Id
                 });
-                postImages.Add(new PostImages
-                {
-                    PostId = posts[i].Id,
-                    ImageId = images[i].Id
-                });
                 favorTags.Add(new FavorTags
                 {
                     FavorId = favors[i].Id,
                     TagId = tags[i].Id
                 });
-                favorImages.Add(new FavorImages
-                {
-                    FavorId = favors[i].Id,
-                    ImageId = images[i].Id
-                });
                 partyTags.Add(new PartyTags
                 {
                     PartyId = parties[i].Id,
                     TagId = tags[i].Id
-                });
-                partyImages.Add(new PartyImages
-                {
-                    PartyId = parties[i].Id,
-                    ImageId = images[i].Id
                 });
                 partyUsers.Add(new PartyUsers
                 {
@@ -422,16 +399,10 @@ namespace Pappion.Infrastructure
                 .HasData(postTags);
             modelBuilder.Entity<UserTags>()
                 .HasData(userTags);
-            modelBuilder.Entity<PostImages>()
-                .HasData(postImages);
             modelBuilder.Entity<FavorTags>()
                 .HasData(favorTags);
-            modelBuilder.Entity<FavorImages>()
-                .HasData(favorImages);
             modelBuilder.Entity<PartyTags>()
                 .HasData(partyTags);
-            modelBuilder.Entity<PartyImages>()
-                .HasData(partyImages);
             modelBuilder.Entity<PartyUsers>()
                 .HasData(partyUsers);
             modelBuilder.Entity<PhoneNumber>()

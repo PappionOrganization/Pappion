@@ -15,6 +15,6 @@
 
         public ICollection<Comment> Comments { get; set; }
         public ICollection<FavorTags> FavorTags { get; set; }
-        public ICollection<FavorImages> FavorImages { get; set; }
+        public ICollection<Image> Images { get; set; }
     }
 }

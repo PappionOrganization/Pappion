@@ -15,7 +15,7 @@
 
         public ICollection<PartyTags> PartyTags { get; set; }
         public ICollection<PartyUsers> PartyUsers { get; set; }
-        public ICollection<PartyImages> PartyImages { get; set; }
+        public ICollection<Image> Images { get; set; }
 
     }
 }

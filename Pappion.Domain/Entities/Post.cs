@@ -15,6 +15,6 @@
         public ICollection<Like> Likes { get; set; }
 
         public ICollection<PostTags> PostTags { get; set; }
-        public ICollection<PostImages> PostImages { get; set; }
+        public ICollection<Image> Images { get; set; }
     }
 }

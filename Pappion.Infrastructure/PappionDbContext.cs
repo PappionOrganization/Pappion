@@ -6,7 +6,7 @@ namespace Pappion.Infrastructure
     public class PappionDbContext : DbContext
     {
         public PappionDbContext(DbContextOptions<PappionDbContext> options) : base(options) { }
-            
+
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Party> Parties { get; set; }
@@ -24,14 +24,11 @@ namespace Pappion.Infrastructure
         public DbSet<FavorTags> FavorTags { get; set; }
 
         public DbSet<PartyUsers> PartyUsers { get; set; }
-        public DbSet<FavorImages> FavorImages { get; set; }
-        public DbSet<PartyImages> PartyImages { get; set; }
-        public DbSet<PostImages> PostImages { get; set; }
 
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        { 
+        {
             modelBuilder.Entity<Role>(entity =>
             {
                 entity.HasKey(a => a.Id);
@@ -42,7 +39,7 @@ namespace Pappion.Infrastructure
             {
                 entity.HasKey(u => u.Id);
                 entity.Property(u => u.Id).HasDefaultValueSql("(uuid())");
-                entity.Property(u => u .CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
+                entity.Property(u => u.CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
                 entity.Property(u => u.FirstName).IsRequired().HasMaxLength(100);
                 entity.Property(u => u.LastName).IsRequired().HasMaxLength(100);
                 entity.Property(u => u.Email).IsRequired().HasMaxLength(100);
@@ -53,11 +50,6 @@ namespace Pappion.Infrastructure
                 entity.HasOne(u => u.Role)
                 .WithMany(r => r.Users)
                 .HasForeignKey(u => u.RoleId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-                entity.HasOne(u => u.Image)
-                .WithMany(ie => ie.Users)
-                .HasForeignKey(u => u.ImageId)
                 .OnDelete(DeleteBehavior.NoAction);
             });
 
@@ -214,6 +206,30 @@ namespace Pappion.Infrastructure
                 entity.HasKey(im => im.Id);
                 entity.Property(im => im.Id).HasDefaultValueSql("(uuid())");
                 entity.Property(im => im.Path).IsRequired();
+
+                entity.HasOne(im => im.User)
+                .WithMany(u => u.Images)
+                .HasForeignKey(im => im.UserId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.NoAction);
+
+                entity.HasOne(im => im.Post)
+                .WithMany(p => p.Images)
+                .HasForeignKey(im => im.PostId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.NoAction);
+
+                entity.HasOne(im => im.Favor)
+                .WithMany(f => f.Images)
+                .HasForeignKey(im => im.FavorId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.NoAction);
+
+                entity.HasOne(im => im.Party)
+                .WithMany(p => p.Images)
+                .HasForeignKey(im => im.PartyId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<FavorTags>(entity =>
@@ -248,7 +264,7 @@ namespace Pappion.Infrastructure
 
             modelBuilder.Entity<PostTags>(entity =>
             {
-                entity.HasKey(pt => new {pt.PostId, pt.TagId});
+                entity.HasKey(pt => new { pt.PostId, pt.TagId });
 
                 entity.HasOne(pt => pt.Post)
                 .WithMany(p => p.PostTags)
@@ -291,54 +307,6 @@ namespace Pappion.Infrastructure
                 .HasForeignKey(pu => pu.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
             });
-
-            modelBuilder.Entity<FavorImages>(entity =>
-            {
-                entity.HasKey(fi => new { fi.FavorId, fi.ImageId });
-
-                entity.HasOne(fi => fi.Favor)
-                .WithMany(f => f.FavorImages)
-                .HasForeignKey(fi => fi.FavorId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-                entity.HasOne(fi => fi.Image)
-                .WithMany(im => im.FavorImages)
-                .HasForeignKey(fi => fi.ImageId)
-                .OnDelete(DeleteBehavior.NoAction);
-                
-
-            });
-
-            modelBuilder.Entity<PartyImages>(entity =>
-            {
-                entity.HasKey(pi => new {pi.PartyId, pi.ImageId});
-
-                entity.HasOne(pi => pi.Party)
-                .WithMany(p => p.PartyImages)
-                .HasForeignKey(pi => pi.PartyId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-                entity.HasOne(pi => pi.Image)
-                .WithMany(im => im.PartyImages)
-                .HasForeignKey(pi => pi.ImageId)
-                .OnDelete(DeleteBehavior.NoAction);
-            });
-
-            modelBuilder.Entity<PostImages>(entity =>
-            {
-                entity.HasKey(pi => new {pi.PostId, pi.ImageId});
-
-                entity.HasOne(pi => pi.Post)
-                .WithMany(p => p.PostImages)
-                .HasForeignKey(pi => pi.PostId)
-                .OnDelete(DeleteBehavior.NoAction);
-
-                entity.HasOne(pi => pi.Image)
-                .WithMany(im => im.PostImages)
-                .HasForeignKey(pi => pi.ImageId)
-                .OnDelete(DeleteBehavior.NoAction);
-            });
-            Seed.SeedData(modelBuilder);
-        }   
+        }
     }
 }
