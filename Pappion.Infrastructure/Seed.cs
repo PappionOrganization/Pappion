@@ -10,34 +10,7 @@ namespace Pappion.Infrastructure
         
         public static void SeedData(ModelBuilder modelBuilder)
         {
-            List<Image> images = new List<Image> 
-            {
-                new Image
-                {
-                    Id = Guid.NewGuid(),
-                    Path = $"{Guid.NewGuid()}.png"
-                },
-                new Image
-                {
-                    Id = Guid.NewGuid(),
-                    Path = $"{Guid.NewGuid()}.png"
-                },
-                new Image
-                {
-                    Id = Guid.NewGuid(),
-                    Path = $"{Guid.NewGuid()}.png"
-                },
-                new Image
-                {
-                    Id = Guid.NewGuid(),
-                    Path = $"{Guid.NewGuid()}.png"
-                },
-                new Image
-                {
-                    Id = Guid.NewGuid(),
-                    Path = $"{Guid.NewGuid()}.png"
-                }
-            };
+            List<Image> images = new();
             List<Tag> tags = new List<Tag>
         {
             new Tag{Id = Guid.NewGuid(), Name = "Лижі"},
@@ -349,6 +322,34 @@ namespace Pappion.Infrastructure
                         SenderId = users[i].Id,
                         CommentId = comments[i].Id
                     }
+                });
+
+                images.AddRange(new List<Image>
+                {
+                    new Image
+                    {
+                        Id = Guid.NewGuid(),
+                        Path = $"{Guid.NewGuid()}.png",
+                        UserId = users[0].Id
+                    },
+                    new Image
+                    {
+                        Id = Guid.NewGuid(),
+                        Path = $"{Guid.NewGuid()}.png",
+                        PostId = posts[0].Id
+                    },
+                    new Image
+                    {
+                        Id = Guid.NewGuid(),
+                        Path = $"{Guid.NewGuid()}.png",
+                        PartyId = parties[0].Id   
+                    },
+                    new Image
+                    {
+                        Id = Guid.NewGuid(),
+                        Path = $"{Guid.NewGuid()}.png",
+                        FavorId = favors[0].Id
+                    },
                 });
                 userTags.Add(new UserTags
                 {

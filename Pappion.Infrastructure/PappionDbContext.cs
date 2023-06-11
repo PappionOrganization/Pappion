@@ -6,7 +6,6 @@ namespace Pappion.Infrastructure
     public class PappionDbContext : DbContext
     {
         public PappionDbContext(DbContextOptions<PappionDbContext> options) : base(options) { }
-
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Party> Parties { get; set; }
@@ -307,6 +306,7 @@ namespace Pappion.Infrastructure
                 .HasForeignKey(pu => pu.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
             });
+            Seed.SeedData(modelBuilder);
         }
     }
 }
