@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Pappion.Application.Users;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Dto.Like;
-using Pappion.Infrastructure.Dto.User;
+using Pappion.Application.Dto.User;
 
 namespace Pappion.API.Controllers
 {
@@ -21,11 +21,31 @@ namespace Pappion.API.Controllers
             _mediator = mediator;
         }
 
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        {
+            string tokenResult = await _mediator.Send(new LoginCommand(request.Email, request.Password));
+            if(tokenResult == null)
+            {
+                return NotFound("User not found");
+            }
+            return Ok(tokenResult);
+        }
+
+        [Authorize]
         [HttpGet]
         public async Task<List<UserReadDto>> GetAll()
         {
             List<User> users = await _mediator.Send(new GetUserListQuery());
             return _mapper.Map<List<UserReadDto>>(users);
+        }
+
+        [Authorize]
+        [HttpGet("GetCurrentUser")]
+        public async Task<UserReadDto> GetCurrentUser()
+        {
+            User user = await _mediator.Send(new GetCurrentUserInfoQuery());
+            return _mapper.Map<UserReadDto>(user);
         }
 
         [HttpGet("{id}")]
@@ -39,14 +59,6 @@ namespace Pappion.API.Controllers
         public async Task<IActionResult> Remove(Guid id)
         {
             await _mediator.Send(new RemoveUserCommand(id));
-            return Ok();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Add(UserAddDto userAddDto)
-        {
-            User user = _mapper.Map<User>(userAddDto);
-            await _mediator.Send(new AddUserCommand(user));
             return Ok();
         }
 

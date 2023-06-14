@@ -1,16 +1,12 @@
 ﻿using MediatR;
+using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pappion.Application.Users
 {
-    public record AddUserCommand(User user) : IRequest;
-    public class AddUserHandler : IRequestHandler<AddUserCommand>
+    public record AddUserCommand(User user) : ICommand<Unit>;
+    public class AddUserHandler : ICommandHandler<AddUserCommand, Unit>
     {
         private readonly IGenericRepository<User> _genericRepository;
 
@@ -19,10 +15,11 @@ namespace Pappion.Application.Users
             _genericRepository = genericRepository;
         }
 
-        async Task IRequestHandler<AddUserCommand>.Handle(AddUserCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(AddUserCommand request, CancellationToken cancellationToken)
         {
             await _genericRepository.Add(request.user);
             _genericRepository.Save();
+            return Unit.Value;
         }
     }
 }

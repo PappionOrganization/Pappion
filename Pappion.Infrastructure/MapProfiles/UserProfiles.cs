@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
+using Pappion.Application.Dto.User;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Dto.User;
 
 namespace Pappion.Infrastructure.MapProfiles
 {

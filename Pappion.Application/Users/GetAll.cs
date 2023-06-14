@@ -1,16 +1,12 @@
 ﻿using MediatR;
+using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pappion.Application.Users
 {
-    public record GetUserListQuery() : IRequest<List<User>>;
-    public class GetUserListHandler : IRequestHandler<GetUserListQuery, List<User>>
+    public record GetUserListQuery() : IQuery<List<User>>;
+    public class GetUserListHandler : IQueryHandler<GetUserListQuery, List<User>>
     {
         private readonly IGenericRepository<User> _genericRepository;
 

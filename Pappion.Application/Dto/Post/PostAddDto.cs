@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pappion.Infrastructure.Dto.Post
+﻿namespace Pappion.Application.Dto.Post
 {
     public class PostAddDto
     {

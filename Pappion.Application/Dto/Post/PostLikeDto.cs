@@ -5,11 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pappion.Infrastructure.Dto.Like
+namespace Pappion.Application.Dto.Post
 {
-    public class UserLikeReadDto
+    public class PostLikeDto
     {
+        public DateTime CreatedDate { get; set; }
         public Guid SenderId { get; set; }
-        public Guid? UserId { get; set; } = null;
+        public Guid PostId { get; set; } 
     }
 }

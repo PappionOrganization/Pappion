@@ -55,7 +55,7 @@ namespace Pappion.Infrastructure.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Email = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Password = table.Column<string>(type: "varchar(15)", maxLength: 15, nullable: false)
+                    Password = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Rating = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP(6)"),
@@ -421,9 +421,9 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("240cf5d2-f6aa-402f-bceb-8cbd572aeaab"), "Resident" },
-                    { new Guid("3ff06725-fc1b-4f21-813f-aecbbcf94ab5"), "User" },
-                    { new Guid("dc4832f8-2fe9-4307-bbe5-83fed639e4e2"), "Admin" }
+                    { new Guid("2cdfb1ff-d24c-4e11-8c4a-136f713dee30"), "User" },
+                    { new Guid("56f475b6-430a-4201-8e08-9f2ee83887e0"), "Resident" },
+                    { new Guid("a7a0853a-f622-4a64-b1d4-5a1acbbf40c1"), "Admin" }
                 });
 
             migrationBuilder.InsertData(
@@ -431,11 +431,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("2520cdf3-3932-4ed9-ba8c-f9d9149f8465"), "Велосипед" },
-                    { new Guid("3b821ecd-de88-47c0-b365-3485847b6250"), "Сноуборд" },
-                    { new Guid("4c6665dd-994d-49d7-abe5-b77b35f4be8d"), "Лижі" },
-                    { new Guid("8d162146-4b15-48fe-bbe0-05e2e0966394"), "Настільні ігри" },
-                    { new Guid("edd728e1-76d4-4c01-8f34-5e9ec75a6a95"), "Кемпінг" }
+                    { new Guid("40f77412-864f-4293-8bf0-8f5c0c02530c"), "Настільні ігри" },
+                    { new Guid("73c4768a-ec00-4dd8-a205-3c5d19633809"), "Велосипед" },
+                    { new Guid("7da5fee9-3459-4967-a4fc-5216dc8800a7"), "Сноуборд" },
+                    { new Guid("822d5ea4-b116-4cc6-a4ec-5d873cc01ff4"), "Лижі" },
+                    { new Guid("b86de954-ec7c-4b93-90e7-00478e51e689"), "Кемпінг" }
                 });
 
             migrationBuilder.InsertData(
@@ -443,11 +443,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "Email", "FirstName", "LastName", "Location", "Password", "Rating", "RoleId" },
                 values: new object[,]
                 {
-                    { new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), "tatakae@gmail.com", "Еран", "Єґа", null, "password", 1.5m, new Guid("240cf5d2-f6aa-402f-bceb-8cbd572aeaab") },
-                    { new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "harrypotter@gmail.com", "Гаррі", "Поттер", null, "password", 3.5m, new Guid("3ff06725-fc1b-4f21-813f-aecbbcf94ab5") },
-                    { new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), "bossofthegym@gmail.com", "Біллі", "Герінґтон", null, "password", 2.5m, new Guid("240cf5d2-f6aa-402f-bceb-8cbd572aeaab") },
-                    { new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), "killing.monsters@gmail.com", "Ґеральт", "з Рівії", null, "password", 4.5m, new Guid("dc4832f8-2fe9-4307-bbe5-83fed639e4e2") },
-                    { new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), "not.exist@gmail.com", "Тайлер", "Дьорден", null, "password", 5.0m, new Guid("240cf5d2-f6aa-402f-bceb-8cbd572aeaab") }
+                    { new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), "killing.monsters@gmail.com", "Ґеральт", "з Рівії", null, "TaT8QFxQRAVtbjboHzaq6g==;Ew+XiDem9296NGADXzbhAiLnJr8WSDmylGAAwXVF6PI=", 4.5m, new Guid("a7a0853a-f622-4a64-b1d4-5a1acbbf40c1") },
+                    { new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), "bossofthegym@gmail.com", "Біллі", "Герінґтон", null, "y7fqJb1fyaJ5szjYAhjb2Q==;lWAa8BxyRJQoU/sV25k7fZVV+WjiZPep/7EpKoIJJ48=", 2.5m, new Guid("56f475b6-430a-4201-8e08-9f2ee83887e0") },
+                    { new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), "tatakae@gmail.com", "Еран", "Єґа", null, "20Xx32GA1tgFTjFBdWvfFA==;UlqtoowWR8jSyDTEAW/7n75IkHJmcqD/ZOiXrE+X9b4=", 1.5m, new Guid("56f475b6-430a-4201-8e08-9f2ee83887e0") },
+                    { new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), "not.exist@gmail.com", "Тайлер", "Дьорден", null, "TP0+oWCNMzWs/Vj7ufYwWA==;C6GEnXFQH8iIKo37QyGr8nIRSx1waw8r9uOqL6Z79wE=", 5.0m, new Guid("56f475b6-430a-4201-8e08-9f2ee83887e0") },
+                    { new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "harrypotter@gmail.com", "Гаррі", "Поттер", null, "Hd3UAjkimPC7AdBLqZ5TXw==;3Rl6CPUezOhm1VVzceuOoXi7ANkEu0oYYn+ynVt6hIc=", 3.5m, new Guid("2cdfb1ff-d24c-4e11-8c4a-136f713dee30") }
                 });
 
             migrationBuilder.InsertData(
@@ -455,11 +455,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "FavorId", "PartyId", "PostId", "SenderId", "Text", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("0053cb1a-25f4-4afb-a255-d212bbfcc83c"), null, null, null, new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), "Біллі це дуже файний пацан! Стоп...", new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256") },
-                    { new Guid("66a051b9-f45f-47a2-bfab-3d5b97d2122f"), null, null, null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Гаррі це дуже файний пацан! Стоп...", new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("823acf67-be09-4f5a-b63d-baa567e71978"), null, null, null, new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), "Ґеральт це дуже файний пацан! Стоп...", new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd") },
-                    { new Guid("b3f0c151-946c-4469-b37c-e1e7178eba7e"), null, null, null, new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), "Тайлер це дуже файний пацан! Стоп...", new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f") },
-                    { new Guid("f5ecf94f-2ff1-4510-ab79-51d5997506f4"), null, null, null, new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), "Еран це дуже файний пацан! Стоп...", new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab") }
+                    { new Guid("4f43c652-7b99-44d8-a420-79966cdcbf76"), null, null, null, new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), "Ґеральт це дуже файний пацан! Стоп...", new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877") },
+                    { new Guid("5de59748-2bba-452a-a2c0-a6cf0461a1ed"), null, null, null, new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), "Тайлер це дуже файний пацан! Стоп...", new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41") },
+                    { new Guid("63452f27-9195-4dfb-9ee2-8ab37d4f7105"), null, null, null, new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), "Біллі це дуже файний пацан! Стоп...", new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b") },
+                    { new Guid("82b61da4-aebf-4071-a77b-16dd3b4b926f"), null, null, null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Гаррі це дуже файний пацан! Стоп...", new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") },
+                    { new Guid("95ac2d53-580e-431e-bbeb-ca5638deaf65"), null, null, null, new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), "Еран це дуже файний пацан! Стоп...", new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2") }
                 });
 
             migrationBuilder.InsertData(
@@ -467,11 +467,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "AuthorId", "Description", "Price", "Rating", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("05642f93-ba1c-4667-8508-b5327cf49900"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Отримайте розкішну косметичну процедуру, яка підкреслить вашу природну красу і зробить вашу шкіру сяючою.", 80.0m, 0m, "Косметична процедура" },
-                    { new Guid("0d615659-569d-40a8-80d9-6aa6a6148956"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Досвідчений тренер допоможе вам досягнути ваших фітнес-цілей, розробивши індивідуальну тренувальну програму для вас.", 70.2m, 0m, "Персональний тренер" },
-                    { new Guid("4a627a97-ea01-4e3d-b405-cafa8eaa46f6"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Розслабтеся і зосередьтеся на своєму тілі та розумі під час особистого сеансу йоги з досвідченим інструктором.", 55.3m, 0m, "Сеанс йоги" },
-                    { new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Найкращі майстри масажу готові показати всі свої вміння на вашій задубілій спині.", 50.5m, 0m, "Масаж" },
-                    { new Guid("f62048e4-b462-4164-9efb-9420fc35e93f"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Розкішний манікюр і педикюр, який зробить ваші нігті і ніжки неймовірно чудовими і доглянутими.", 45.8m, 0m, "Ретельна манікюр і педикюр" }
+                    { new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Найкращі майстри масажу готові показати всі свої вміння на вашій задубілій спині.", 50.5m, 0m, "Масаж" },
+                    { new Guid("50d1fe9d-0328-4edc-a3c8-44a017a01f5b"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Розкішний манікюр і педикюр, який зробить ваші нігті і ніжки неймовірно чудовими і доглянутими.", 45.8m, 0m, "Ретельна манікюр і педикюр" },
+                    { new Guid("ae0d69b4-e15a-441d-bd9e-2ee7be0629e7"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Розслабтеся і зосередьтеся на своєму тілі та розумі під час особистого сеансу йоги з досвідченим інструктором.", 55.3m, 0m, "Сеанс йоги" },
+                    { new Guid("e2d9525b-28c0-4827-8b90-ce4aec19db99"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Досвідчений тренер допоможе вам досягнути ваших фітнес-цілей, розробивши індивідуальну тренувальну програму для вас.", 70.2m, 0m, "Персональний тренер" },
+                    { new Guid("fbd8b343-ecd3-4695-b163-e7e12b7bbd0c"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Отримайте розкішну косметичну процедуру, яка підкреслить вашу природну красу і зробить вашу шкіру сяючою.", 80.0m, 0m, "Косметична процедура" }
                 });
 
             migrationBuilder.InsertData(
@@ -479,11 +479,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "FavorId", "PartyId", "Path", "PostId", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("7062e329-d94f-46e1-8754-cc3ba2a5efe9"), null, null, "aa9c6552-d0e1-4cc7-8e0f-991d2b6a2695.png", null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("af083edb-a727-4573-af56-aa3119e45551"), null, null, "918b77f1-9887-4001-b172-83583c5e60ef.png", null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("bcfa3fde-65b7-4855-9540-ee9fc38e4fc8"), null, null, "c0d3ea5f-dcc8-4961-913c-a2f063d7a349.png", null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("d6803ec3-981f-4ec5-b6be-f71d09d96fda"), null, null, "bcb8106c-f532-46c5-aa05-579ee7c997c6.png", null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("e6b106c4-0fca-4fd3-821d-62a4a4da59d8"), null, null, "af5d85d9-4404-4e49-a922-53009d6752e0.png", null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") }
+                    { new Guid("23fa92c2-50e0-4e1a-883c-96d2da0e712a"), null, null, "946f9cb2-d7df-4b33-8c3d-faba1e938992.png", null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") },
+                    { new Guid("375210f4-e71f-4763-8006-c6f29b742ac5"), null, null, "b98fe946-5d13-4781-b389-2c3e8da333e0.png", null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") },
+                    { new Guid("3e0a97c0-341e-4354-a111-631b9878e07f"), null, null, "cb7373e8-7616-49bb-a94c-13aa892ed8ee.png", null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") },
+                    { new Guid("89d440f1-948e-4b2f-860a-88737fb0b1fd"), null, null, "d36f2242-3dfe-4491-a494-55d6fffec9a8.png", null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") },
+                    { new Guid("d8915b42-be50-42b5-b9cc-5925f32137ee"), null, null, "62f3c309-4212-49c9-8466-38fb2a8096f9.png", null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") }
                 });
 
             migrationBuilder.InsertData(
@@ -491,11 +491,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "CommentId", "FavorId", "PartyId", "PostId", "SenderId", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("0a864eed-7eae-41fe-b617-9704c7417360"), null, null, null, null, new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd") },
-                    { new Guid("2a2e2af3-e2e8-400c-964a-f8374515ee63"), null, null, null, null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("50d245f2-96f0-4976-b21f-93f845e0e4c9"), null, null, null, null, new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256") },
-                    { new Guid("b12afac2-7bca-4702-a55d-aa36fee54ee7"), null, null, null, null, new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab") },
-                    { new Guid("ecdf4edd-0600-4ce1-9b17-f0d4de102888"), null, null, null, null, new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f") }
+                    { new Guid("0a122ed0-d13f-4c3b-a5c1-c168076c01a2"), null, null, null, null, new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41") },
+                    { new Guid("0e0d19e1-d658-45a3-b1bb-3f291d46de1a"), null, null, null, null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") },
+                    { new Guid("97e94ab5-2f9e-4b7a-9044-771a24d0385a"), null, null, null, null, new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b") },
+                    { new Guid("f113c401-a90e-4454-9ba3-082c046b2c7e"), null, null, null, null, new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877") },
+                    { new Guid("f13adedf-1195-42cb-997b-064d43628589"), null, null, null, null, new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2") }
                 });
 
             migrationBuilder.InsertData(
@@ -503,11 +503,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "AuthorId", "Date", "Description", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("0c063b59-dd86-4e01-8ce7-5d9dcb36838b"), new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(1084), "Хто хоче приєднатися до мене для вечірньої прогулянки по красивому місту? Разом ми зможемо насолодитися видами, побалакати і провести час весело. Приходьте!", "Вечірня прогулянка по місту" },
-                    { new Guid("1c8ab47f-928e-4604-a37c-f22ec7306b9d"), new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(1120), "Шукаю людей, які так само захоплені гуртом 'Rammstein' і хотіли б піти на їхній концерт. Разом буде набагато веселіше! Хто бажає долучитися?", "Концерт Rammstein" },
-                    { new Guid("752f4314-24bd-485d-bf0c-85e3fe303ea4"), new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(1104), "Хтось цікавиться проведенням вечірки вдома з настільними іграми? Я маю гарну колекцію ігор і шукаю компанію для веселого проведення вечора. Приєднуйтесь!", "Вечірка вдома з настільними іграми" },
-                    { new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(1023), "Приходьте до мене сьогодні в джакузі, тут весело. Про оплату потім.", "Джакузі з скінхедом" },
-                    { new Guid("d1a44c54-d95a-42a3-b6d2-87c63214bd87"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(1070), "Хто хоче приєднатися до мене для вечірньої прогулянки по красивому місту? Разом ми зможемо насолодитися видами, побалакати і провести час весело. Приходьте!", "Вечірня прогулянка по місту" }
+                    { new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(829), "Приходьте до мене сьогодні в джакузі, тут весело. Про оплату потім.", "Джакузі з скінхедом" },
+                    { new Guid("b0c0c9ba-1b00-474c-8a76-13e4e348f75e"), new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(878), "Хто хоче приєднатися до мене для вечірньої прогулянки по красивому місту? Разом ми зможемо насолодитися видами, побалакати і провести час весело. Приходьте!", "Вечірня прогулянка по місту" },
+                    { new Guid("b2dacf23-fdf2-4ae9-ba6f-824d35d8fcb0"), new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(885), "Хтось цікавиться проведенням вечірки вдома з настільними іграми? Я маю гарну колекцію ігор і шукаю компанію для веселого проведення вечора. Приєднуйтесь!", "Вечірка вдома з настільними іграми" },
+                    { new Guid("e0d94930-0578-405d-a218-6cda688bd778"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(835), "Хто хоче приєднатися до мене для вечірньої прогулянки по красивому місту? Разом ми зможемо насолодитися видами, побалакати і провести час весело. Приходьте!", "Вечірня прогулянка по місту" },
+                    { new Guid("f106260f-1c90-49a1-944d-59e2a0f49be2"), new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(891), "Шукаю людей, які так само захоплені гуртом 'Rammstein' і хотіли б піти на їхній концерт. Разом буде набагато веселіше! Хто бажає долучитися?", "Концерт Rammstein" }
                 });
 
             migrationBuilder.InsertData(
@@ -515,11 +515,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "Phone", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("1eca53eb-6141-4e3e-9f88-9a18f98e193e"), "+380687654587", new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("36a287b9-5d74-4289-bb88-64b1323d4558"), "+380955647834", new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256") },
-                    { new Guid("64527ab2-d142-42fa-9147-5177bac0b26f"), "+380988234901", new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab") },
-                    { new Guid("8040df02-f810-4de8-80a3-d8cb7dd9d0f9"), "+380508672351", new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f") },
-                    { new Guid("aa31ebe0-3f58-439b-b38b-24b5fe99da9a"), "+380660981292", new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd") }
+                    { new Guid("26a4ad95-86e6-49cd-bc27-c8f45581684e"), "+380988234901", new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2") },
+                    { new Guid("744ad1f4-18c9-4799-adf5-37dc7ff7bb4d"), "+380508672351", new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41") },
+                    { new Guid("af7a75a2-9104-4af3-8f05-0dd38a18b519"), "+380687654587", new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") },
+                    { new Guid("dba9b0aa-306b-47b4-a283-ca99b5a4b87a"), "+380955647834", new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b") },
+                    { new Guid("e223801f-e551-493b-9a57-7de74aadd8cd"), "+380660981292", new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877") }
                 });
 
             migrationBuilder.InsertData(
@@ -527,11 +527,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "AuthorId", "CreatedDate", "Description", "Location", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("3c41c506-80b3-4742-a44d-10e4dc8f9fe4"), new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(675), "Під час наших пішохідних прогулянок по Карпатах ми були просто зачаровані мальовничими пейзажами, які відкривалися перед нами. Гірські потоки, зелені луки та красиві гори - все це створює незабутню атмосферу та надихає на нові відкриття. Рекомендуємо це місце для всіх любителів активного відпочинку та красивої природи!", null, "Неймовірні пейзажі Карпат" },
-                    { new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(527), "Карпати інфо шахраї! Я забронювала собі номер в одній з камер Азкабану, але дементори мене туди не впустили. Це жах!", null, "Увага!" },
-                    { new Guid("51e9de90-76be-4f27-8bd4-6b5c2937099a"), new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(641), "Нещодавно повернулися з унікальної подорожі до Карпат і просто захоплюємося цим мальовничим куточком природи. Гірські ландшафти та заповідні ліси залишили незабутні враження в нашій пам'яті. Рекомендуємо всім любителям пригод відвідати цю частину України!", null, "Незабутні враження від Карпат" },
-                    { new Guid("cf237311-a526-4c1a-8ba8-4c1bb661ba71"), new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(691), "Наша зимова подорож до Карпат принесла нам незабутні враження від катання на лижах. Добре обладнані гірськолижні курорти та різноманітні траси задовольнять навіть найвибагливіших любителів лижного спорту. Насолоджуйтесь зимовими пригодами у Карпатах!", null, "Зимові пригоди у Карпатах" },
-                    { new Guid("fd75f018-abbc-45b0-b691-112abc1a2811"), new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), new DateTime(2023, 6, 11, 19, 37, 11, 878, DateTimeKind.Local).AddTicks(658), "Під час нашої поїздки в Карпати ми не лише насолоджувалися природою, але й смакували справжні кулінарні шедеври. Місцеві страви, такі як вершкові гриби та банош, просто вражають своїм неповторним смаком. Рекомендуємо спробувати!", null, "Смаколики Карпатської кухні" }
+                    { new Guid("5b438114-8c0f-4595-8f47-3f53f572ac34"), new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(791), "Наша зимова подорож до Карпат принесла нам незабутні враження від катання на лижах. Добре обладнані гірськолижні курорти та різноманітні траси задовольнять навіть найвибагливіших любителів лижного спорту. Насолоджуйтесь зимовими пригодами у Карпатах!", null, "Зимові пригоди у Карпатах" },
+                    { new Guid("b089e754-41f3-4881-8fcb-848e4437a9b3"), new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(745), "Під час нашої поїздки в Карпати ми не лише насолоджувалися природою, але й смакували справжні кулінарні шедеври. Місцеві страви, такі як вершкові гриби та банош, просто вражають своїм неповторним смаком. Рекомендуємо спробувати!", null, "Смаколики Карпатської кухні" },
+                    { new Guid("b0bf0a6c-b8c0-48a3-ba82-17ed13cf72f2"), new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(740), "Нещодавно повернулися з унікальної подорожі до Карпат і просто захоплюємося цим мальовничим куточком природи. Гірські ландшафти та заповідні ліси залишили незабутні враження в нашій пам'яті. Рекомендуємо всім любителям пригод відвідати цю частину України!", null, "Незабутні враження від Карпат" },
+                    { new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(693), "Карпати інфо шахраї! Я забронювала собі номер в одній з камер Азкабану, але дементори мене туди не впустили. Це жах!", null, "Увага!" },
+                    { new Guid("f35e555e-44b3-48ab-8d2e-98f86145e693"), new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), new DateTime(2023, 6, 14, 12, 55, 17, 126, DateTimeKind.Local).AddTicks(750), "Під час наших пішохідних прогулянок по Карпатах ми були просто зачаровані мальовничими пейзажами, які відкривалися перед нами. Гірські потоки, зелені луки та красиві гори - все це створює незабутню атмосферу та надихає на нові відкриття. Рекомендуємо це місце для всіх любителів активного відпочинку та красивої природи!", null, "Неймовірні пейзажі Карпат" }
                 });
 
             migrationBuilder.InsertData(
@@ -539,11 +539,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "TagId", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("3b821ecd-de88-47c0-b365-3485847b6250"), new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab") },
-                    { new Guid("4c6665dd-994d-49d7-abe5-b77b35f4be8d"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("edd728e1-76d4-4c01-8f34-5e9ec75a6a95"), new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256") },
-                    { new Guid("8d162146-4b15-48fe-bbe0-05e2e0966394"), new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd") },
-                    { new Guid("2520cdf3-3932-4ed9-ba8c-f9d9149f8465"), new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f") }
+                    { new Guid("40f77412-864f-4293-8bf0-8f5c0c02530c"), new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877") },
+                    { new Guid("b86de954-ec7c-4b93-90e7-00478e51e689"), new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b") },
+                    { new Guid("7da5fee9-3459-4967-a4fc-5216dc8800a7"), new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2") },
+                    { new Guid("73c4768a-ec00-4dd8-a205-3c5d19633809"), new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41") },
+                    { new Guid("822d5ea4-b116-4cc6-a4ec-5d873cc01ff4"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") }
                 });
 
             migrationBuilder.InsertData(
@@ -551,21 +551,21 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "FavorId", "PartyId", "PostId", "SenderId", "Text", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("19695b83-fcbd-4619-aeb5-70ec864cf3b7"), null, new Guid("752f4314-24bd-485d-bf0c-85e3fe303ea4"), null, new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), "Вечірка вдома з настільними іграми це звучить дуже цікаво! Я обов'язково прийду!", null },
-                    { new Guid("22f0a6b7-2129-4936-813a-2e24130cbb7d"), null, null, new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Увага! це дуже корисна публікація!", null },
-                    { new Guid("30613838-1c70-4f96-9d8c-559e3461c68c"), null, new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Джакузі з скінхедом це звучить дуже цікаво! Я обов'язково прийду!", null },
-                    { new Guid("3814a39f-8332-431e-abc1-73a4a072eb22"), new Guid("05642f93-ba1c-4667-8508-b5327cf49900"), null, null, new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), "Косметична процедура це дуже крута послуга! Раджу всім спробувати!", null },
-                    { new Guid("3b9dabc5-b365-4a45-979d-0cee670d140f"), new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), null, null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), "Масаж це дуже крута послуга! Раджу всім спробувати!", null },
-                    { new Guid("40316343-3146-4a5e-a6d6-9d3f3765b38a"), null, null, new Guid("51e9de90-76be-4f27-8bd4-6b5c2937099a"), new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), "Незабутні враження від Карпат це дуже корисна публікація!", null },
-                    { new Guid("47a48f98-7f80-43c8-99b1-1e8cb9a9ac9d"), null, new Guid("1c8ab47f-928e-4604-a37c-f22ec7306b9d"), null, new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), "Концерт Rammstein це звучить дуже цікаво! Я обов'язково прийду!", null },
-                    { new Guid("58a9cc2f-4c6f-4f99-90c4-5961da061f78"), new Guid("0d615659-569d-40a8-80d9-6aa6a6148956"), null, null, new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), "Персональний тренер це дуже крута послуга! Раджу всім спробувати!", null },
-                    { new Guid("5ff882ad-675e-442d-94a7-0fcbbd7ba863"), null, null, new Guid("cf237311-a526-4c1a-8ba8-4c1bb661ba71"), new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), "Зимові пригоди у Карпатах це дуже корисна публікація!", null },
-                    { new Guid("65e7e4f9-d294-41a6-949f-c46e4d4d58af"), new Guid("f62048e4-b462-4164-9efb-9420fc35e93f"), null, null, new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), "Ретельна манікюр і педикюр це дуже крута послуга! Раджу всім спробувати!", null },
-                    { new Guid("76cd9aef-d6fe-46c5-821b-16d4515b2e2c"), null, new Guid("0c063b59-dd86-4e01-8ce7-5d9dcb36838b"), null, new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), "Вечірня прогулянка по місту це звучить дуже цікаво! Я обов'язково прийду!", null },
-                    { new Guid("87af1501-ad0d-4572-92ae-e5019def8909"), null, null, new Guid("fd75f018-abbc-45b0-b691-112abc1a2811"), new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), "Смаколики Карпатської кухні це дуже корисна публікація!", null },
-                    { new Guid("ad4db20b-673a-4672-8c0a-3b621c2a5d24"), new Guid("4a627a97-ea01-4e3d-b405-cafa8eaa46f6"), null, null, new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), "Сеанс йоги це дуже крута послуга! Раджу всім спробувати!", null },
-                    { new Guid("b2528f2b-6aca-41ee-bf90-9a959a1af7b1"), null, new Guid("d1a44c54-d95a-42a3-b6d2-87c63214bd87"), null, new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), "Вечірня прогулянка по місту це звучить дуже цікаво! Я обов'язково прийду!", null },
-                    { new Guid("ed9217d5-19a5-4d71-a868-3e2e7a2d1fd3"), null, null, new Guid("3c41c506-80b3-4742-a44d-10e4dc8f9fe4"), new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), "Неймовірні пейзажі Карпат це дуже корисна публікація!", null }
+                    { new Guid("044977bb-198d-4f0c-b843-fc99a667c8e5"), null, null, new Guid("f35e555e-44b3-48ab-8d2e-98f86145e693"), new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), "Неймовірні пейзажі Карпат це дуже корисна публікація!", null },
+                    { new Guid("0dd1206a-f55b-4dcd-91c3-fa81f17a1d03"), null, new Guid("b2dacf23-fdf2-4ae9-ba6f-824d35d8fcb0"), null, new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), "Вечірка вдома з настільними іграми це звучить дуже цікаво! Я обов'язково прийду!", null },
+                    { new Guid("472960bb-9eb0-49b1-9e0d-36d372099715"), new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), null, null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Масаж це дуже крута послуга! Раджу всім спробувати!", null },
+                    { new Guid("4b1ae366-9a07-4bed-b2b6-dcbd78bc7043"), null, null, new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Увага! це дуже корисна публікація!", null },
+                    { new Guid("71fb923f-fe80-4413-a270-1cd018ada140"), new Guid("ae0d69b4-e15a-441d-bd9e-2ee7be0629e7"), null, null, new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), "Сеанс йоги це дуже крута послуга! Раджу всім спробувати!", null },
+                    { new Guid("7a79dd25-8dd6-46b3-bc1a-af21ce713d7f"), null, new Guid("b0c0c9ba-1b00-474c-8a76-13e4e348f75e"), null, new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), "Вечірня прогулянка по місту це звучить дуже цікаво! Я обов'язково прийду!", null },
+                    { new Guid("81fc31f1-54c1-4eab-ab45-897442d33740"), null, new Guid("f106260f-1c90-49a1-944d-59e2a0f49be2"), null, new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), "Концерт Rammstein це звучить дуже цікаво! Я обов'язково прийду!", null },
+                    { new Guid("83c74cfa-73b0-4fd2-88b1-75650002776b"), new Guid("e2d9525b-28c0-4827-8b90-ce4aec19db99"), null, null, new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), "Персональний тренер це дуже крута послуга! Раджу всім спробувати!", null },
+                    { new Guid("89c3866d-4b3b-458d-8629-f3650bd2314a"), null, null, new Guid("b089e754-41f3-4881-8fcb-848e4437a9b3"), new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), "Смаколики Карпатської кухні це дуже корисна публікація!", null },
+                    { new Guid("8c8e7794-d783-4732-9fa1-bbfa3969a00e"), null, new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), "Джакузі з скінхедом це звучить дуже цікаво! Я обов'язково прийду!", null },
+                    { new Guid("a28c9278-42c7-4114-b7ee-11c52b03ccd0"), null, new Guid("e0d94930-0578-405d-a218-6cda688bd778"), null, new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), "Вечірня прогулянка по місту це звучить дуже цікаво! Я обов'язково прийду!", null },
+                    { new Guid("b987045d-b639-4542-afcd-eda7a4933edd"), null, null, new Guid("b0bf0a6c-b8c0-48a3-ba82-17ed13cf72f2"), new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), "Незабутні враження від Карпат це дуже корисна публікація!", null },
+                    { new Guid("ca6bd045-571c-489b-a5cb-8beefbecebdd"), new Guid("fbd8b343-ecd3-4695-b163-e7e12b7bbd0c"), null, null, new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), "Косметична процедура це дуже крута послуга! Раджу всім спробувати!", null },
+                    { new Guid("da6d4955-29fc-4a19-8940-993e5b5ff713"), new Guid("50d1fe9d-0328-4edc-a3c8-44a017a01f5b"), null, null, new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), "Ретельна манікюр і педикюр це дуже крута послуга! Раджу всім спробувати!", null },
+                    { new Guid("fe5a904b-e12a-4506-adbd-299150d13071"), null, null, new Guid("5b438114-8c0f-4595-8f47-3f53f572ac34"), new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), "Зимові пригоди у Карпатах це дуже корисна публікація!", null }
                 });
 
             migrationBuilder.InsertData(
@@ -573,11 +573,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "FavorId", "TagId" },
                 values: new object[,]
                 {
-                    { new Guid("05642f93-ba1c-4667-8508-b5327cf49900"), new Guid("3b821ecd-de88-47c0-b365-3485847b6250") },
-                    { new Guid("0d615659-569d-40a8-80d9-6aa6a6148956"), new Guid("8d162146-4b15-48fe-bbe0-05e2e0966394") },
-                    { new Guid("4a627a97-ea01-4e3d-b405-cafa8eaa46f6"), new Guid("edd728e1-76d4-4c01-8f34-5e9ec75a6a95") },
-                    { new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), new Guid("4c6665dd-994d-49d7-abe5-b77b35f4be8d") },
-                    { new Guid("f62048e4-b462-4164-9efb-9420fc35e93f"), new Guid("2520cdf3-3932-4ed9-ba8c-f9d9149f8465") }
+                    { new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), new Guid("822d5ea4-b116-4cc6-a4ec-5d873cc01ff4") },
+                    { new Guid("50d1fe9d-0328-4edc-a3c8-44a017a01f5b"), new Guid("73c4768a-ec00-4dd8-a205-3c5d19633809") },
+                    { new Guid("ae0d69b4-e15a-441d-bd9e-2ee7be0629e7"), new Guid("b86de954-ec7c-4b93-90e7-00478e51e689") },
+                    { new Guid("e2d9525b-28c0-4827-8b90-ce4aec19db99"), new Guid("40f77412-864f-4293-8bf0-8f5c0c02530c") },
+                    { new Guid("fbd8b343-ecd3-4695-b163-e7e12b7bbd0c"), new Guid("7da5fee9-3459-4967-a4fc-5216dc8800a7") }
                 });
 
             migrationBuilder.InsertData(
@@ -585,21 +585,21 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "FavorId", "PartyId", "Path", "PostId", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("049e6498-a5ec-4a35-9b02-2f92e43d21c4"), null, null, "71456a51-0acc-46bb-b19e-723b3e1327ee.png", new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), null },
-                    { new Guid("0a797ff5-7277-4269-99f6-1b63c81e5dd8"), null, new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), "d640729d-72c8-4bee-923e-eb9745305ffd.png", null, null },
-                    { new Guid("125a1435-362a-4293-b597-5d0d705c4237"), new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), null, "145b8685-47d8-4b51-b98e-f11f5409a6c8.png", null, null },
-                    { new Guid("17952fd9-f8a4-48ef-86cd-748edb17eb5f"), null, new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), "ea431ca5-0617-445b-88f1-3c8f62763e30.png", null, null },
-                    { new Guid("1cc07206-18cf-4950-b0aa-32455193e7fa"), null, new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), "d1dc68ca-3720-438a-b86e-0c8d5e462a7e.png", null, null },
-                    { new Guid("5d40dc34-3030-4dee-aa77-8b8b207ba1f9"), null, null, "b7ebc8cb-a584-43e2-9aa7-b5585093ee48.png", new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), null },
-                    { new Guid("7510a8d7-b442-4433-ad50-ae5ee40a40ee"), null, null, "a91ff5b6-2d0e-4bba-8d67-60d514f89297.png", new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), null },
-                    { new Guid("815ce203-f24d-40db-a7b3-8e8eeabf7054"), null, new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), "c5e9e99c-2e64-4e45-a06f-56e9cf5cdcf8.png", null, null },
-                    { new Guid("9990da02-bde2-4042-84b0-989b6c453471"), null, new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), "ee886fff-5fc7-42d8-a7e3-762689aa787e.png", null, null },
-                    { new Guid("aa2a2896-6f82-4039-84d1-5d191646d92c"), new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), null, "a4c40f2b-9fb8-4a54-bcb7-ee10bb6c37a3.png", null, null },
-                    { new Guid("ae3f1217-d5dd-49ef-a3d7-e6f1d156aac2"), new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), null, "fe293152-f926-4c1f-9c79-e330ec798999.png", null, null },
-                    { new Guid("c7849dba-1a27-46d4-9835-3a4ed2cb1588"), new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), null, "b13a3395-8cae-4e1f-b3f6-88f30d890aa5.png", null, null },
-                    { new Guid("c851260f-2a25-44bc-ab97-a08c0e082292"), null, null, "960b4e12-1817-4476-87ec-5cb25034d1eb.png", new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), null },
-                    { new Guid("d09ad1c4-c22d-40eb-8504-92b0a96bd7e4"), null, null, "ecc22aa0-772c-45be-aeda-80ee041280dd.png", new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), null },
-                    { new Guid("f7db1ae6-2b4d-412d-b50b-7dea51dbbd6e"), new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), null, "afd6315b-1af7-409c-86bb-30a0c2eaff52.png", null, null }
+                    { new Guid("05b9ac19-0308-4379-aa03-917bb76cfb10"), null, new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), "ab384644-ec9e-4bf0-8e76-6446204d77df.png", null, null },
+                    { new Guid("0d3bce39-d309-4696-a2ff-120fd78d7d6a"), null, null, "9733c761-8212-4973-ad62-bd9d267cb662.png", new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), null },
+                    { new Guid("217ed1f7-82d8-44fd-a255-45920e60ada7"), null, null, "8e7f6dc0-6bef-4e01-a275-0839f0741dd5.png", new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), null },
+                    { new Guid("23682aa4-9b25-4f21-98ed-21a142579b37"), new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), null, "14ad304b-7b47-4e9c-9949-7d024d67d9f9.png", null, null },
+                    { new Guid("2423c911-c161-4606-a759-bc2ca36e4597"), null, null, "1b03b35a-990c-48c5-a77e-d00c32570a52.png", new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), null },
+                    { new Guid("38b7d1d4-283e-4213-8c04-62cb30818ef1"), null, new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), "18472e33-1eb3-4b09-8892-041a22d61d89.png", null, null },
+                    { new Guid("4227df7d-f2c1-4395-b294-1a5361d7075d"), new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), null, "8d1ddf68-3f20-4bbd-a4df-6c52df020c7a.png", null, null },
+                    { new Guid("689647e6-7171-4996-ab31-b9acf83b038d"), null, null, "34847184-0642-4c25-ae81-c8305b484d7b.png", new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), null },
+                    { new Guid("8381cb66-fbbe-4e81-a3f6-ba5d6cee30c4"), null, new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), "e8010730-41f2-4526-9bbd-dae1eae2c99c.png", null, null },
+                    { new Guid("86e6a3d7-eb55-4a86-b38c-a059faeb56a8"), new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), null, "1d56447d-b0f0-4de7-9b58-81690054f72a.png", null, null },
+                    { new Guid("a4573548-fb4f-4e09-8ed0-ecd511cb33bb"), new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), null, "6fb427d4-aaae-491e-8860-7e471c1e71ef.png", null, null },
+                    { new Guid("a53a77c9-8e45-482c-b7cd-f0b89cded87a"), null, new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), "a9b35e70-01a3-4221-88cc-224751ea1b83.png", null, null },
+                    { new Guid("a9c35a63-bff3-4665-8981-4bbd70d088ef"), new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), null, "335044a3-65c1-4e2f-9406-f3541ea9cf01.png", null, null },
+                    { new Guid("b76ab3c6-2442-493c-8a0b-4d0b3edde5cf"), null, null, "980e451f-c97c-4807-af5f-fa12df9104ac.png", new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), null },
+                    { new Guid("f80fbc0e-8942-483d-b21e-9ad386d2d334"), null, new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), "ad78917a-6513-4940-a97f-153b55504448.png", null, null }
                 });
 
             migrationBuilder.InsertData(
@@ -607,22 +607,22 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "CommentId", "FavorId", "PartyId", "PostId", "SenderId", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("05d923aa-a035-45b6-80c9-8bd19ee53bba"), null, null, new Guid("752f4314-24bd-485d-bf0c-85e3fe303ea4"), null, new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), null },
-                    { new Guid("33daac7a-3372-4ef9-be4a-b110a11677d0"), new Guid("66a051b9-f45f-47a2-bfab-3d5b97d2122f"), null, null, null, new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), null },
-                    { new Guid("37795ed5-9e2b-4ef6-a16b-af21bff4c6ca"), null, null, null, new Guid("fd75f018-abbc-45b0-b691-112abc1a2811"), new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), null },
-                    { new Guid("4afde064-99e3-4260-b0a9-04faca20cf3c"), null, null, null, new Guid("3c41c506-80b3-4742-a44d-10e4dc8f9fe4"), new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), null },
-                    { new Guid("5861105b-4b92-4caa-b7a1-582048c4e193"), null, null, new Guid("1c8ab47f-928e-4604-a37c-f22ec7306b9d"), null, new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), null },
-                    { new Guid("6f156f2d-a208-4406-92f7-7e9e033e6304"), null, new Guid("05642f93-ba1c-4667-8508-b5327cf49900"), null, null, new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), null },
-                    { new Guid("91602c7a-60c5-4491-a671-d468e05ca621"), null, new Guid("4a627a97-ea01-4e3d-b405-cafa8eaa46f6"), null, null, new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), null },
-                    { new Guid("aa86a620-288a-4751-aed8-559e98130527"), null, new Guid("b8055fc5-a21f-4873-958f-3278de1d5a09"), null, null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), null },
-                    { new Guid("b181bb15-3236-4328-b94b-6defb3b8b489"), null, null, new Guid("0c063b59-dd86-4e01-8ce7-5d9dcb36838b"), null, new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), null },
-                    { new Guid("c5d1e946-33bc-4c12-b27a-3fd58d437e5a"), null, null, null, new Guid("51e9de90-76be-4f27-8bd4-6b5c2937099a"), new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), null },
-                    { new Guid("c679b181-647e-4f02-b697-62c78728f654"), null, null, null, new Guid("cf237311-a526-4c1a-8ba8-4c1bb661ba71"), new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), null },
-                    { new Guid("cd72f292-e1e3-4743-9533-6a12455078c6"), null, null, new Guid("d1a44c54-d95a-42a3-b6d2-87c63214bd87"), null, new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), null },
-                    { new Guid("de848a80-1588-41e1-952c-551668a64994"), null, new Guid("0d615659-569d-40a8-80d9-6aa6a6148956"), null, null, new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), null },
-                    { new Guid("eb677eda-60ea-4315-be1a-327ec60bdebe"), null, new Guid("f62048e4-b462-4164-9efb-9420fc35e93f"), null, null, new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f"), null },
-                    { new Guid("f0ec2820-b3f3-4ee5-8493-7f9ca069cccf"), null, null, new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), null },
-                    { new Guid("f8521c0e-cd78-42d5-8638-9ada1caaa390"), null, null, null, new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), null }
+                    { new Guid("050cf4ad-b16a-449c-a073-076a798cf551"), null, null, null, new Guid("b089e754-41f3-4881-8fcb-848e4437a9b3"), new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), null },
+                    { new Guid("0a45e5cf-05b7-4857-9fdd-925e5f4a5370"), null, null, null, new Guid("5b438114-8c0f-4595-8f47-3f53f572ac34"), new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), null },
+                    { new Guid("0f837b72-b780-4478-a7b7-845c609f11c8"), null, null, new Guid("b0c0c9ba-1b00-474c-8a76-13e4e348f75e"), null, new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), null },
+                    { new Guid("19426836-ffa9-47ef-90f7-2fc7571181c4"), null, new Guid("fbd8b343-ecd3-4695-b163-e7e12b7bbd0c"), null, null, new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), null },
+                    { new Guid("243ebb3a-ba07-4de2-b763-67aef7c14708"), null, null, null, new Guid("b0bf0a6c-b8c0-48a3-ba82-17ed13cf72f2"), new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), null },
+                    { new Guid("3dbcff47-2ad2-4fe3-a121-eb2dd4d6c87d"), null, new Guid("50d1fe9d-0328-4edc-a3c8-44a017a01f5b"), null, null, new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), null },
+                    { new Guid("44233740-a3e0-4096-87b8-fcd43d9e28c0"), new Guid("82b61da4-aebf-4071-a77b-16dd3b4b926f"), null, null, null, new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), null },
+                    { new Guid("48a4efb2-b5a4-4742-a10e-cc927030f86d"), null, null, new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), null },
+                    { new Guid("6b5dc170-6aa0-4ee1-a9c0-a41c1f483956"), null, new Guid("3d27f1ff-c1fb-468d-94e1-636e7987888f"), null, null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), null },
+                    { new Guid("7d66d831-aa37-4218-8f20-337c28588dc9"), null, null, new Guid("e0d94930-0578-405d-a218-6cda688bd778"), null, new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), null },
+                    { new Guid("7d6fa6d5-934e-4488-9312-338408fbfd7b"), null, new Guid("ae0d69b4-e15a-441d-bd9e-2ee7be0629e7"), null, null, new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), null },
+                    { new Guid("b6b07f21-ef96-4899-8372-305e8a0575e6"), null, null, null, new Guid("f35e555e-44b3-48ab-8d2e-98f86145e693"), new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), null },
+                    { new Guid("d009ea65-5761-4fdd-824c-2b909bcc46f1"), null, null, new Guid("b2dacf23-fdf2-4ae9-ba6f-824d35d8fcb0"), null, new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41"), null },
+                    { new Guid("e7fddd00-3709-4401-ad8e-c2a25c59bd77"), null, null, null, new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), null },
+                    { new Guid("ea0538dc-0b3c-47df-ab77-09639ff7f400"), null, new Guid("e2d9525b-28c0-4827-8b90-ce4aec19db99"), null, null, new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), null },
+                    { new Guid("f1b80986-0a09-424b-9919-fc7a87315574"), null, null, new Guid("f106260f-1c90-49a1-944d-59e2a0f49be2"), null, new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), null }
                 });
 
             migrationBuilder.InsertData(
@@ -630,11 +630,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "PartyId", "TagId" },
                 values: new object[,]
                 {
-                    { new Guid("0c063b59-dd86-4e01-8ce7-5d9dcb36838b"), new Guid("8d162146-4b15-48fe-bbe0-05e2e0966394") },
-                    { new Guid("1c8ab47f-928e-4604-a37c-f22ec7306b9d"), new Guid("edd728e1-76d4-4c01-8f34-5e9ec75a6a95") },
-                    { new Guid("752f4314-24bd-485d-bf0c-85e3fe303ea4"), new Guid("2520cdf3-3932-4ed9-ba8c-f9d9149f8465") },
-                    { new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), new Guid("4c6665dd-994d-49d7-abe5-b77b35f4be8d") },
-                    { new Guid("d1a44c54-d95a-42a3-b6d2-87c63214bd87"), new Guid("3b821ecd-de88-47c0-b365-3485847b6250") }
+                    { new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), new Guid("822d5ea4-b116-4cc6-a4ec-5d873cc01ff4") },
+                    { new Guid("b0c0c9ba-1b00-474c-8a76-13e4e348f75e"), new Guid("40f77412-864f-4293-8bf0-8f5c0c02530c") },
+                    { new Guid("b2dacf23-fdf2-4ae9-ba6f-824d35d8fcb0"), new Guid("73c4768a-ec00-4dd8-a205-3c5d19633809") },
+                    { new Guid("e0d94930-0578-405d-a218-6cda688bd778"), new Guid("7da5fee9-3459-4967-a4fc-5216dc8800a7") },
+                    { new Guid("f106260f-1c90-49a1-944d-59e2a0f49be2"), new Guid("b86de954-ec7c-4b93-90e7-00478e51e689") }
                 });
 
             migrationBuilder.InsertData(
@@ -642,11 +642,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "PartyId", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("0c063b59-dd86-4e01-8ce7-5d9dcb36838b"), new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd") },
-                    { new Guid("1c8ab47f-928e-4604-a37c-f22ec7306b9d"), new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256") },
-                    { new Guid("752f4314-24bd-485d-bf0c-85e3fe303ea4"), new Guid("f3fb177f-b3f0-4ee3-a6ac-d262c80a888f") },
-                    { new Guid("ce5ba483-4819-4e14-a6b8-6384ca3f2bcb"), new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0") },
-                    { new Guid("d1a44c54-d95a-42a3-b6d2-87c63214bd87"), new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab") }
+                    { new Guid("6cc33e2e-9ad2-4653-ba57-26ab95848ac9"), new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6") },
+                    { new Guid("b0c0c9ba-1b00-474c-8a76-13e4e348f75e"), new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877") },
+                    { new Guid("b2dacf23-fdf2-4ae9-ba6f-824d35d8fcb0"), new Guid("91db9dc2-b2d4-47cf-9263-3769ca00aa41") },
+                    { new Guid("e0d94930-0578-405d-a218-6cda688bd778"), new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2") },
+                    { new Guid("f106260f-1c90-49a1-944d-59e2a0f49be2"), new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b") }
                 });
 
             migrationBuilder.InsertData(
@@ -654,11 +654,11 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "PostId", "TagId" },
                 values: new object[,]
                 {
-                    { new Guid("3c41c506-80b3-4742-a44d-10e4dc8f9fe4"), new Guid("2520cdf3-3932-4ed9-ba8c-f9d9149f8465") },
-                    { new Guid("3fe067b7-9ca6-4f93-bcc2-2560087adfda"), new Guid("4c6665dd-994d-49d7-abe5-b77b35f4be8d") },
-                    { new Guid("51e9de90-76be-4f27-8bd4-6b5c2937099a"), new Guid("3b821ecd-de88-47c0-b365-3485847b6250") },
-                    { new Guid("cf237311-a526-4c1a-8ba8-4c1bb661ba71"), new Guid("edd728e1-76d4-4c01-8f34-5e9ec75a6a95") },
-                    { new Guid("fd75f018-abbc-45b0-b691-112abc1a2811"), new Guid("8d162146-4b15-48fe-bbe0-05e2e0966394") }
+                    { new Guid("5b438114-8c0f-4595-8f47-3f53f572ac34"), new Guid("b86de954-ec7c-4b93-90e7-00478e51e689") },
+                    { new Guid("b089e754-41f3-4881-8fcb-848e4437a9b3"), new Guid("40f77412-864f-4293-8bf0-8f5c0c02530c") },
+                    { new Guid("b0bf0a6c-b8c0-48a3-ba82-17ed13cf72f2"), new Guid("7da5fee9-3459-4967-a4fc-5216dc8800a7") },
+                    { new Guid("ec91538e-6957-4b50-aa06-ef8c2b6d5083"), new Guid("822d5ea4-b116-4cc6-a4ec-5d873cc01ff4") },
+                    { new Guid("f35e555e-44b3-48ab-8d2e-98f86145e693"), new Guid("73c4768a-ec00-4dd8-a205-3c5d19633809") }
                 });
 
             migrationBuilder.InsertData(
@@ -666,10 +666,10 @@ namespace Pappion.Infrastructure.Migrations
                 columns: new[] { "Id", "CommentId", "FavorId", "PartyId", "PostId", "SenderId", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("3ff3dcfd-b839-40cd-8fa8-c19696314212"), new Guid("3b9dabc5-b365-4a45-979d-0cee670d140f"), null, null, null, new Guid("e81b937b-e3ad-4446-b7c7-fe8e77ce22fd"), null },
-                    { new Guid("4b19c418-f9d1-4191-b7e7-1388591893c8"), new Guid("22f0a6b7-2129-4936-813a-2e24130cbb7d"), null, null, null, new Guid("998a7789-1aee-4dc7-9731-9610c0abd7d0"), null },
-                    { new Guid("92e2cc61-739d-40c0-b1a5-9fbba65c5983"), new Guid("40316343-3146-4a5e-a6d6-9d3f3765b38a"), null, null, null, new Guid("a9a3cc65-9d71-48da-b2bb-2ac9adc16256"), null },
-                    { new Guid("cd56f88d-5773-4c2c-88fa-9e92bde8d91c"), new Guid("30613838-1c70-4f96-9d8c-559e3461c68c"), null, null, null, new Guid("4ecc155b-f373-4b7c-965b-d6efbb46f2ab"), null }
+                    { new Guid("6978ba43-0bb8-4c0e-a9a4-ca05f4f2bdf6"), new Guid("8c8e7794-d783-4732-9fa1-bbfa3969a00e"), null, null, null, new Guid("7a78a5ba-77f6-4c8b-99d3-772a39caa3d2"), null },
+                    { new Guid("6bba2562-8513-4108-95d7-e69aa28ec0d9"), new Guid("4b1ae366-9a07-4bed-b2b6-dcbd78bc7043"), null, null, null, new Guid("d2732cc0-4f0a-4cf8-b24f-62657dbafed6"), null },
+                    { new Guid("d44d5dec-8359-472b-ad3d-1a85fde114ba"), new Guid("b987045d-b639-4542-afcd-eda7a4933edd"), null, null, null, new Guid("72a6edf3-2ff5-474f-9b45-3d1fa55cf16b"), null },
+                    { new Guid("d8cdb1e3-e5c3-4a07-9620-392723332c0e"), new Guid("472960bb-9eb0-49b1-9e0d-36d372099715"), null, null, null, new Guid("3af4fbdf-59e1-42f9-8898-ff7dfd783877"), null }
                 });
 
             migrationBuilder.CreateIndex(

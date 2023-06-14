@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
+using Pappion.Application.Dto.Post;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Dto.Post;
-using System.Diagnostics;
 
 namespace Pappion.Infrastructure.MapProfiles
 {
@@ -12,7 +11,8 @@ namespace Pappion.Infrastructure.MapProfiles
             CreateMap<Post, PostReadDto>();
             CreateMap<PostReadDto, Post>();
             CreateMap<PostAddDto, Post>();
-            
+            CreateMap<PostLikeDto, Like>();
+
         }
     }
 }

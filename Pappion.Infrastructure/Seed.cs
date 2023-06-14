@@ -1,13 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Pappion.Application.Interfaces;
 using Pappion.Domain.Entities;
+using Pappion.Infrastructure.Auth;
 using System.Data;
 
 namespace Pappion.Infrastructure
 {
     public class Seed
     {
+        private static PasswordService passwordService = new PasswordService();
+
         
+
         public static void SeedData(ModelBuilder modelBuilder)
         {
             List<Image> images = new();
@@ -44,7 +50,7 @@ namespace Pappion.Infrastructure
                     FirstName = "Гаррі",
                     LastName = "Поттер",
                     Email= "harrypotter@gmail.com",
-                    Password = "password",
+                    Password = passwordService.Hash("password"),
                     Rating = 3.5M,
                     RoleId = roles[0].Id
                 },
@@ -53,7 +59,7 @@ namespace Pappion.Infrastructure
                     FirstName = "Еран",
                     LastName = "Єґа",
                     Email= "tatakae@gmail.com",
-                    Password = "password",
+                    Password = passwordService.Hash("password"),
                     Rating = 1.5M,
                     RoleId = roles[1].Id
                 },
@@ -62,7 +68,7 @@ namespace Pappion.Infrastructure
                     FirstName = "Ґеральт",
                     LastName = "з Рівії",
                     Email= "killing.monsters@gmail.com",
-                    Password = "password",
+                    Password = passwordService.Hash("password"),
                     Rating = 4.5M,
                     RoleId = roles[2].Id
                 },
@@ -71,7 +77,7 @@ namespace Pappion.Infrastructure
                     FirstName = "Тайлер",
                     LastName = "Дьорден",
                     Email= "not.exist@gmail.com",
-                    Password = "password",
+                    Password = passwordService.Hash("password"),
                     Rating = 5.0M,
                     RoleId = roles[1].Id
                 },
@@ -80,7 +86,7 @@ namespace Pappion.Infrastructure
                     FirstName = "Біллі",
                     LastName = "Герінґтон",
                     Email= "bossofthegym@gmail.com",
-                    Password = "password",
+                    Password = passwordService.Hash("password"),
                     Rating = 2.5M,
                     RoleId = roles[1].Id
                 },
@@ -255,6 +261,7 @@ namespace Pappion.Infrastructure
                     Phone = "+380955647834"
                 }
             };
+            
 
 
             for (int i = 0; i < 5; i++)

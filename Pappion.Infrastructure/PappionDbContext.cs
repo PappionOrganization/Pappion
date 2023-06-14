@@ -43,7 +43,7 @@ namespace Pappion.Infrastructure
                 entity.Property(u => u.LastName).IsRequired().HasMaxLength(100);
                 entity.Property(u => u.Email).IsRequired().HasMaxLength(100);
                 entity.Property(u => u.Location).HasMaxLength(100);
-                entity.Property(u => u.Password).IsRequired().HasMaxLength(15);
+                entity.Property(u => u.Password).IsRequired().HasMaxLength(100);
 
 
                 entity.HasOne(u => u.Role)

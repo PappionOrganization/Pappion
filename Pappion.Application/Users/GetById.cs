@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Interfaces;
 using System;
@@ -9,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace Pappion.Application.Users
 {
-    public record GetUserQuery(Guid id) : IRequest<User>;
-    public class GetUserHandler : IRequestHandler<GetUserQuery, User>
+    public record GetUserQuery(Guid id) : IQuery<User>;
+    public class GetUserHandler : IQueryHandler<GetUserQuery, User>
     {
         private readonly IGenericRepository<User> _genericRepository;
 

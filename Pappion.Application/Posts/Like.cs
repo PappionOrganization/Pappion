@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace Pappion.Application.Posts
 {
-    public record UpdatePostCommand(Post post) : ICommand<Unit>;
-    public class UpdatePostHandler : ICommandHandler<UpdatePostCommand, Unit>
+    public record LikePostCommand(Like like) : ICommand<Unit>;
+    public class LikePostHandler : ICommandHandler<LikePostCommand, Unit>
     {
-        private readonly IGenericRepository<Post> _genericRepository;
+        private readonly IGenericRepository<Like> _genericRepository;
 
-        public UpdatePostHandler(IGenericRepository<Post> genericRepository)
+        public LikePostHandler(IGenericRepository<Like> genericRepository)
         {
             _genericRepository = genericRepository;
         }
 
-        public async Task<Unit> Handle(UpdatePostCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(LikePostCommand request, CancellationToken cancellationToken)
         {
-            await _genericRepository.Update(request.post);
+            await _genericRepository.Add(request.like);
             _genericRepository.Save();
             return Unit.Value;
         }

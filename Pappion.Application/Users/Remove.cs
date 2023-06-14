@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Interfaces;
 using System;
@@ -9,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace Pappion.Application.Users
 {
-    public record RemoveUserCommand(Guid id) : IRequest;
-    public class RemoveUserHandler : IRequestHandler<RemoveUserCommand>
+    public record RemoveUserCommand(Guid id) : ICommand<Unit>;
+    public class RemoveUserHandler : ICommandHandler<RemoveUserCommand, Unit>
     {
         private readonly IGenericRepository<User> _genericRepository;
 
@@ -19,10 +20,11 @@ namespace Pappion.Application.Users
             _genericRepository = genericRepository;
         }
 
-        async Task IRequestHandler<RemoveUserCommand>.Handle(RemoveUserCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(RemoveUserCommand request, CancellationToken cancellationToken)
         {
             await _genericRepository.Remove(request.id);
             _genericRepository.Save();
+            return Unit.Value;
         }
     }
 

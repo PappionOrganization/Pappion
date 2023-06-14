@@ -4,6 +4,7 @@ using Pappion.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -62,6 +63,11 @@ namespace Pappion.Infrastructure.Repository
         public int Save()
         {
             return _context.SaveChanges();
+        }
+
+        public Task<bool> Exists(Expression<Func<T, bool>> predicate)
+        {
+            return Task.FromResult(_table.Any(predicate.Compile()));
         }
     }
 }

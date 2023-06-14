@@ -17,6 +17,7 @@ namespace Pappion.Infrastructure.Interfaces
         Task AddRange(IEnumerable<T> entities);
         Task Update(T entity);
         Task Remove(Guid id);
+        Task<bool> Exists(Expression<Func<T, bool>> predicate);
         int Save();
 
     }

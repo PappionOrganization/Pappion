@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Interfaces;
 using System;
@@ -9,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace Pappion.Application.Posts
 {
-    public record RemovePostCommand(Guid id) : IRequest;
-    public class RemovePostHandler : IRequestHandler<RemovePostCommand>
+    public record RemovePostCommand(Guid id) : ICommand<Unit>;
+    public class RemovePostHandler : ICommandHandler<RemovePostCommand, Unit>
     {
         private readonly IGenericRepository<Post> _genericRepository;
 
@@ -19,10 +20,11 @@ namespace Pappion.Application.Posts
             _genericRepository = genericRepository;
         }
 
-        async Task IRequestHandler<RemovePostCommand>.Handle(RemovePostCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(RemovePostCommand request, CancellationToken cancellationToken)
         {
             await _genericRepository.Remove(request.id);
             _genericRepository.Save();
+            return Unit.Value;
         }
     }
 
