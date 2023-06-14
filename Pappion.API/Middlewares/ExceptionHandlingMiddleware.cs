@@ -1,9 +1,7 @@
-﻿using FluentValidation;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System.Text.Json;
+﻿using System.Text.Json;
+using FluentValidation;
 
-namespace Pappion.Application
+namespace Pappion.API.Middlewares
 {
     public sealed class ExceptionHandlingMiddleware : IMiddleware
     {

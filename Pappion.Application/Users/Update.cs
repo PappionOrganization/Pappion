@@ -17,8 +17,8 @@ namespace Pappion.Application.Users
 
         public async Task<Unit> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            await _genericRepository.Update(request.user);
-            _genericRepository.Save();
+            await _genericRepository.UpdateAsync(request.user);
+            _genericRepository.SaveChangesAsync();
             return Unit.Value;
         }
     }

@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using MediatR;
+using Pappion.Application.Common.Exceptions;
 using Pappion.Application.Interfaces;
 using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
@@ -34,12 +35,13 @@ namespace Pappion.Application.Users
 
         public Task<string> Handle(LoginCommand request, CancellationToken cancellationToken)
         {
-            User user = _genericRepository.Find(u => u.Email == request.Email).FirstOrDefault();
+            var user = _genericRepository.Filter(u => u.Email == request.Email).FirstOrDefault();
             if (user != null && _passwordService.IsValid(user.Password, request.Password))
             {
                 return Task.FromResult(_iwtProvider.Generate(user));
             }
-            return null;
+            
+            throw new EntityNotFoundException(nameof(User));
         }
     }
 

@@ -1,29 +1,25 @@
-﻿using Microsoft.AspNetCore.Http;
-using Pappion.Application.Interfaces.Messaging;
+﻿using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
-using System.Security.Claims;
 using Pappion.Application.Interfaces;
+using Pappion.Application.Interfaces.Contexts;
 
 namespace Pappion.Application.Users
 {
     public record GetCurrentUserInfoQuery : IQuery<User> { }
     public class GetCurrentUserInfoQueryHandler : IQueryHandler<GetCurrentUserInfoQuery, User>
     {
-        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IUserContext _userContext;
         private readonly IGenericRepository<User> _genericRepository;
 
-        public GetCurrentUserInfoQueryHandler(IHttpContextAccessor httpContextAccessor, IGenericRepository<User> genericRepository)
+        public GetCurrentUserInfoQueryHandler(IUserContext userContext, IGenericRepository<User> genericRepository)
         {
-            _httpContextAccessor = httpContextAccessor;
+            _userContext = userContext;
             _genericRepository = genericRepository;
         }
 
-        public Task<User> Handle(GetCurrentUserInfoQuery request, CancellationToken cancellationToken)
+        public async Task<User> Handle(GetCurrentUserInfoQuery request, CancellationToken cancellationToken)
         {
-            HttpContext httpContext = _httpContextAccessor.HttpContext;
-            Guid userId = Guid.Parse(httpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
-            User user = _genericRepository.Find(u => u.Id == userId).FirstOrDefault();
-            return Task.FromResult(user);
+            return await _genericRepository.GetByIdAsync(_userContext.Id);
         }
     }
 }

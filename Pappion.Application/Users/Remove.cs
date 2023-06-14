@@ -22,8 +22,8 @@ namespace Pappion.Application.Users
 
         public async Task<Unit> Handle(RemoveUserCommand request, CancellationToken cancellationToken)
         {
-            await _genericRepository.Remove(request.id);
-            _genericRepository.Save();
+            await _genericRepository.RemoveAsync(request.id);
+            _genericRepository.SaveChangesAsync();
             return Unit.Value;
         }
     }

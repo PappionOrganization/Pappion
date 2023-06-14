@@ -1,16 +1,11 @@
 ﻿using MediatR;
 using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Pappion.Application.Interfaces;
 
 namespace Pappion.Application.Posts
 {
-    public record RemovePostCommand(Guid id) : ICommand<Unit>;
+    public record RemovePostCommand(Guid Id) : ICommand<Unit>;
     public class RemovePostHandler : ICommandHandler<RemovePostCommand, Unit>
     {
         private readonly IGenericRepository<Post> _genericRepository;
@@ -22,10 +17,10 @@ namespace Pappion.Application.Posts
 
         public async Task<Unit> Handle(RemovePostCommand request, CancellationToken cancellationToken)
         {
-            await _genericRepository.Remove(request.id);
-            _genericRepository.Save();
+            await _genericRepository.RemoveAsync(request.Id);
+            await _genericRepository.SaveChangesAsync();
+
             return Unit.Value;
         }
     }
-
 }

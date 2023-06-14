@@ -4,16 +4,14 @@ namespace Pappion.Application.Interfaces
 {
     public interface IGenericRepository<T> where T : class
     {
-        Task<T> GetById(Guid id);
-        Task<List<T>> GetAll();
-        IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
-        IEnumerable<T> GetWhere(Expression<Func<T, bool>> predicate);
-        Task Add(T entity);
-        Task AddRange(IEnumerable<T> entities);
-        Task Update(T entity);
-        Task Remove(Guid id);
-        Task<bool> Exists(Expression<Func<T, bool>> predicate);
-        int Save();
-
+        Task<T> GetByIdAsync(Guid id);
+        Task<List<T>> GetAllAsync();
+        IQueryable<T> Filter(Expression<Func<T, bool>> predicate);
+        Task AddAsync(T entity);
+        Task AddRangeAsync(IEnumerable<T> entities);
+        Task UpdateAsync(T entity);
+        Task RemoveAsync(Guid id);
+        Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate);
+        Task<int> SaveChangesAsync();
     }
 }

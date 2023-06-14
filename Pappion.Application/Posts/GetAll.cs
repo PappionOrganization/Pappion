@@ -1,16 +1,11 @@
-﻿using MediatR;
-using Pappion.Application.Interfaces.Messaging;
+﻿using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Pappion.Application.Interfaces;
 
 namespace Pappion.Application.Posts
 {
-    public record GetPostListQuery() : IQuery<List<Post>>;
+    public record GetPostListQuery : IQuery<List<Post>>;
+
     public class GetPostListHandler : IQueryHandler<GetPostListQuery, List<Post>>
     {
         private readonly IGenericRepository<Post> _genericRepository;
@@ -21,7 +16,7 @@ namespace Pappion.Application.Posts
         }
         public async Task<List<Post>> Handle(GetPostListQuery request, CancellationToken cancellationToken)
         {
-            return await _genericRepository.GetAll();
+            return await _genericRepository.GetAllAsync();
         }
     }
 }

@@ -22,14 +22,9 @@ namespace Pappion.API.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        public async Task<ActionResult<string>> Login([FromBody] LoginRequest request)
         {
-            string tokenResult = await _mediator.Send(new LoginCommand(request.Email, request.Password));
-            if(tokenResult == null)
-            {
-                return NotFound("User not found");
-            }
-            return Ok(tokenResult);
+            return Ok(await _mediator.Send(new LoginCommand(request.Email, request.Password)));
         }
 
         [Authorize]

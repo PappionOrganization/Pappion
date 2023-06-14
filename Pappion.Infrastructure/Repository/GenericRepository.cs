@@ -1,73 +1,53 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using Pappion.Application.Common.Exceptions;
 using Pappion.Application.Interfaces;
 
 namespace Pappion.Infrastructure.Repository
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         private readonly PappionDbContext _context;
-        private readonly DbSet<T> _table;
+        private readonly DbSet<TEntity> _table;
 
         public GenericRepository(PappionDbContext context)
         {
             _context = context;
-            _table = _context.Set<T>();
-        }
-        public async Task Add(T entity)
-        {
-            _table.Add(entity);
+            _table = _context.Set<TEntity>();
         }
 
-        public async Task AddRange(IEnumerable<T> entities)
+        public async Task AddAsync(TEntity entity) => await _table.AddAsync(entity);
+
+        public Task AddRangeAsync(IEnumerable<TEntity> entities) => _table.AddRangeAsync(entities);
+
+        public IQueryable<TEntity> Filter(Expression<Func<TEntity, bool>> predicate) => _table.Where(predicate);
+
+        public Task<List<TEntity>> GetAllAsync() => _table.ToListAsync();
+
+        public async Task<TEntity> GetByIdAsync(Guid id)
         {
-            _table.AddRange(entities);
+            var entity = await _table.FindAsync(id);
+
+            return entity ?? throw new EntityNotFoundException(nameof(TEntity), id);
         }
 
-        public IEnumerable<T> Find(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
+        public async Task RemoveAsync(Guid id)
         {
-            return _table.Where(predicate).ToList();
+            var entity = await GetByIdAsync(id);
+
+            _table.Remove(entity);
         }
 
-        public Task<List<T>> GetAll()
-        {
-            return _table.ToListAsync();
-        }
-
-        public async Task<T> GetById(Guid id)
-        {
-            return _table.Find(id);
-        }
-
-        public IEnumerable<T> GetWhere(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task Remove(Guid id)
-        {
-            _table.Remove(_table.Find(id));
-        }
-
-        public async Task Update(T entity)
+        public Task UpdateAsync(TEntity entity)
         {
             _table.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
-        }
-        public int Save()
-        {
-            return _context.SaveChanges();
+
+            return Task.CompletedTask;
         }
 
-        public Task<bool> Exists(Expression<Func<T, bool>> predicate)
-        {
-            return Task.FromResult(_table.Any(predicate.Compile()));
-        }
+        public Task<int> SaveChangesAsync() => _context.SaveChangesAsync();
+
+        public Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> predicate) => _table.AnyAsync(predicate);
     }
 }

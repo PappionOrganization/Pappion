@@ -12,6 +12,10 @@ using Pappion.Infrastructure.Auth;
 using Pappion.Infrastructure.Repository;
 using System.Text;
 using MediatR;
+using Pappion.API.Contexts;
+using Pappion.API.Middlewares;
+using Pappion.Application.Common.Behaviors;
+using Pappion.Application.Interfaces.Contexts;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Configuration
@@ -27,6 +31,9 @@ string connectionString = ConnectionStringHelper.GetMySlqConnectionString(databa
 
 
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<IHttpContextResolver, HttpContextResolver>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -63,6 +70,9 @@ builder.Services.AddScoped<IPasswordService, PasswordService>();
 builder.Services.AddValidatorsFromAssembly(typeof(IGenericRepository<>).Assembly);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
+builder.Services.AddScoped(serviceProvider => serviceProvider.GetRequiredService<IHttpContextResolver>().ResolveUserContext()!);
+
 
 builder.Services.AddMediatR(cfg =>
 {

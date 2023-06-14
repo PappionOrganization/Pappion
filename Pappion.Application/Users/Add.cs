@@ -5,7 +5,7 @@ using Pappion.Domain.Entities;
 
 namespace Pappion.Application.Users
 {
-    public record AddUserCommand(User user) : ICommand<Unit>;
+    public record AddUserCommand(User User) : ICommand<Unit>;
     public class AddUserHandler : ICommandHandler<AddUserCommand, Unit>
     {
         private readonly IGenericRepository<User> _genericRepository;
@@ -17,8 +17,9 @@ namespace Pappion.Application.Users
 
         public async Task<Unit> Handle(AddUserCommand request, CancellationToken cancellationToken)
         {
-            await _genericRepository.Add(request.user);
-            _genericRepository.Save();
+            await _genericRepository.AddAsync(request.User);
+            await _genericRepository.SaveChangesAsync();
+
             return Unit.Value;
         }
     }
