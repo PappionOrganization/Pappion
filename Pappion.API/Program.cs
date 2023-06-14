@@ -62,9 +62,8 @@ builder.Services.AddDbContext<PappionDbContext>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), b => b.MigrationsAssembly("Pappion.Infrastructure"));
 });
-builder.Services.AddScoped<IGenericRepository<Post>, GenericRepository<Post>>();
-builder.Services.AddScoped<IGenericRepository<User>, GenericRepository<User>>();
-builder.Services.AddScoped<IGenericRepository<Like>, GenericRepository<Like>>();
+
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IPasswordService, PasswordService>(); 
 
 builder.Services.AddValidatorsFromAssembly(typeof(IGenericRepository<>).Assembly);

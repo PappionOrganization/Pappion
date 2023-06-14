@@ -6,6 +6,11 @@ public class EntityNotFoundException : Exception
     public string EntityName { get; init; }
     public Guid? EntityId { get; set; }
 
+    public EntityNotFoundException(string entityName, string message) : base(message)
+    {
+        EntityName = entityName;
+    }
+
     public EntityNotFoundException(string entityName) : base(BuildExceptionMessage(entityName))
     {
         EntityName = entityName;

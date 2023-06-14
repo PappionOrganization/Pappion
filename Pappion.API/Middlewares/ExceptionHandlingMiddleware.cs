@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using FluentValidation;
+using Pappion.Application.Common.Exceptions;
 
 namespace Pappion.API.Middlewares
 {
@@ -37,6 +38,7 @@ namespace Pappion.API.Middlewares
             exception switch
             {
                 KeyNotFoundException => StatusCodes.Status404NotFound,
+                EntityNotFoundException => StatusCodes.Status404NotFound,
                 ValidationException => StatusCodes.Status422UnprocessableEntity,
                 _ => StatusCodes.Status500InternalServerError
             };

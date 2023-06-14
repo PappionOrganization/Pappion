@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
-using Pappion.Application.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using Pappion.Domain.Constants;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure.Auth;
-using System.Data;
 
 namespace Pappion.Infrastructure
 {
@@ -30,17 +27,17 @@ namespace Pappion.Infrastructure
                 new Role
                 {
                     Id = Guid.NewGuid(),
-                    Name = "User"
+                    Name = UserRoles.User
                 },
                 new Role
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Resident"
+                    Name = UserRoles.Resident
                 },
                 new Role
                 {
                     Id = Guid.NewGuid(),
-                    Name = "Admin"
+                    Name = UserRoles.Admin
                 }
             };
             List<User> users = new()

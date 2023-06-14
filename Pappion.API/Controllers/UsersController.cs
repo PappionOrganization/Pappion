@@ -64,6 +64,8 @@ namespace Pappion.API.Controllers
             await _mediator.Send(new UpdateUserCommand(user));
             return Ok();
         }
-        
+
+        [HttpPost("register")]
+        public async Task<ActionResult<string>> Register(RegisterCommand registerCommand) => await _mediator.Send(registerCommand);
     }
 }

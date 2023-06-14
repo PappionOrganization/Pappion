@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Pappion.Application.Dto.User;
+using Pappion.Application.Users;
 using Pappion.Domain.Entities;
 
 namespace Pappion.Infrastructure.MapProfiles
@@ -11,6 +12,7 @@ namespace Pappion.Infrastructure.MapProfiles
             CreateMap<User, UserReadDto>();
             CreateMap<UserReadDto, User>();
             CreateMap<UserAddDto, User>();
+            CreateMap<RegisterCommand, User>();
         }
     }
 }
