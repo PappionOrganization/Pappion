@@ -9,9 +9,9 @@ using Pappion.Application.Interfaces;
 using Pappion.Domain.Entities;
 using Pappion.Infrastructure;
 using Pappion.Infrastructure.Auth;
-using Pappion.Infrastructure.Interfaces;
 using Pappion.Infrastructure.Repository;
 using System.Text;
+using MediatR;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Configuration
@@ -58,14 +58,19 @@ builder.Services.AddDbContext<PappionDbContext>(options =>
 builder.Services.AddScoped<IGenericRepository<Post>, GenericRepository<Post>>();
 builder.Services.AddScoped<IGenericRepository<User>, GenericRepository<User>>();
 builder.Services.AddScoped<IGenericRepository<Like>, GenericRepository<Like>>();
-builder.Services.AddScoped<IPasswordService, PasswordService>();
+builder.Services.AddScoped<IPasswordService, PasswordService>(); 
 
-builder.Services.AddTransient<ExceptionHandlingMiddleware>();
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(IGenericRepository<>).Assembly));
-builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 builder.Services.AddValidatorsFromAssembly(typeof(IGenericRepository<>).Assembly);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-WebApplication app = builder.Build();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
+
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssembly(typeof(IGenericRepository<>).Assembly);
+    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+});
+
+var app = builder.Build();
 
 if (databaseConfiguration.IsAutoMigrationEnabled)
 {
@@ -80,11 +85,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthentication();
-
-app.UseAuthorization();
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

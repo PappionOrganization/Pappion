@@ -36,5 +36,6 @@ services:
             - DatabaseConfiguration__Host=pappion-db
             - DatabaseConfiguration__Database=pappion
             - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:8001
         networks: 
             - pappion

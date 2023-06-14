@@ -1,6 +1,5 @@
 ﻿using Pappion.Application.Interfaces;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

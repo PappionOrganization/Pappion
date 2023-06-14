@@ -1,7 +1,7 @@
 ﻿using MediatR;
+using Pappion.Application.Interfaces;
 using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Interfaces;
 
 namespace Pappion.Application.Users
 {

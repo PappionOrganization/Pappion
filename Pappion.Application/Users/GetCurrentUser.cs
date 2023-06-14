@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Interfaces;
 using System.Security.Claims;
+using Pappion.Application.Interfaces;
 
 namespace Pappion.Application.Users
 {

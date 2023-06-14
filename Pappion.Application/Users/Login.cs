@@ -1,12 +1,13 @@
 ﻿using FluentValidation;
+using MediatR;
 using Pappion.Application.Interfaces;
 using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Interfaces;
 
 namespace Pappion.Application.Users
 {
-    public record LoginCommand(string Email, string Password) : ICommand<string> { }
+    public record LoginCommand(string Email, string Password) : ICommand<string>;
+
     public record LoginRequest(string Email, string Password);
 
     public sealed class LoginCommandValidator : AbstractValidator<LoginCommand>
@@ -17,7 +18,8 @@ namespace Pappion.Application.Users
             RuleFor(x => x.Password).NotEmpty().MaximumLength(15);
         }
     }
-    public class LoginCommandHandler : ICommandHandler<LoginCommand, string>
+
+    public class LoginCommandHandler : IRequestHandler<LoginCommand, string>
     {
         private readonly IGenericRepository<User> _genericRepository;
         private readonly IJwtProvider _iwtProvider;

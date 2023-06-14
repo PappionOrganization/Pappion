@@ -1,48 +1,44 @@
 ﻿using FluentValidation;
 using MediatR;
-using Pappion.Application.Interfaces.Messaging;
-using System.Text.Json;
 
-namespace Pappion.Application
+namespace Pappion.Application;
+
+public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    where TRequest : notnull
 {
-    public sealed class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
-    where TRequest : class, ICommand<TResponse>
+    private readonly IEnumerable<IValidator<TRequest>> _validators;
+
+    public ValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
     {
-        private readonly IEnumerable<IValidator<TRequest>> _validators;
-        public ValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
+        _validators = validators;
+    }
+
+    public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+    {
+        if (_validators.Any())
         {
-            _validators = validators;
+            await ValidateAsync(request, cancellationToken);
         }
 
-        public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
+        return await next();
+    }
+
+    private async Task ValidateAsync(TRequest request, CancellationToken cancellationToken)
+    {
+        var context = new ValidationContext<TRequest>(request);
+
+        var validationResults = await Task.WhenAll(_validators
+            .Select(v => v
+                .ValidateAsync(context, cancellationToken)));
+
+        var failures = validationResults
+            .SelectMany(r => r.Errors)
+            .Where(f => f != null)
+            .ToList();
+
+        if (failures.Any())
         {
-            if (!_validators.Any())
-            {
-                return await next();
-            }
-
-            ValidationContext<TRequest> context = new ValidationContext<TRequest>(request);
-            Dictionary<string, string[]> errorsDictionary = _validators
-                .Select(x => x.Validate(context))
-                .SelectMany(x => x.Errors)
-                .Where(x => x != null)
-                .GroupBy(
-                    x => x.PropertyName,
-                    x => x.ErrorMessage,
-                    (propertyName, errorMessages) => new
-                    {
-                        Key = propertyName,
-                        Values = errorMessages.Distinct().ToArray()
-                    })
-                .ToDictionary(x => x.Key, x => x.Values);
-
-            if (errorsDictionary.Any())
-            {
-                string errorsJson = JsonSerializer.Serialize(errorsDictionary);
-                throw new ValidationException(errorsJson);
-            }
-
-            return await next();
+            throw new ValidationException(failures);
         }
     }
 }

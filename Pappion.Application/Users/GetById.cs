@@ -1,12 +1,12 @@
 ﻿using MediatR;
 using Pappion.Application.Interfaces.Messaging;
 using Pappion.Domain.Entities;
-using Pappion.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Pappion.Application.Interfaces;
 
 namespace Pappion.Application.Users
 {
