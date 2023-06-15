@@ -1,4 +1,6 @@
-﻿namespace Pappion.Domain.Entities
+﻿using Pappion.Domain.Constants;
+
+namespace Pappion.Domain.Entities
 {
     public class User
     {
@@ -7,14 +9,13 @@
         public string LastName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string Password { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
+        public string? PhoneNumber2 { get; set; }
         public decimal Rating { get; set; }
         public DateTime CreatedDate { get; set; }
         public string? Location { get; set; }
-
-        public Guid RoleId { get; set; }
-        public Role Role { get; set; }
+        public UserRoles Role { get; set; }
         public ICollection<Image> Images { get; set; }
-        public ICollection<PhoneNumber> PhoneNumbers { get; set; }
         public ICollection<Like> Likes { get; set; }
         public ICollection<Like> LikesSended { get; set; }
         public ICollection<Comment> Comments { get; set; }

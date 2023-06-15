@@ -22,24 +22,6 @@ namespace Pappion.Infrastructure
             new Tag{Id = Guid.NewGuid(), Name = "Велосипед"},
             new Tag{Id = Guid.NewGuid(), Name = "Кемпінг"}
         };
-            List<Role> roles = new()
-        {
-                new Role
-                {
-                    Id = Guid.NewGuid(),
-                    Name = UserRoles.User
-                },
-                new Role
-                {
-                    Id = Guid.NewGuid(),
-                    Name = UserRoles.Resident
-                },
-                new Role
-                {
-                    Id = Guid.NewGuid(),
-                    Name = UserRoles.Admin
-                }
-            };
             List<User> users = new()
         {
                 new User{
@@ -48,44 +30,49 @@ namespace Pappion.Infrastructure
                     LastName = "Поттер",
                     Email= "harrypotter@gmail.com",
                     Password = passwordService.Hash("password"),
+                    PhoneNumber = "+38000000000",
                     Rating = 3.5M,
-                    RoleId = roles[0].Id
+                    Role = UserRoles.User
                 },
                 new User{
                     Id = Guid.NewGuid(),
                     FirstName = "Еран",
                     LastName = "Єґа",
                     Email= "tatakae@gmail.com",
+                    PhoneNumber = "+38000000000",
                     Password = passwordService.Hash("password"),
                     Rating = 1.5M,
-                    RoleId = roles[1].Id
+                    Role = UserRoles.User
                 },
                 new User{
                     Id = Guid.NewGuid(),
                     FirstName = "Ґеральт",
                     LastName = "з Рівії",
                     Email= "killing.monsters@gmail.com",
+                    PhoneNumber = "+38000000000",
                     Password = passwordService.Hash("password"),
                     Rating = 4.5M,
-                    RoleId = roles[2].Id
+                    Role = UserRoles.User
                 },
                 new User{
                     Id = Guid.NewGuid(),
                     FirstName = "Тайлер",
                     LastName = "Дьорден",
                     Email= "not.exist@gmail.com",
+                    PhoneNumber = "+38000000000",
                     Password = passwordService.Hash("password"),
                     Rating = 5.0M,
-                    RoleId = roles[1].Id
+                    Role = UserRoles.User
                 },
                 new User{
                     Id = Guid.NewGuid(),
                     FirstName = "Біллі",
                     LastName = "Герінґтон",
                     Email= "bossofthegym@gmail.com",
+                    PhoneNumber = "+38000000000",
                     Password = passwordService.Hash("password"),
                     Rating = 2.5M,
-                    RoleId = roles[1].Id
+                    Role = UserRoles.User
                 },
 
             };
@@ -225,39 +212,6 @@ namespace Pappion.Infrastructure
             List<PartyUsers> partyUsers = new();
             List<Like> likes = new();
             List<Comment> comments = new();
-            List<PhoneNumber> phoneNumbers = new List<PhoneNumber>
-            {
-                new PhoneNumber
-                {
-                    Id = Guid.NewGuid(),
-                    UserId = users[0].Id,
-                    Phone = "+380687654587"
-                },
-                new PhoneNumber
-                {
-                    Id = Guid.NewGuid(),
-                    UserId = users[1].Id,
-                    Phone = "+380988234901"
-                },
-                new PhoneNumber
-                {
-                    Id = Guid.NewGuid(),
-                    UserId = users[2].Id,
-                    Phone = "+380660981292"
-                },
-                new PhoneNumber
-                {
-                    Id = Guid.NewGuid(),
-                    UserId = users[3].Id,
-                    Phone = "+380508672351"
-                },
-                new PhoneNumber
-                {
-                    Id = Guid.NewGuid(),
-                    UserId = users[4].Id,
-                    Phone = "+380955647834"
-                }
-            };
             
 
 
@@ -384,8 +338,6 @@ namespace Pappion.Infrastructure
             }
             modelBuilder.Entity<Image>()
                .HasData(images);
-            modelBuilder.Entity<Role>()
-               .HasData(roles);
             modelBuilder.Entity<User>()
                 .HasData(users);
             modelBuilder.Entity<Post>()
@@ -410,8 +362,6 @@ namespace Pappion.Infrastructure
                 .HasData(partyTags);
             modelBuilder.Entity<PartyUsers>()
                 .HasData(partyUsers);
-            modelBuilder.Entity<PhoneNumber>()
-                .HasData(phoneNumbers);
 
         }
 

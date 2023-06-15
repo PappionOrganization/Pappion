@@ -6,14 +6,12 @@ namespace Pappion.Infrastructure
     public class PappionDbContext : DbContext
     {
         public PappionDbContext(DbContextOptions<PappionDbContext> options) : base(options) { }
-        public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Party> Parties { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Favor> Favors { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<PhoneNumber> PhoneNumbers { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
@@ -28,12 +26,6 @@ namespace Pappion.Infrastructure
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Role>(entity =>
-            {
-                entity.HasKey(a => a.Id);
-                entity.Property(a => a.Id).HasDefaultValueSql("(uuid())");
-            });
-
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(u => u.Id);
@@ -41,15 +33,12 @@ namespace Pappion.Infrastructure
                 entity.Property(u => u.CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
                 entity.Property(u => u.FirstName).IsRequired().HasMaxLength(100);
                 entity.Property(u => u.LastName).IsRequired().HasMaxLength(100);
+                entity.Property(u => u.Role).IsRequired().HasConversion<string>().HasMaxLength(20);
                 entity.Property(u => u.Email).IsRequired().HasMaxLength(100);
+                entity.Property(u => u.PhoneNumber).IsRequired().HasMaxLength(15);
+                entity.Property(u => u.PhoneNumber2).IsRequired(false).HasMaxLength(15);
                 entity.Property(u => u.Location).HasMaxLength(100);
                 entity.Property(u => u.Password).IsRequired().HasMaxLength(100);
-
-
-                entity.HasOne(u => u.Role)
-                .WithMany(r => r.Users)
-                .HasForeignKey(u => u.RoleId)
-                .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<Party>(entity =>
@@ -64,7 +53,7 @@ namespace Pappion.Infrastructure
                 entity.HasOne(p => p.Author)
                 .WithMany(a => a.Parties)
                 .HasForeignKey(p => p.AuthorId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Post>(entity =>
@@ -80,7 +69,7 @@ namespace Pappion.Infrastructure
                 entity.HasOne(p => p.Author)
                 .WithMany(a => a.Posts)
                 .HasForeignKey(p => p.AuthorId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Favor>(entity =>
@@ -96,7 +85,7 @@ namespace Pappion.Infrastructure
                 entity.HasOne(f => f.Author)
                 .WithMany(a => a.Favors)
                 .HasForeignKey(f => f.AuthorId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Like>(entity =>
@@ -109,37 +98,37 @@ namespace Pappion.Infrastructure
                 .WithMany(s => s.LikesSended)
                 .HasForeignKey(l => l.SenderId)
                 .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(l => l.Party)
                .WithMany(p => p.Likes)
                .HasForeignKey(l => l.PartyId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(l => l.Post)
                .WithMany(p => p.Likes)
                .HasForeignKey(l => l.PostId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(l => l.Favor)
                .WithMany(f => f.Likes)
                .HasForeignKey(l => l.FavorId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(l => l.Comment)
                .WithMany(c => c.Likes)
                .HasForeignKey(l => l.CommentId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(l => l.User)
                .WithMany(u => u.Likes)
                .HasForeignKey(l => l.UserId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Comment>(entity =>
@@ -154,43 +143,31 @@ namespace Pappion.Infrastructure
                 entity.HasOne(c => c.Sender)
                 .WithMany(s => s.CommentsSended)
                 .HasForeignKey(c => c.SenderId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(c => c.Party)
                .WithMany(p => p.Comments)
                .HasForeignKey(c => c.PartyId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(c => c.Post)
                .WithMany(p => p.Comments)
                .HasForeignKey(c => c.PostId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(c => c.Favor)
                .WithMany(f => f.Comments)
                .HasForeignKey(c => c.FavorId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(c => c.User)
                .WithMany(u => u.Comments)
                .HasForeignKey(c => c.UserId)
                .IsRequired(false)
-               .OnDelete(DeleteBehavior.NoAction);
-            });
-
-            modelBuilder.Entity<PhoneNumber>(entity =>
-            {
-                entity.HasKey(a => a.Id);
-                entity.Property(a => a.Id).HasDefaultValueSql("(uuid())");
-                entity.Property(a => a.Phone).IsRequired();
-
-                entity.HasOne(p => p.User)
-                .WithMany(u => u.PhoneNumbers)
-                .HasForeignKey(p => p.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
+               .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Tag>(entity =>
@@ -210,25 +187,25 @@ namespace Pappion.Infrastructure
                 .WithMany(u => u.Images)
                 .HasForeignKey(im => im.UserId)
                 .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(im => im.Post)
                 .WithMany(p => p.Images)
                 .HasForeignKey(im => im.PostId)
                 .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(im => im.Favor)
                 .WithMany(f => f.Images)
                 .HasForeignKey(im => im.FavorId)
                 .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(im => im.Party)
                 .WithMany(p => p.Images)
                 .HasForeignKey(im => im.PartyId)
                 .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<FavorTags>(entity =>
@@ -238,12 +215,12 @@ namespace Pappion.Infrastructure
                 entity.HasOne(ft => ft.Favor)
                 .WithMany(f => f.FavorTags)
                 .HasForeignKey(ft => ft.FavorId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(ft => ft.Tag)
                 .WithMany(t => t.FavorTags)
                 .HasForeignKey(ft => ft.TagId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<PartyTags>(entity =>
@@ -253,7 +230,7 @@ namespace Pappion.Infrastructure
                 entity.HasOne(pt => pt.Party)
                 .WithMany(p => p.PartyTags)
                 .HasForeignKey(pt => pt.PartyId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(pt => pt.Tag)
                 .WithMany(t => t.PartyTags)

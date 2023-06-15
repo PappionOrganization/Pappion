@@ -25,7 +25,7 @@ namespace Pappion.Infrastructure.Auth
             Claim[] claims = new Claim[]
             {
                 new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-                new("role", user.RoleId.ToString())
+                new("role", user.Role.ToString())
             };
             SigningCredentials signingCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(

@@ -1,10 +1,9 @@
-﻿using AutoMapper;
+﻿    using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Pappion.Application.Dto.Post;
 using Pappion.Application.Posts;
-using Pappion.Application.Users;
 using Pappion.Domain.Entities;
 
 namespace Pappion.API.Controllers
@@ -25,7 +24,7 @@ namespace Pappion.API.Controllers
         [HttpGet]
         public async Task<List<PostReadDto>> GetAll()
         {
-            List<Post> posts = await _mediator.Send(new GetPostListQuery());
+            List<Post> posts = await _mediator.Send(new GetPostsQuery());
             return _mapper.Map<List<PostReadDto>>(posts);
         }
 
@@ -36,38 +35,17 @@ namespace Pappion.API.Controllers
             return _mapper.Map<PostReadDto>(post);
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Remove(Guid id)
-        {
-            await _mediator.Send(new RemovePostCommand(id));
-            return Ok();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Add(PostAddDto postAddDto)
-        {
-            Post post = _mapper.Map<Post>(postAddDto);
-            await _mediator.Send(new AddPostCommand(post));
-            return Ok();
-        }
+        public async Task Remove(Guid id) => await _mediator.Send(new RemovePostCommand(id));
 
         [Authorize]
-        [HttpPost("Like/{id}")]
-        public async Task<IActionResult> Like(Guid id)
-        {
-            User currentUser = await _mediator.Send(new GetCurrentUserInfoQuery());
-            PostLikeDto postLikeDto = new(){ PostId = id, SenderId = currentUser.Id};
-            Like like = _mapper.Map<Like>(postLikeDto);
-            await _mediator.Send(new LikePostCommand(like));
-            return Ok();
-        }
+        [HttpPost]
+        public async Task Add(AddPostCommand addPostCommand) => await _mediator.Send(addPostCommand);
 
-        [HttpPut]
-        public async Task<IActionResult> Update(PostReadDto postReadDto)
-        {
-            Post post = _mapper.Map<Post>(postReadDto);
-            await _mediator.Send(new UpdatePostCommand(post));
-            return Ok();
-        }
+
+        [Authorize]
+        [HttpPost("like/{id}")]
+        public async Task Like(Guid id) => await _mediator.Send(new LikePostCommand(id));
     }
 }
