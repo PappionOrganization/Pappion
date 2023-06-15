@@ -12,16 +12,14 @@ namespace Pappion.API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IMapper _mapper;
         private readonly IMediator _mediator;
 
         public UsersController(IMapper mapper, IMediator mediator)
         {
-            _mapper = mapper;
             _mediator = mediator;
         }
 
-        [HttpPost("login")]
+        [HttpGet("login")]
         public async Task<ActionResult<string>> Login([FromBody] LoginRequest request)
         {
             return Ok(await _mediator.Send(new LoginCommand(request.Email, request.Password)));
