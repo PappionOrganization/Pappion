@@ -19,7 +19,7 @@ namespace Pappion.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("login")]
+        [HttpPost("login")]
         public async Task<ActionResult<string>> Login([FromBody] LoginRequest request)
         {
             return Ok(await _mediator.Send(new LoginCommand(request.Email, request.Password)));
