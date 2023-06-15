@@ -10,8 +10,6 @@ namespace Pappion.Infrastructure.MapProfiles
         {
             CreateMap<Post, PostReadDto>();
             CreateMap<PostReadDto, Post>();
-            CreateMap<PostAddDto, Post>();
-            CreateMap<PostLikeDto, Like>();
 
         }
     }
