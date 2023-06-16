@@ -46,6 +46,10 @@ namespace Pappion.API.Controllers
 
         [Authorize]
         [HttpPost("like/{id}")]
-        public async Task Like(Guid id) => await _mediator.Send(new LikePostCommand(id));
+        public async Task<IActionResult> Like(Guid id) => Ok(await _mediator.Send(new LikePostCommand(id)));
+
+        [Authorize]
+        [HttpDelete("unlike/{id}")]
+        public async Task Unlike(Guid id) => await _mediator.Send(new UnlikePostCommand(id));
     }
 }

@@ -40,6 +40,7 @@ namespace Pappion.API.Middlewares
                 KeyNotFoundException => StatusCodes.Status404NotFound,
                 EntityNotFoundException => StatusCodes.Status404NotFound,
                 AccessDeniedExeption=> StatusCodes.Status405MethodNotAllowed,
+                EntityAlreadyExistsException => StatusCodes.Status409Conflict,
                 ValidationException => StatusCodes.Status422UnprocessableEntity,
                 _ => StatusCodes.Status500InternalServerError
             };

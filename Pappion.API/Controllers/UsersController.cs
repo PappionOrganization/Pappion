@@ -12,12 +12,10 @@ namespace Pappion.API.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IMapper _mapper;
         private readonly IMediator _mediator;
 
-        public UsersController(IMapper mapper, IMediator mediator)
+        public UsersController(IMediator mediator)
         {
-            _mapper = mapper;
             _mediator = mediator;
         }
 

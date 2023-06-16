@@ -6,6 +6,7 @@ using Pappion.Application.Interfaces.Contexts;
 using AutoMapper;
 using Pappion.Application.Dto.Post;
 using FluentValidation;
+using Pappion.Application.Common.Exceptions;
 
 namespace Pappion.Application.Posts
 {
@@ -31,6 +32,15 @@ namespace Pappion.Application.Posts
         public async Task<Unit> Handle(LikePostCommand request, CancellationToken cancellationToken)
         {
             var like = new Like { PostId = request.postId, SenderId = _userContext.Id };
+
+            if (_likeRepository
+                .Filter(l => l.SenderId.Equals(like.SenderId))
+                .Where(l => l.PostId.Equals(like.PostId)) != null)
+            {
+                throw new EntityAlreadyExistsException(nameof(like), $"Like is already " +
+                    $"sended by user '{_userContext.Id}'");
+            }
+            
             await _likeRepository.AddAsync(like);
             await _likeRepository.SaveChangesAsync();
             return Unit.Value;
