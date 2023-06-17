@@ -16,6 +16,7 @@ using Pappion.API.Contexts;
 using Pappion.API.Middlewares;
 using Pappion.Application.Common.Behaviors;
 using Pappion.Application.Interfaces.Contexts;
+using Microsoft.AspNetCore.Http.Features;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Configuration

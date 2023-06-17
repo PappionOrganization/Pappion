@@ -288,25 +288,25 @@ namespace Pappion.Infrastructure
                     {
                         Id = Guid.NewGuid(),
                         Path = $"{Guid.NewGuid()}.png",
-                        UserId = users[0].Id
+                        UserId = users[i].Id
                     },
                     new Image
                     {
                         Id = Guid.NewGuid(),
                         Path = $"{Guid.NewGuid()}.png",
-                        PostId = posts[0].Id
+                        PostId = posts[i].Id
                     },
                     new Image
                     {
                         Id = Guid.NewGuid(),
                         Path = $"{Guid.NewGuid()}.png",
-                        PartyId = parties[0].Id   
+                        PartyId = parties[i].Id   
                     },
                     new Image
                     {
                         Id = Guid.NewGuid(),
                         Path = $"{Guid.NewGuid()}.png",
-                        FavorId = favors[0].Id
+                        FavorId = favors[i].Id
                     },
                 });
                 userTags.Add(new UserTags

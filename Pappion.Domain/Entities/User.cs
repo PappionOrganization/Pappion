@@ -15,11 +15,11 @@ namespace Pappion.Domain.Entities
         public DateTime CreatedDate { get; set; }
         public string? Location { get; set; }
         public UserRoles Role { get; set; }
-        public ICollection<Image> Images { get; set; }
+        public Image Image { get; set; }
         public ICollection<Like> Likes { get; set; }
-        public ICollection<Like> LikesSended { get; set; }
+        public ICollection<Like> LikesSent { get; set; }
         public ICollection<Comment> Comments { get; set; }
-        public ICollection<Comment> CommentsSended { get; set; }
+        public ICollection<Comment> CommentsSent { get; set; }
         public ICollection<Party> Parties { get; set; }
         public ICollection<Favor> Favors { get; set; }
         public ICollection<Post> Posts { get; set; }

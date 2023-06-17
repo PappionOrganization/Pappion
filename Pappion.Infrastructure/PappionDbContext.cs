@@ -95,7 +95,7 @@ namespace Pappion.Infrastructure
                 entity.Property(l => l.CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
 
                 entity.HasOne(l => l.Sender)
-                .WithMany(s => s.LikesSended)
+                .WithMany(s => s.LikesSent)
                 .HasForeignKey(l => l.SenderId)
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Cascade);
@@ -141,7 +141,7 @@ namespace Pappion.Infrastructure
                 entity.Property(c => c.CreatedDate).HasDefaultValueSql("CURRENT_TIMESTAMP(6)");
 
                 entity.HasOne(c => c.Sender)
-                .WithMany(s => s.CommentsSended)
+                .WithMany(s => s.CommentsSent)
                 .HasForeignKey(c => c.SenderId)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -183,12 +183,6 @@ namespace Pappion.Infrastructure
                 entity.Property(im => im.Id).HasDefaultValueSql("(uuid())");
                 entity.Property(im => im.Path).IsRequired();
 
-                entity.HasOne(im => im.User)
-                .WithMany(u => u.Images)
-                .HasForeignKey(im => im.UserId)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.Cascade);
-
                 entity.HasOne(im => im.Post)
                 .WithMany(p => p.Images)
                 .HasForeignKey(im => im.PostId)
@@ -198,6 +192,12 @@ namespace Pappion.Infrastructure
                 entity.HasOne(im => im.Favor)
                 .WithMany(f => f.Images)
                 .HasForeignKey(im => im.FavorId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Cascade);
+
+                entity.HasOne(im => im.User)
+                .WithOne(u => u.Image)
+                .HasForeignKey<Image>(im => im.UserId)
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Cascade);
 

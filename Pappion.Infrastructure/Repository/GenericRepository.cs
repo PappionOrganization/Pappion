@@ -5,40 +5,43 @@ using Pappion.Application.Interfaces;
 
 namespace Pappion.Infrastructure.Repository
 {
-    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly PappionDbContext _context;
-        private readonly DbSet<TEntity> _table;
+        private readonly DbSet<T> _table;
 
         public GenericRepository(PappionDbContext context)
         {
             _context = context;
-            _table = _context.Set<TEntity>();
+            _table = _context.Set<T>();
         }
 
-        public async Task AddAsync(TEntity entity) => await _table.AddAsync(entity);
+        public async Task AddAsync(T entity) => await _table.AddAsync(entity);
 
-        public Task AddRangeAsync(IEnumerable<TEntity> entities) => _table.AddRangeAsync(entities);
+        public Task AddRangeAsync(IEnumerable<T> entities) => _table.AddRangeAsync(entities);
 
-        public IQueryable<TEntity> Filter(Expression<Func<TEntity, bool>> predicate) => _table.Where(predicate);
+        public IQueryable<T> Filter(Expression<Func<T, bool>> predicate) => _table.Where(predicate);
 
-        public Task<List<TEntity>> GetAllAsync() => _table.ToListAsync();
+        public Task<List<T>> GetAllAsync() => _table.ToListAsync();
 
-        public async Task<TEntity> GetByIdAsync(Guid id)
+        public async Task<T> GetByIdAsync(Guid id)
         {
             var entity = await _table.FindAsync(id);
 
-            return entity ?? throw new EntityNotFoundException(nameof(TEntity), id);
+            return entity ?? throw new EntityNotFoundException(nameof(T), id);
         }
 
         public async Task RemoveAsync(Guid id)
         {
-            var entity = await GetByIdAsync(id);
-
-            _table.Remove(entity);
+            _table.Remove(await GetByIdAsync(id));
         }
 
-        public Task UpdateAsync(TEntity entity)
+        public async Task RemoveRangeAsync(IEnumerable<T> entities)
+        {
+            _table.RemoveRange(entities);
+        }
+
+        public Task UpdateAsync(T entity)
         {
             _table.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
@@ -48,6 +51,6 @@ namespace Pappion.Infrastructure.Repository
 
         public Task<int> SaveChangesAsync() => _context.SaveChangesAsync();
 
-        public Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> predicate) => _table.AnyAsync(predicate);
+        public Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate) => _table.AnyAsync(predicate);
     }
 }

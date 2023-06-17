@@ -11,6 +11,7 @@ namespace Pappion.Application.Interfaces
         Task AddRangeAsync(IEnumerable<T> entities);
         Task UpdateAsync(T entity);
         Task RemoveAsync(Guid id);
+        Task RemoveRangeAsync(IEnumerable<T> entities);
         Task<bool> ExistsAsync(Expression<Func<T, bool>> predicate);
         Task<int> SaveChangesAsync();
     }
