@@ -72,183 +72,183 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("591360dc-b2b1-491f-8ff3-8d1c44513700"),
+                            Id = new Guid("d6b6b1e1-365f-43e3-8663-acc00a5582ee"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PostId = new Guid("27a58803-71a1-4081-a10c-e153189ece77"),
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            PostId = new Guid("b6af4aa5-dbbc-4d47-93d1-2baabb526b31"),
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             Text = "Увага! це дуже корисна публікація!"
                         },
                         new
                         {
-                            Id = new Guid("a9d856ff-0992-4a6e-9c91-ef7a68e4766d"),
+                            Id = new Guid("9fc01311-b059-450e-ba20-4172083b5172"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PartyId = new Guid("6e573647-25ec-4298-b2e9-4c5eec746ac5"),
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            PartyId = new Guid("fc4b8cda-e695-4f24-9331-e409e4b7f82e"),
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             Text = "Джакузі з скінхедом це звучить дуже цікаво! Я обов'язково прийду!"
                         },
                         new
                         {
-                            Id = new Guid("7264b02b-80b0-4328-bc75-c3b13d711643"),
+                            Id = new Guid("a8942268-9c5e-43c1-a3a2-2f8852d8de9d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("d796954d-a19b-4220-a307-158a188bf965"),
+                            FavorId = new Guid("ea733c0b-31a2-4ba0-919d-2f0195f653b2"),
                             Grade = 0m,
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             Text = "Масаж це дуже крута послуга! Раджу всім спробувати!"
                         },
                         new
                         {
-                            Id = new Guid("1de08753-6df9-423f-92e4-6d408bd2d2d4"),
+                            Id = new Guid("0732b92a-3744-4a67-b351-7930fdb5b113"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             Text = "Гаррі це дуже файний пацан! Стоп...",
-                            UserId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8")
+                            UserId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562")
                         },
                         new
                         {
-                            Id = new Guid("2c24b4ba-64f9-4748-b3f2-645bccf53b31"),
+                            Id = new Guid("a93192b3-5ed2-41fc-b9f0-3f37c9f3b284"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PostId = new Guid("f76853c2-07e6-4f71-ba63-666b64dd31a1"),
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
+                            PostId = new Guid("abf7a0b8-aa0a-4f4b-956b-8ba602989450"),
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
                             Text = "Незабутні враження від Карпат це дуже корисна публікація!"
                         },
                         new
                         {
-                            Id = new Guid("68780820-207d-427b-88dc-df867d072ad6"),
+                            Id = new Guid("a3dc469c-957e-4b0a-a090-b755ef5a142a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PartyId = new Guid("5bb25d2b-4500-44b8-8e19-93124dfbff74"),
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
+                            PartyId = new Guid("73fa45fc-5820-4aaf-90dc-12e8114c0daa"),
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
                             Text = "Вечірня прогулянка по місту це звучить дуже цікаво! Я обов'язково прийду!"
                         },
                         new
                         {
-                            Id = new Guid("b66ef0cf-a24b-4ac0-970b-b4214e18f18b"),
+                            Id = new Guid("1786ff5c-d1a3-42e3-b065-66ccb8973b08"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("73e9162f-7a5a-411c-89b2-e7008b8676cd"),
+                            FavorId = new Guid("c24e030f-ecad-42a2-88eb-fdf055915c85"),
                             Grade = 0m,
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
                             Text = "Косметична процедура це дуже крута послуга! Раджу всім спробувати!"
                         },
                         new
                         {
-                            Id = new Guid("7c9c96c7-6fbe-49ef-8cc2-eb4aebb775f6"),
+                            Id = new Guid("b6d9021c-4823-48ae-9eb1-4623bfbf9617"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
                             Text = "Еран це дуже файний пацан! Стоп...",
-                            UserId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444")
+                            UserId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788")
                         },
                         new
                         {
-                            Id = new Guid("efeab792-a8e9-4304-ae4b-d2de8058aad4"),
+                            Id = new Guid("b1ad9e41-d3f6-4e4d-85cc-5718e06af9d0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PostId = new Guid("0dc85af5-6ba7-4329-b2c2-94abbe4033ae"),
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
+                            PostId = new Guid("4e3de5fd-37ec-4f34-b3b2-78b751979d2b"),
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
                             Text = "Смаколики Карпатської кухні це дуже корисна публікація!"
                         },
                         new
                         {
-                            Id = new Guid("a85a6004-c550-4ec6-b4b1-3014ba5979a3"),
+                            Id = new Guid("71c1669f-e4d0-4f5b-92fa-a06e0f0fcb75"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PartyId = new Guid("4677f772-2acd-40c3-94a3-b03ee2fe655c"),
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
+                            PartyId = new Guid("f6787cb8-98db-478a-a41e-ff3eab4c8567"),
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
                             Text = "Вечірня прогулянка по місту це звучить дуже цікаво! Я обов'язково прийду!"
                         },
                         new
                         {
-                            Id = new Guid("2d922c9d-2dd5-4fef-b537-260212653853"),
+                            Id = new Guid("a7f51f5e-0486-4f37-b8cb-3a929ef75e3a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("f3170037-57b9-4386-9eb8-1b0d141bb2cb"),
+                            FavorId = new Guid("e0446b0e-5fc2-4073-aad5-d69d9fa3fee4"),
                             Grade = 0m,
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
                             Text = "Персональний тренер це дуже крута послуга! Раджу всім спробувати!"
                         },
                         new
                         {
-                            Id = new Guid("3a1996e2-13ff-4405-a55d-9dea8ac10a42"),
+                            Id = new Guid("ded91049-12e1-404a-80d3-c39381d2e686"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
                             Text = "Ґеральт це дуже файний пацан! Стоп...",
-                            UserId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9")
+                            UserId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b")
                         },
                         new
                         {
-                            Id = new Guid("b7c090fd-0c94-48ad-a171-d367ef125b9b"),
+                            Id = new Guid("5a47a32e-a024-4c84-b307-18e419f901c8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PostId = new Guid("6913590a-af0b-4b67-8cb9-b34474f4424a"),
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
+                            PostId = new Guid("6a994f3e-ac89-432a-b0df-67904955f210"),
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
                             Text = "Неймовірні пейзажі Карпат це дуже корисна публікація!"
                         },
                         new
                         {
-                            Id = new Guid("ca3f8f60-d9a4-44eb-91c8-6a1eb37fe8c9"),
+                            Id = new Guid("e09ae5ed-5bc6-4125-a70e-76bd2ff7bed0"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PartyId = new Guid("102ac689-dfc0-42af-abd9-10d0e5eddf63"),
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
+                            PartyId = new Guid("f78c1d06-cef3-41c3-93b5-8c1a1f3507d4"),
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
                             Text = "Вечірка вдома з настільними іграми це звучить дуже цікаво! Я обов'язково прийду!"
                         },
                         new
                         {
-                            Id = new Guid("3540e2e7-2041-4645-bdee-60478ca53160"),
+                            Id = new Guid("ab325bcb-9f32-4af8-a27b-af4a09e97e9d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("e5cc3341-235a-484d-898d-281774cb1594"),
+                            FavorId = new Guid("1eb82f43-27fd-4ec2-851d-fb67e7de5c25"),
                             Grade = 0m,
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
                             Text = "Ретельна манікюр і педикюр це дуже крута послуга! Раджу всім спробувати!"
                         },
                         new
                         {
-                            Id = new Guid("d5e705bd-d499-45c0-96bf-e76627285ddb"),
+                            Id = new Guid("78af6db4-8728-4d34-b821-29799c4f7eb4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
                             Text = "Тайлер це дуже файний пацан! Стоп...",
-                            UserId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc")
+                            UserId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858")
                         },
                         new
                         {
-                            Id = new Guid("9eff24db-46fa-43e7-b9ae-97a133e8becc"),
+                            Id = new Guid("749afb89-be73-4df3-bd81-f6dde0649635"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PostId = new Guid("dfdfa042-14bf-42bc-8008-3e86bbb1ed7a"),
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
+                            PostId = new Guid("14669a78-c727-4213-a339-c10d92eb35ad"),
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
                             Text = "Зимові пригоди у Карпатах це дуже корисна публікація!"
                         },
                         new
                         {
-                            Id = new Guid("b89c0acd-8edb-4fab-9025-d39a8cf683c9"),
+                            Id = new Guid("1f2a6b57-7eb3-4fb3-852b-fc0cf0d0a1e6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            PartyId = new Guid("57c8ba50-a84d-40dd-802b-bb9f884e7614"),
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
+                            PartyId = new Guid("c49f9cca-08b0-44d4-be6b-20903a9ce3e8"),
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
                             Text = "Концерт Rammstein це звучить дуже цікаво! Я обов'язково прийду!"
                         },
                         new
                         {
-                            Id = new Guid("1d96f30a-d8a7-42b2-9094-011d0ae3bb52"),
+                            Id = new Guid("54bbef9b-5943-491d-b13c-cbd33454e809"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("85aea96e-38f7-4540-99fd-4f4f3b06598d"),
+                            FavorId = new Guid("5af39064-8cd5-405b-8963-9922b9e67dd5"),
                             Grade = 0m,
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
                             Text = "Сеанс йоги це дуже крута послуга! Раджу всім спробувати!"
                         },
                         new
                         {
-                            Id = new Guid("d5a0f0de-2fd6-4c86-8f75-53fef9156b14"),
+                            Id = new Guid("16739b73-11aa-4340-ba76-6dc08b996beb"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Grade = 0m,
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
                             Text = "Біллі це дуже файний пацан! Стоп...",
-                            UserId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100")
+                            UserId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4")
                         });
                 });
 
@@ -291,8 +291,8 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d796954d-a19b-4220-a307-158a188bf965"),
-                            AuthorId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            Id = new Guid("ea733c0b-31a2-4ba0-919d-2f0195f653b2"),
+                            AuthorId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Найкращі майстри масажу готові показати всі свої вміння на вашій задубілій спині.",
                             Price = 50.5m,
@@ -301,8 +301,8 @@ namespace Pappion.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("73e9162f-7a5a-411c-89b2-e7008b8676cd"),
-                            AuthorId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            Id = new Guid("c24e030f-ecad-42a2-88eb-fdf055915c85"),
+                            AuthorId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Отримайте розкішну косметичну процедуру, яка підкреслить вашу природну красу і зробить вашу шкіру сяючою.",
                             Price = 80.0m,
@@ -311,8 +311,8 @@ namespace Pappion.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f3170037-57b9-4386-9eb8-1b0d141bb2cb"),
-                            AuthorId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            Id = new Guid("e0446b0e-5fc2-4073-aad5-d69d9fa3fee4"),
+                            AuthorId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Досвідчений тренер допоможе вам досягнути ваших фітнес-цілей, розробивши індивідуальну тренувальну програму для вас.",
                             Price = 70.2m,
@@ -321,8 +321,8 @@ namespace Pappion.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e5cc3341-235a-484d-898d-281774cb1594"),
-                            AuthorId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            Id = new Guid("1eb82f43-27fd-4ec2-851d-fb67e7de5c25"),
+                            AuthorId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Розкішний манікюр і педикюр, який зробить ваші нігті і ніжки неймовірно чудовими і доглянутими.",
                             Price = 45.8m,
@@ -331,8 +331,8 @@ namespace Pappion.Infrastructure.Migrations
                         },
                         new
                         {
-                            Id = new Guid("85aea96e-38f7-4540-99fd-4f4f3b06598d"),
-                            AuthorId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            Id = new Guid("5af39064-8cd5-405b-8963-9922b9e67dd5"),
+                            AuthorId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Розслабтеся і зосередьтеся на своєму тілі та розумі під час особистого сеансу йоги з досвідченим інструктором.",
                             Price = 55.3m,
@@ -358,28 +358,28 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            FavorId = new Guid("d796954d-a19b-4220-a307-158a188bf965"),
-                            TagId = new Guid("69697103-7de2-473d-9495-3c676a0141b7")
+                            FavorId = new Guid("ea733c0b-31a2-4ba0-919d-2f0195f653b2"),
+                            TagId = new Guid("b024c3d5-a1ab-4630-900f-79afbf709cb3")
                         },
                         new
                         {
-                            FavorId = new Guid("73e9162f-7a5a-411c-89b2-e7008b8676cd"),
-                            TagId = new Guid("f26eb314-0b87-4ce1-9412-ddcedc964690")
+                            FavorId = new Guid("c24e030f-ecad-42a2-88eb-fdf055915c85"),
+                            TagId = new Guid("9b8ed1e5-4b48-4e70-a29d-f9cc65f388e1")
                         },
                         new
                         {
-                            FavorId = new Guid("f3170037-57b9-4386-9eb8-1b0d141bb2cb"),
-                            TagId = new Guid("9f26a73f-0f3f-48a7-9161-8e29d5f7bb83")
+                            FavorId = new Guid("e0446b0e-5fc2-4073-aad5-d69d9fa3fee4"),
+                            TagId = new Guid("d01427cf-e4ca-4d0d-95ba-906c0f80e767")
                         },
                         new
                         {
-                            FavorId = new Guid("e5cc3341-235a-484d-898d-281774cb1594"),
-                            TagId = new Guid("3c2de118-e173-4e12-95cf-a2cef626a5a3")
+                            FavorId = new Guid("1eb82f43-27fd-4ec2-851d-fb67e7de5c25"),
+                            TagId = new Guid("34ef5701-2bcd-4337-b1b8-fbb06e781b16")
                         },
                         new
                         {
-                            FavorId = new Guid("85aea96e-38f7-4540-99fd-4f4f3b06598d"),
-                            TagId = new Guid("7ffd387f-61d9-4f23-a59a-dee2de132f44")
+                            FavorId = new Guid("5af39064-8cd5-405b-8963-9922b9e67dd5"),
+                            TagId = new Guid("d34108aa-ca9b-4574-82f4-8294723be0d7")
                         });
                 });
 
@@ -422,123 +422,123 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("7fa50b78-5533-4d73-8a52-e3cc722e6189"),
-                            Path = "8d08fcb9-8216-480a-ac50-7704224c1aba.png",
-                            UserId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8")
+                            Id = new Guid("029c70f0-26c2-40a4-9ce6-ea191d415b1d"),
+                            Path = "f5aa04fb-3728-458a-ba5a-7f325cccce19.png",
+                            UserId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562")
                         },
                         new
                         {
-                            Id = new Guid("721d49e5-4b05-42c4-9806-4afc07701b53"),
-                            Path = "10fa44c6-09ed-45a4-a31a-ea2d9a6b7164.png",
-                            PostId = new Guid("27a58803-71a1-4081-a10c-e153189ece77")
+                            Id = new Guid("a498c434-0abd-4c93-abe3-70e75e054592"),
+                            Path = "0c1b87bd-9b75-499d-9896-6ec47560c873.png",
+                            PostId = new Guid("b6af4aa5-dbbc-4d47-93d1-2baabb526b31")
                         },
                         new
                         {
-                            Id = new Guid("bba50028-019c-4b3d-90ee-d034532f9863"),
-                            PartyId = new Guid("6e573647-25ec-4298-b2e9-4c5eec746ac5"),
-                            Path = "0a41cad7-68a9-4399-b5fa-4ab469c46885.png"
+                            Id = new Guid("0da85c61-1b60-4b85-82e5-5ccd1057211a"),
+                            PartyId = new Guid("fc4b8cda-e695-4f24-9331-e409e4b7f82e"),
+                            Path = "22c92514-31a7-4339-9017-d4bff80d820e.png"
                         },
                         new
                         {
-                            Id = new Guid("e28e2864-58d9-4a25-802e-a616602d9858"),
-                            FavorId = new Guid("d796954d-a19b-4220-a307-158a188bf965"),
-                            Path = "a86ef337-79dc-4bc6-93a4-ce1324f86c21.png"
+                            Id = new Guid("66257386-ce38-4000-bf72-97a2aaec3071"),
+                            FavorId = new Guid("ea733c0b-31a2-4ba0-919d-2f0195f653b2"),
+                            Path = "0b2faaeb-0bf4-4570-a812-8e6294e40534.png"
                         },
                         new
                         {
-                            Id = new Guid("d067af25-99d0-4c5d-b4e3-5c9b82c2623e"),
-                            Path = "68ae3d64-3328-4805-9d98-86714f6257c9.png",
-                            UserId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444")
+                            Id = new Guid("fee7346f-4688-47b3-a99e-7901b8fa6095"),
+                            Path = "0d9de09f-1761-45cf-a853-512702ef62da.png",
+                            UserId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788")
                         },
                         new
                         {
-                            Id = new Guid("8872d1a5-a5af-4c0f-bbcb-8b93e1116c7c"),
-                            Path = "9470cd9b-e6b8-4f5f-a06f-20653395313d.png",
-                            PostId = new Guid("f76853c2-07e6-4f71-ba63-666b64dd31a1")
+                            Id = new Guid("0894268f-8f91-48ee-9a62-b65b418e686f"),
+                            Path = "48fa117c-5e78-4023-83a3-505ef2a95c63.png",
+                            PostId = new Guid("abf7a0b8-aa0a-4f4b-956b-8ba602989450")
                         },
                         new
                         {
-                            Id = new Guid("f928a8af-0402-466e-8ca1-e8ebdc855204"),
-                            PartyId = new Guid("5bb25d2b-4500-44b8-8e19-93124dfbff74"),
-                            Path = "0a5b1904-b171-492e-ac66-bf8cb5873249.png"
+                            Id = new Guid("1758b1cf-788b-471a-9b62-f59766b79650"),
+                            PartyId = new Guid("73fa45fc-5820-4aaf-90dc-12e8114c0daa"),
+                            Path = "c462665c-cd13-4627-9bed-a8ad0c879868.png"
                         },
                         new
                         {
-                            Id = new Guid("99736258-0b9b-4c02-b2c3-62c7c018b645"),
-                            FavorId = new Guid("73e9162f-7a5a-411c-89b2-e7008b8676cd"),
-                            Path = "ced60315-da9c-4b11-bc34-4afede464cc7.png"
+                            Id = new Guid("8d182e87-028f-4a2d-91f5-5f7bfb78ff69"),
+                            FavorId = new Guid("c24e030f-ecad-42a2-88eb-fdf055915c85"),
+                            Path = "567b171b-8d02-47b7-bfd4-29cdb07ab6cd.png"
                         },
                         new
                         {
-                            Id = new Guid("73a9dca2-92d1-4074-b1b5-0a1abf3c2e5b"),
-                            Path = "c7a48821-6f90-44ad-a67a-f8e54aa9da83.png",
-                            UserId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9")
+                            Id = new Guid("5842a663-fb06-416d-a389-93e4b0184881"),
+                            Path = "d190d264-ec8c-45de-a25d-41fdb516c106.png",
+                            UserId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b")
                         },
                         new
                         {
-                            Id = new Guid("d45b8813-9cbc-4d45-af5e-52fcd42f962f"),
-                            Path = "b1d92c49-26bc-41e8-8026-af01f5c4b52c.png",
-                            PostId = new Guid("0dc85af5-6ba7-4329-b2c2-94abbe4033ae")
+                            Id = new Guid("fbe0a462-f674-43d1-86f3-3fdd5a38443f"),
+                            Path = "e59f8ff4-1d68-4ade-977a-fe4ea49254a5.png",
+                            PostId = new Guid("4e3de5fd-37ec-4f34-b3b2-78b751979d2b")
                         },
                         new
                         {
-                            Id = new Guid("c74eb49e-ee7a-4b29-b0db-43f9a70120f3"),
-                            PartyId = new Guid("4677f772-2acd-40c3-94a3-b03ee2fe655c"),
-                            Path = "a22d6751-84f5-4a3a-ac67-8869c97f9f90.png"
+                            Id = new Guid("1bb12964-bddd-4ec7-87f4-3d31c91f6805"),
+                            PartyId = new Guid("f6787cb8-98db-478a-a41e-ff3eab4c8567"),
+                            Path = "58a81253-338b-4037-89dc-2fcf3a501e0c.png"
                         },
                         new
                         {
-                            Id = new Guid("d56b1300-86d0-4473-b36e-8018c9eb61fb"),
-                            FavorId = new Guid("f3170037-57b9-4386-9eb8-1b0d141bb2cb"),
-                            Path = "497245a8-4f2d-4f0b-a063-87c7a431f181.png"
+                            Id = new Guid("e5e7f7d2-cedb-44aa-aa42-f4d9bc4b8cae"),
+                            FavorId = new Guid("e0446b0e-5fc2-4073-aad5-d69d9fa3fee4"),
+                            Path = "8b1b7e4d-8e2c-4494-abd7-ed888a971591.png"
                         },
                         new
                         {
-                            Id = new Guid("7808aa28-0ec5-4063-82c1-c40c3b18829e"),
-                            Path = "d6181258-35b6-4564-bd87-94122639bd2c.png",
-                            UserId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc")
+                            Id = new Guid("73bc9113-9216-49c2-b440-673fad71e3e4"),
+                            Path = "bf484494-5347-4635-a364-212e196cd062.png",
+                            UserId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858")
                         },
                         new
                         {
-                            Id = new Guid("94a8de4c-0194-4a34-a863-2e8dbc821d1a"),
-                            Path = "bab337a8-8651-461a-b88d-1d048a9cea02.png",
-                            PostId = new Guid("6913590a-af0b-4b67-8cb9-b34474f4424a")
+                            Id = new Guid("cc9d5634-0f34-4ffe-aa12-630c273aef89"),
+                            Path = "23eb78de-bb77-40a9-9955-df1d99737798.png",
+                            PostId = new Guid("6a994f3e-ac89-432a-b0df-67904955f210")
                         },
                         new
                         {
-                            Id = new Guid("47b94a9b-317a-41d3-9e43-e9ab3a3d0309"),
-                            PartyId = new Guid("102ac689-dfc0-42af-abd9-10d0e5eddf63"),
-                            Path = "834d313f-2243-47bf-832d-ec03a523b397.png"
+                            Id = new Guid("aebe9fdc-138f-43d8-a2ff-e8caf566d9dd"),
+                            PartyId = new Guid("f78c1d06-cef3-41c3-93b5-8c1a1f3507d4"),
+                            Path = "5464f998-0081-46ff-a7ad-3561bcd48f58.png"
                         },
                         new
                         {
-                            Id = new Guid("636a4c42-5c97-4bc7-ac3e-39770bdc4771"),
-                            FavorId = new Guid("e5cc3341-235a-484d-898d-281774cb1594"),
-                            Path = "8778283c-e253-48d3-bd2b-04d32b0195d1.png"
+                            Id = new Guid("36dc2d84-66a7-4a14-8938-b7e51de01b10"),
+                            FavorId = new Guid("1eb82f43-27fd-4ec2-851d-fb67e7de5c25"),
+                            Path = "ff877f69-031f-4890-9eef-d4cc7d22043e.png"
                         },
                         new
                         {
-                            Id = new Guid("e72ae2f7-05f4-4136-b048-a17682c483ef"),
-                            Path = "76446e29-7895-48b5-88a8-6aa0053cb950.png",
-                            UserId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100")
+                            Id = new Guid("6ff4b04e-086b-4357-9d6e-f31b8e597ec1"),
+                            Path = "82328f74-0204-4c72-be30-404840c540b7.png",
+                            UserId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4")
                         },
                         new
                         {
-                            Id = new Guid("0169eac2-f30d-4494-a1d8-5603a59217c9"),
-                            Path = "73aabeec-7310-429a-a060-258893d97a33.png",
-                            PostId = new Guid("dfdfa042-14bf-42bc-8008-3e86bbb1ed7a")
+                            Id = new Guid("d169992a-96aa-4143-af80-9f91f140900b"),
+                            Path = "27593490-8d6a-48b5-8457-42ba6f33d8a4.png",
+                            PostId = new Guid("14669a78-c727-4213-a339-c10d92eb35ad")
                         },
                         new
                         {
-                            Id = new Guid("06d3b8ec-0a4d-4852-9cfa-bc2b8dbd38a3"),
-                            PartyId = new Guid("57c8ba50-a84d-40dd-802b-bb9f884e7614"),
-                            Path = "ff9187ea-bdbf-4fd7-bea7-b09d21ce3f85.png"
+                            Id = new Guid("f0b9f98d-1e02-4342-89e6-1c2aafe36ffb"),
+                            PartyId = new Guid("c49f9cca-08b0-44d4-be6b-20903a9ce3e8"),
+                            Path = "98cb879d-8a04-4b4f-867f-50e6952d40a5.png"
                         },
                         new
                         {
-                            Id = new Guid("2e146f8f-d4ea-4528-8739-fd8df0e3740f"),
-                            FavorId = new Guid("85aea96e-38f7-4540-99fd-4f4f3b06598d"),
-                            Path = "8d149e33-b52f-4d2d-b9d4-dfaee86f0ef8.png"
+                            Id = new Guid("57a0674f-5e3e-4c37-a773-7218f0f316c5"),
+                            FavorId = new Guid("5af39064-8cd5-405b-8963-9922b9e67dd5"),
+                            Path = "1396e3e1-c31f-4812-9313-05a1d4dd8d50.png"
                         });
                 });
 
@@ -591,178 +591,178 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d3f1fa69-e189-4f6a-b685-f1bdd30b159d"),
+                            Id = new Guid("553d3617-ede1-4bec-bf67-8e3647b05e5a"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PostId = new Guid("27a58803-71a1-4081-a10c-e153189ece77"),
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8")
+                            PostId = new Guid("b6af4aa5-dbbc-4d47-93d1-2baabb526b31"),
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562")
                         },
                         new
                         {
-                            Id = new Guid("7d444e6c-43a6-4f35-8c56-9fa40445e141"),
+                            Id = new Guid("b7ba6de5-9690-4a4f-b604-a5cb25ff4c5e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("d796954d-a19b-4220-a307-158a188bf965"),
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8")
+                            FavorId = new Guid("ea733c0b-31a2-4ba0-919d-2f0195f653b2"),
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562")
                         },
                         new
                         {
-                            Id = new Guid("d3ae4913-4f9c-4768-bbdb-d96be402bf27"),
+                            Id = new Guid("4cdf6e4a-543c-43eb-b143-cfca8b62bc51"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PartyId = new Guid("6e573647-25ec-4298-b2e9-4c5eec746ac5"),
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8")
+                            PartyId = new Guid("fc4b8cda-e695-4f24-9331-e409e4b7f82e"),
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562")
                         },
                         new
                         {
-                            Id = new Guid("caabf843-87bb-47fb-ad93-500ad4d3cf7e"),
+                            Id = new Guid("ed7b6f1e-bdf4-4abf-898f-8e578fd3340e"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
-                            UserId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8")
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
+                            UserId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562")
                         },
                         new
                         {
-                            Id = new Guid("c6333530-1266-4883-a81a-c5226acb2cec"),
-                            CommentId = new Guid("591360dc-b2b1-491f-8ff3-8d1c44513700"),
+                            Id = new Guid("d60d3828-e35d-4d56-ac48-e2e43108db1a"),
+                            CommentId = new Guid("d6b6b1e1-365f-43e3-8663-acc00a5582ee"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8")
+                            SenderId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562")
                         },
                         new
                         {
-                            Id = new Guid("e510e1f5-d34d-48a3-a832-be986d11fd4f"),
+                            Id = new Guid("797d8145-5f93-482e-b470-410122ce25a7"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PostId = new Guid("f76853c2-07e6-4f71-ba63-666b64dd31a1"),
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444")
+                            PostId = new Guid("abf7a0b8-aa0a-4f4b-956b-8ba602989450"),
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788")
                         },
                         new
                         {
-                            Id = new Guid("434d3605-5be8-4d1d-a557-74a6c69ae862"),
+                            Id = new Guid("11518523-0cef-4c62-ad09-a61f528b3d0f"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("73e9162f-7a5a-411c-89b2-e7008b8676cd"),
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444")
+                            FavorId = new Guid("c24e030f-ecad-42a2-88eb-fdf055915c85"),
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788")
                         },
                         new
                         {
-                            Id = new Guid("5b92d726-a4a5-400b-b519-e49e71309ea4"),
+                            Id = new Guid("d896f60c-957b-45d6-9f09-2873e9716630"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PartyId = new Guid("5bb25d2b-4500-44b8-8e19-93124dfbff74"),
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444")
+                            PartyId = new Guid("73fa45fc-5820-4aaf-90dc-12e8114c0daa"),
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788")
                         },
                         new
                         {
-                            Id = new Guid("6eebe024-52e1-4326-982a-d05a8e22ab80"),
+                            Id = new Guid("f70e1399-bde9-417a-b3b3-7309670ad9b6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
-                            UserId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444")
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
+                            UserId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788")
                         },
                         new
                         {
-                            Id = new Guid("4e28d5c0-332a-4944-a65f-3693453cd6e7"),
-                            CommentId = new Guid("a9d856ff-0992-4a6e-9c91-ef7a68e4766d"),
+                            Id = new Guid("b8402999-e4d1-4171-ba05-c0e7687aaddd"),
+                            CommentId = new Guid("9fc01311-b059-450e-ba20-4172083b5172"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444")
+                            SenderId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788")
                         },
                         new
                         {
-                            Id = new Guid("f0e281c3-d5c0-49ef-8cf9-dfbb8a5a9327"),
+                            Id = new Guid("88319270-69a5-40a7-aeb0-6af41384e203"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PostId = new Guid("0dc85af5-6ba7-4329-b2c2-94abbe4033ae"),
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9")
+                            PostId = new Guid("4e3de5fd-37ec-4f34-b3b2-78b751979d2b"),
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b")
                         },
                         new
                         {
-                            Id = new Guid("e3da1ac1-93e1-4aa4-b35b-55f58afa113d"),
+                            Id = new Guid("833f32f5-b457-4b69-8aad-e8b13a54e261"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("f3170037-57b9-4386-9eb8-1b0d141bb2cb"),
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9")
+                            FavorId = new Guid("e0446b0e-5fc2-4073-aad5-d69d9fa3fee4"),
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b")
                         },
                         new
                         {
-                            Id = new Guid("76287490-b98b-4920-af9e-beb0d7bd998d"),
+                            Id = new Guid("46864050-bfdf-4a6d-998a-6447a8abd2e2"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PartyId = new Guid("4677f772-2acd-40c3-94a3-b03ee2fe655c"),
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9")
+                            PartyId = new Guid("f6787cb8-98db-478a-a41e-ff3eab4c8567"),
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b")
                         },
                         new
                         {
-                            Id = new Guid("1365ff6f-ff97-4cb4-90c2-d865e78cc546"),
+                            Id = new Guid("6c3c3405-5d08-4846-8ff2-4df75ac545b6"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
-                            UserId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9")
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
+                            UserId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b")
                         },
                         new
                         {
-                            Id = new Guid("f263f775-eaf2-416e-8e40-f1d45df322f2"),
-                            CommentId = new Guid("7264b02b-80b0-4328-bc75-c3b13d711643"),
+                            Id = new Guid("4fb33ccd-5f12-4e2d-a86e-ac6caabc65fe"),
+                            CommentId = new Guid("a8942268-9c5e-43c1-a3a2-2f8852d8de9d"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9")
+                            SenderId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b")
                         },
                         new
                         {
-                            Id = new Guid("091f8836-108d-4a9e-b5ff-7244cca33b66"),
+                            Id = new Guid("f07bb104-0706-4d61-80a1-cbcb90d4558c"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PostId = new Guid("6913590a-af0b-4b67-8cb9-b34474f4424a"),
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc")
+                            PostId = new Guid("6a994f3e-ac89-432a-b0df-67904955f210"),
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858")
                         },
                         new
                         {
-                            Id = new Guid("55adb7ea-fe19-43db-bfe9-a22060920d90"),
+                            Id = new Guid("616c3587-e136-45cf-b33e-0b5dea170fde"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("e5cc3341-235a-484d-898d-281774cb1594"),
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc")
+                            FavorId = new Guid("1eb82f43-27fd-4ec2-851d-fb67e7de5c25"),
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858")
                         },
                         new
                         {
-                            Id = new Guid("23dff11c-f8f4-4834-8874-e9f541d7a766"),
+                            Id = new Guid("f50b2d6e-f8c2-4ede-aafe-99f7b15dec2f"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PartyId = new Guid("102ac689-dfc0-42af-abd9-10d0e5eddf63"),
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc")
+                            PartyId = new Guid("f78c1d06-cef3-41c3-93b5-8c1a1f3507d4"),
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858")
                         },
                         new
                         {
-                            Id = new Guid("7655b805-4b09-4e2a-a2b4-061f336e42af"),
+                            Id = new Guid("2ad52621-7874-4099-8ded-6f0e4da30616"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
-                            UserId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc")
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
+                            UserId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858")
                         },
                         new
                         {
-                            Id = new Guid("8bb15ff4-fd46-48da-ba1e-529da2c9b7a5"),
-                            CommentId = new Guid("1de08753-6df9-423f-92e4-6d408bd2d2d4"),
+                            Id = new Guid("328d22bd-0bf4-4960-a5bd-eddbbb356f13"),
+                            CommentId = new Guid("0732b92a-3744-4a67-b351-7930fdb5b113"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc")
+                            SenderId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858")
                         },
                         new
                         {
-                            Id = new Guid("f4d67d7a-d0c5-4c83-9d39-bae50f102647"),
+                            Id = new Guid("880467df-b8da-4cf0-a5fd-0267ee2ee0c4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PostId = new Guid("dfdfa042-14bf-42bc-8008-3e86bbb1ed7a"),
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100")
+                            PostId = new Guid("14669a78-c727-4213-a339-c10d92eb35ad"),
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4")
                         },
                         new
                         {
-                            Id = new Guid("2eb25930-3545-4f85-b348-2cdd248c41c8"),
+                            Id = new Guid("c4cdcc14-71ac-4922-9d28-a758954f89fc"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FavorId = new Guid("85aea96e-38f7-4540-99fd-4f4f3b06598d"),
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100")
+                            FavorId = new Guid("5af39064-8cd5-405b-8963-9922b9e67dd5"),
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4")
                         },
                         new
                         {
-                            Id = new Guid("ed5b80e8-436c-476f-bbfd-7589396fa2b5"),
+                            Id = new Guid("d99d8266-d0e2-48b3-9774-fd7874d3e922"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            PartyId = new Guid("57c8ba50-a84d-40dd-802b-bb9f884e7614"),
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100")
+                            PartyId = new Guid("c49f9cca-08b0-44d4-be6b-20903a9ce3e8"),
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4")
                         },
                         new
                         {
-                            Id = new Guid("cb87a4a0-d567-4a58-a6e5-a6217e850998"),
+                            Id = new Guid("e0b667fd-ed0d-4b03-a7d6-d972044d73e8"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
-                            UserId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100")
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
+                            UserId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4")
                         },
                         new
                         {
-                            Id = new Guid("477fa423-953c-42e1-96b5-7f555b1ade51"),
-                            CommentId = new Guid("2c24b4ba-64f9-4748-b3f2-645bccf53b31"),
+                            Id = new Guid("39735138-947b-4bc6-a438-f8366106b33f"),
+                            CommentId = new Guid("a93192b3-5ed2-41fc-b9f0-3f37c9f3b284"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SenderId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100")
+                            SenderId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4")
                         });
                 });
 
@@ -803,46 +803,46 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("6e573647-25ec-4298-b2e9-4c5eec746ac5"),
-                            AuthorId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
+                            Id = new Guid("fc4b8cda-e695-4f24-9331-e409e4b7f82e"),
+                            AuthorId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8704),
+                            Date = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7640),
                             Description = "Приходьте до мене сьогодні в джакузі, тут весело. Про оплату потім.",
                             Title = "Джакузі з скінхедом"
                         },
                         new
                         {
-                            Id = new Guid("5bb25d2b-4500-44b8-8e19-93124dfbff74"),
-                            AuthorId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            Id = new Guid("73fa45fc-5820-4aaf-90dc-12e8114c0daa"),
+                            AuthorId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8710),
+                            Date = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7647),
                             Description = "Хто хоче приєднатися до мене для вечірньої прогулянки по красивому місту? Разом ми зможемо насолодитися видами, побалакати і провести час весело. Приходьте!",
                             Title = "Вечірня прогулянка по місту"
                         },
                         new
                         {
-                            Id = new Guid("4677f772-2acd-40c3-94a3-b03ee2fe655c"),
-                            AuthorId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
+                            Id = new Guid("f6787cb8-98db-478a-a41e-ff3eab4c8567"),
+                            AuthorId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8714),
+                            Date = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7651),
                             Description = "Хто хоче приєднатися до мене для вечірньої прогулянки по красивому місту? Разом ми зможемо насолодитися видами, побалакати і провести час весело. Приходьте!",
                             Title = "Вечірня прогулянка по місту"
                         },
                         new
                         {
-                            Id = new Guid("102ac689-dfc0-42af-abd9-10d0e5eddf63"),
-                            AuthorId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
+                            Id = new Guid("f78c1d06-cef3-41c3-93b5-8c1a1f3507d4"),
+                            AuthorId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8719),
+                            Date = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7655),
                             Description = "Хтось цікавиться проведенням вечірки вдома з настільними іграми? Я маю гарну колекцію ігор і шукаю компанію для веселого проведення вечора. Приєднуйтесь!",
                             Title = "Вечірка вдома з настільними іграми"
                         },
                         new
                         {
-                            Id = new Guid("57c8ba50-a84d-40dd-802b-bb9f884e7614"),
-                            AuthorId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
+                            Id = new Guid("c49f9cca-08b0-44d4-be6b-20903a9ce3e8"),
+                            AuthorId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Date = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8723),
+                            Date = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7660),
                             Description = "Шукаю людей, які так само захоплені гуртом 'Rammstein' і хотіли б піти на їхній концерт. Разом буде набагато веселіше! Хто бажає долучитися?",
                             Title = "Концерт Rammstein"
                         });
@@ -865,28 +865,28 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            PartyId = new Guid("6e573647-25ec-4298-b2e9-4c5eec746ac5"),
-                            TagId = new Guid("69697103-7de2-473d-9495-3c676a0141b7")
+                            PartyId = new Guid("fc4b8cda-e695-4f24-9331-e409e4b7f82e"),
+                            TagId = new Guid("b024c3d5-a1ab-4630-900f-79afbf709cb3")
                         },
                         new
                         {
-                            PartyId = new Guid("5bb25d2b-4500-44b8-8e19-93124dfbff74"),
-                            TagId = new Guid("f26eb314-0b87-4ce1-9412-ddcedc964690")
+                            PartyId = new Guid("73fa45fc-5820-4aaf-90dc-12e8114c0daa"),
+                            TagId = new Guid("9b8ed1e5-4b48-4e70-a29d-f9cc65f388e1")
                         },
                         new
                         {
-                            PartyId = new Guid("4677f772-2acd-40c3-94a3-b03ee2fe655c"),
-                            TagId = new Guid("9f26a73f-0f3f-48a7-9161-8e29d5f7bb83")
+                            PartyId = new Guid("f6787cb8-98db-478a-a41e-ff3eab4c8567"),
+                            TagId = new Guid("d01427cf-e4ca-4d0d-95ba-906c0f80e767")
                         },
                         new
                         {
-                            PartyId = new Guid("102ac689-dfc0-42af-abd9-10d0e5eddf63"),
-                            TagId = new Guid("3c2de118-e173-4e12-95cf-a2cef626a5a3")
+                            PartyId = new Guid("f78c1d06-cef3-41c3-93b5-8c1a1f3507d4"),
+                            TagId = new Guid("34ef5701-2bcd-4337-b1b8-fbb06e781b16")
                         },
                         new
                         {
-                            PartyId = new Guid("57c8ba50-a84d-40dd-802b-bb9f884e7614"),
-                            TagId = new Guid("7ffd387f-61d9-4f23-a59a-dee2de132f44")
+                            PartyId = new Guid("c49f9cca-08b0-44d4-be6b-20903a9ce3e8"),
+                            TagId = new Guid("d34108aa-ca9b-4574-82f4-8294723be0d7")
                         });
                 });
 
@@ -907,28 +907,28 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            PartyId = new Guid("6e573647-25ec-4298-b2e9-4c5eec746ac5"),
-                            UserId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8")
+                            PartyId = new Guid("fc4b8cda-e695-4f24-9331-e409e4b7f82e"),
+                            UserId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562")
                         },
                         new
                         {
-                            PartyId = new Guid("5bb25d2b-4500-44b8-8e19-93124dfbff74"),
-                            UserId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444")
+                            PartyId = new Guid("73fa45fc-5820-4aaf-90dc-12e8114c0daa"),
+                            UserId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788")
                         },
                         new
                         {
-                            PartyId = new Guid("4677f772-2acd-40c3-94a3-b03ee2fe655c"),
-                            UserId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9")
+                            PartyId = new Guid("f6787cb8-98db-478a-a41e-ff3eab4c8567"),
+                            UserId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b")
                         },
                         new
                         {
-                            PartyId = new Guid("102ac689-dfc0-42af-abd9-10d0e5eddf63"),
-                            UserId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc")
+                            PartyId = new Guid("f78c1d06-cef3-41c3-93b5-8c1a1f3507d4"),
+                            UserId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858")
                         },
                         new
                         {
-                            PartyId = new Guid("57c8ba50-a84d-40dd-802b-bb9f884e7614"),
-                            UserId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100")
+                            PartyId = new Guid("c49f9cca-08b0-44d4-be6b-20903a9ce3e8"),
+                            UserId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4")
                         });
                 });
 
@@ -969,41 +969,41 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("27a58803-71a1-4081-a10c-e153189ece77"),
-                            AuthorId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
-                            CreatedDate = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8611),
+                            Id = new Guid("b6af4aa5-dbbc-4d47-93d1-2baabb526b31"),
+                            AuthorId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
+                            CreatedDate = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7542),
                             Description = "Карпати інфо шахраї! Я забронювала собі номер в одній з камер Азкабану, але дементори мене туди не впустили. Це жах!",
                             Title = "Увага!"
                         },
                         new
                         {
-                            Id = new Guid("f76853c2-07e6-4f71-ba63-666b64dd31a1"),
-                            AuthorId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
-                            CreatedDate = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8657),
+                            Id = new Guid("abf7a0b8-aa0a-4f4b-956b-8ba602989450"),
+                            AuthorId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
+                            CreatedDate = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7590),
                             Description = "Нещодавно повернулися з унікальної подорожі до Карпат і просто захоплюємося цим мальовничим куточком природи. Гірські ландшафти та заповідні ліси залишили незабутні враження в нашій пам'яті. Рекомендуємо всім любителям пригод відвідати цю частину України!",
                             Title = "Незабутні враження від Карпат"
                         },
                         new
                         {
-                            Id = new Guid("0dc85af5-6ba7-4329-b2c2-94abbe4033ae"),
-                            AuthorId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
-                            CreatedDate = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8664),
+                            Id = new Guid("4e3de5fd-37ec-4f34-b3b2-78b751979d2b"),
+                            AuthorId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
+                            CreatedDate = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7595),
                             Description = "Під час нашої поїздки в Карпати ми не лише насолоджувалися природою, але й смакували справжні кулінарні шедеври. Місцеві страви, такі як вершкові гриби та банош, просто вражають своїм неповторним смаком. Рекомендуємо спробувати!",
                             Title = "Смаколики Карпатської кухні"
                         },
                         new
                         {
-                            Id = new Guid("6913590a-af0b-4b67-8cb9-b34474f4424a"),
-                            AuthorId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
-                            CreatedDate = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8669),
+                            Id = new Guid("6a994f3e-ac89-432a-b0df-67904955f210"),
+                            AuthorId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
+                            CreatedDate = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7603),
                             Description = "Під час наших пішохідних прогулянок по Карпатах ми були просто зачаровані мальовничими пейзажами, які відкривалися перед нами. Гірські потоки, зелені луки та красиві гори - все це створює незабутню атмосферу та надихає на нові відкриття. Рекомендуємо це місце для всіх любителів активного відпочинку та красивої природи!",
                             Title = "Неймовірні пейзажі Карпат"
                         },
                         new
                         {
-                            Id = new Guid("dfdfa042-14bf-42bc-8008-3e86bbb1ed7a"),
-                            AuthorId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
-                            CreatedDate = new DateTime(2023, 6, 17, 15, 18, 22, 614, DateTimeKind.Local).AddTicks(8674),
+                            Id = new Guid("14669a78-c727-4213-a339-c10d92eb35ad"),
+                            AuthorId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
+                            CreatedDate = new DateTime(2023, 6, 18, 12, 14, 21, 211, DateTimeKind.Local).AddTicks(7608),
                             Description = "Наша зимова подорож до Карпат принесла нам незабутні враження від катання на лижах. Добре обладнані гірськолижні курорти та різноманітні траси задовольнять навіть найвибагливіших любителів лижного спорту. Насолоджуйтесь зимовими пригодами у Карпатах!",
                             Title = "Зимові пригоди у Карпатах"
                         });
@@ -1026,28 +1026,28 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            PostId = new Guid("27a58803-71a1-4081-a10c-e153189ece77"),
-                            TagId = new Guid("69697103-7de2-473d-9495-3c676a0141b7")
+                            PostId = new Guid("b6af4aa5-dbbc-4d47-93d1-2baabb526b31"),
+                            TagId = new Guid("b024c3d5-a1ab-4630-900f-79afbf709cb3")
                         },
                         new
                         {
-                            PostId = new Guid("f76853c2-07e6-4f71-ba63-666b64dd31a1"),
-                            TagId = new Guid("f26eb314-0b87-4ce1-9412-ddcedc964690")
+                            PostId = new Guid("abf7a0b8-aa0a-4f4b-956b-8ba602989450"),
+                            TagId = new Guid("9b8ed1e5-4b48-4e70-a29d-f9cc65f388e1")
                         },
                         new
                         {
-                            PostId = new Guid("0dc85af5-6ba7-4329-b2c2-94abbe4033ae"),
-                            TagId = new Guid("9f26a73f-0f3f-48a7-9161-8e29d5f7bb83")
+                            PostId = new Guid("4e3de5fd-37ec-4f34-b3b2-78b751979d2b"),
+                            TagId = new Guid("d01427cf-e4ca-4d0d-95ba-906c0f80e767")
                         },
                         new
                         {
-                            PostId = new Guid("6913590a-af0b-4b67-8cb9-b34474f4424a"),
-                            TagId = new Guid("3c2de118-e173-4e12-95cf-a2cef626a5a3")
+                            PostId = new Guid("6a994f3e-ac89-432a-b0df-67904955f210"),
+                            TagId = new Guid("34ef5701-2bcd-4337-b1b8-fbb06e781b16")
                         },
                         new
                         {
-                            PostId = new Guid("dfdfa042-14bf-42bc-8008-3e86bbb1ed7a"),
-                            TagId = new Guid("7ffd387f-61d9-4f23-a59a-dee2de132f44")
+                            PostId = new Guid("14669a78-c727-4213-a339-c10d92eb35ad"),
+                            TagId = new Guid("d34108aa-ca9b-4574-82f4-8294723be0d7")
                         });
                 });
 
@@ -1069,27 +1069,27 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("69697103-7de2-473d-9495-3c676a0141b7"),
+                            Id = new Guid("b024c3d5-a1ab-4630-900f-79afbf709cb3"),
                             Name = "Лижі"
                         },
                         new
                         {
-                            Id = new Guid("f26eb314-0b87-4ce1-9412-ddcedc964690"),
+                            Id = new Guid("9b8ed1e5-4b48-4e70-a29d-f9cc65f388e1"),
                             Name = "Сноуборд"
                         },
                         new
                         {
-                            Id = new Guid("9f26a73f-0f3f-48a7-9161-8e29d5f7bb83"),
+                            Id = new Guid("d01427cf-e4ca-4d0d-95ba-906c0f80e767"),
                             Name = "Настільні ігри"
                         },
                         new
                         {
-                            Id = new Guid("3c2de118-e173-4e12-95cf-a2cef626a5a3"),
+                            Id = new Guid("34ef5701-2bcd-4337-b1b8-fbb06e781b16"),
                             Name = "Велосипед"
                         },
                         new
                         {
-                            Id = new Guid("7ffd387f-61d9-4f23-a59a-dee2de132f44"),
+                            Id = new Guid("d34108aa-ca9b-4574-82f4-8294723be0d7"),
                             Name = "Кемпінг"
                         });
                 });
@@ -1154,60 +1154,60 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
+                            Id = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "harrypotter@gmail.com",
                             FirstName = "Гаррі",
                             LastName = "Поттер",
-                            Password = "y/BtxI0F4gdteZLfYdo9Jg==;ZCu1HY1iTTvsj3vrbgfyHsFqUrD/0zQSdxejVeB21tw=",
+                            Password = "tXm0TjNIlr5po0NIviID2Q==;jNCDzquD8OyceNy/uwcRtc1d5+V4Z84/ecnbkip7Uhk=",
                             PhoneNumber = "+38000000000",
                             Rating = 3.5m,
                             Role = "User"
                         },
                         new
                         {
-                            Id = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
+                            Id = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "tatakae@gmail.com",
                             FirstName = "Еран",
                             LastName = "Єґа",
-                            Password = "Wfs4VBfI8TzIgiWCaBIj6g==;5kz7OgSy5HS1gjC5e+Wu8sjDtMK9kddJQEbL8wwBSgw=",
+                            Password = "tEoHiwdHo6BQ+Ied6f5NxQ==;TgmmgiTVYfBXdsDkHsXsBt/A5XthSOkO5RJKUtKJONk=",
                             PhoneNumber = "+38000000000",
                             Rating = 1.5m,
                             Role = "User"
                         },
                         new
                         {
-                            Id = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
+                            Id = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "killing.monsters@gmail.com",
                             FirstName = "Ґеральт",
                             LastName = "з Рівії",
-                            Password = "mxaAM8+/czroHE/v+yS+wA==;zqBsuZCqXGNUth7OYpJZfdwJStKu/38Vu7PINF+zSQw=",
+                            Password = "AnJvYXLCFviKopQBQDKbfQ==;cr6btLx8eFNP88Mfe1DcaS5V5a8/MX5ab/hJweSWKk4=",
                             PhoneNumber = "+38000000000",
                             Rating = 4.5m,
                             Role = "User"
                         },
                         new
                         {
-                            Id = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
+                            Id = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "not.exist@gmail.com",
                             FirstName = "Тайлер",
                             LastName = "Дьорден",
-                            Password = "40YydzmEnQ1hzN2prE+icQ==;i66kZFJOvbBjvNjhmR3y82SGcjajE/0Qw05l98pllhw=",
+                            Password = "RQXOvYMwUKS37hagysdqPQ==;tKW68EMW1O2re2CfRAZQyDBj8t0JfgYJ1B69oCvhCys=",
                             PhoneNumber = "+38000000000",
                             Rating = 5.0m,
                             Role = "User"
                         },
                         new
                         {
-                            Id = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
+                            Id = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bossofthegym@gmail.com",
                             FirstName = "Біллі",
                             LastName = "Герінґтон",
-                            Password = "NkwocNZ3l262B3mX11lU9A==;efgCj+yQTM6XRXQc6OejSok3ZIp2Omqsl7UbLXQ5MnY=",
+                            Password = "leK67VXLpIsafT+E0jkjIQ==;OQK/5Lv6P4ZIENr3QmDdknUiDpn9Lo+4OWA2WCypcvQ=",
                             PhoneNumber = "+38000000000",
                             Rating = 2.5m,
                             Role = "User"
@@ -1231,28 +1231,28 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = new Guid("08f211e7-af5f-403c-897e-a31527b721d8"),
-                            TagId = new Guid("69697103-7de2-473d-9495-3c676a0141b7")
+                            UserId = new Guid("a6e85327-e4ec-4736-85d1-d44814863562"),
+                            TagId = new Guid("b024c3d5-a1ab-4630-900f-79afbf709cb3")
                         },
                         new
                         {
-                            UserId = new Guid("afcf9313-21da-4da1-b6aa-c65a2bfa7444"),
-                            TagId = new Guid("f26eb314-0b87-4ce1-9412-ddcedc964690")
+                            UserId = new Guid("8dd930b8-9985-4297-9286-2c6cfb93e788"),
+                            TagId = new Guid("9b8ed1e5-4b48-4e70-a29d-f9cc65f388e1")
                         },
                         new
                         {
-                            UserId = new Guid("890d6887-20ae-4ab9-b358-2c57bb35f5f9"),
-                            TagId = new Guid("9f26a73f-0f3f-48a7-9161-8e29d5f7bb83")
+                            UserId = new Guid("03138389-2fd2-47af-a9a1-db59c518972b"),
+                            TagId = new Guid("d01427cf-e4ca-4d0d-95ba-906c0f80e767")
                         },
                         new
                         {
-                            UserId = new Guid("49bb2916-c46c-440e-8e3f-97464b9dc3dc"),
-                            TagId = new Guid("3c2de118-e173-4e12-95cf-a2cef626a5a3")
+                            UserId = new Guid("da32bf83-8fdb-4405-bc80-be732443e858"),
+                            TagId = new Guid("34ef5701-2bcd-4337-b1b8-fbb06e781b16")
                         },
                         new
                         {
-                            UserId = new Guid("0e53e2b4-d5cf-4e46-b7ec-23fa48d68100"),
-                            TagId = new Guid("7ffd387f-61d9-4f23-a59a-dee2de132f44")
+                            UserId = new Guid("c80587d6-356d-4b63-a1d1-02ea9c6d97f4"),
+                            TagId = new Guid("d34108aa-ca9b-4574-82f4-8294723be0d7")
                         });
                 });
 
@@ -1423,7 +1423,7 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasOne("Pappion.Domain.Entities.Tag", "Tag")
                         .WithMany("PartyTags")
                         .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Party");
@@ -1436,13 +1436,13 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasOne("Pappion.Domain.Entities.Party", "Party")
                         .WithMany("PartyUsers")
                         .HasForeignKey("PartyId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Pappion.Domain.Entities.User", "User")
                         .WithMany("PartyUsers")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Party");
@@ -1466,13 +1466,13 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasOne("Pappion.Domain.Entities.Post", "Post")
                         .WithMany("PostTags")
                         .HasForeignKey("PostId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Pappion.Domain.Entities.Tag", "Tag")
                         .WithMany("PostTags")
                         .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Post");
@@ -1485,13 +1485,13 @@ namespace Pappion.Infrastructure.Migrations
                     b.HasOne("Pappion.Domain.Entities.Tag", "Tag")
                         .WithMany("UserTags")
                         .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Pappion.Domain.Entities.User", "User")
                         .WithMany("UserTags")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Tag");

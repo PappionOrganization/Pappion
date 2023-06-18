@@ -235,7 +235,7 @@ namespace Pappion.Infrastructure
                 entity.HasOne(pt => pt.Tag)
                 .WithMany(t => t.PartyTags)
                 .HasForeignKey(pt => pt.TagId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<PostTags>(entity =>
@@ -245,12 +245,12 @@ namespace Pappion.Infrastructure
                 entity.HasOne(pt => pt.Post)
                 .WithMany(p => p.PostTags)
                 .HasForeignKey(pt => pt.PostId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(pt => pt.Tag)
                 .WithMany(t => t.PostTags)
                 .HasForeignKey(pt => pt.TagId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<UserTags>(entity =>
@@ -260,12 +260,12 @@ namespace Pappion.Infrastructure
                 entity.HasOne(ut => ut.User)
                 .WithMany(u => u.UserTags)
                 .HasForeignKey(ut => ut.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(ut => ut.Tag)
                 .WithMany(t => t.UserTags)
                 .HasForeignKey(ut => ut.TagId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
 
 
@@ -276,12 +276,12 @@ namespace Pappion.Infrastructure
                 entity.HasOne(pu => pu.Party)
                 .WithMany(p => p.PartyUsers)
                 .HasForeignKey(pu => pu.PartyId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
                 entity.HasOne(pu => pu.User)
                 .WithMany(u => u.PartyUsers)
                 .HasForeignKey(pu => pu.UserId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
             });
             Seed.SeedData(modelBuilder);
         }

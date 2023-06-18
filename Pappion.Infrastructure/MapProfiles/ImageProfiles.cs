@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Pappion.Application.Dto.Images;
+using Pappion.Application.Dto.Post;
 using Pappion.Domain.Entities;
 
 namespace Pappion.Infrastructure.MapProfiles
@@ -8,7 +8,8 @@ namespace Pappion.Infrastructure.MapProfiles
     {
         public ImageProfiles()
         {
-            CreateMap<ImageReadDto, Image>();
+            CreateMap<Guid, Image>();
+
         }
     }
 }

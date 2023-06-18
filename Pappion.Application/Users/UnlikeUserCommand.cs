@@ -38,7 +38,7 @@ namespace Pappion.Application.Users
             {
                 throw new EntityNotFoundException(nameof(existLike), $"Cannot found like sended by user '{_userContext.Id}'");
             }
-            await _likeRepository.RemoveAsync(existLike.Id);
+            await _likeRepository.RemoveAsync(l => l.Equals(existLike.Id));
             await _likeRepository.SaveChangesAsync();
             return Unit.Value;
         }

@@ -1,5 +1,4 @@
-﻿using Pappion.Application.Dto.Images;
-using Pappion.Domain.Entities;
+﻿using Pappion.Domain.Entities;
 
 namespace Pappion.Application.Dto.Post
 {
@@ -11,6 +10,6 @@ namespace Pappion.Application.Dto.Post
         public DateTime CreatedDate { get; set; }
         public string? Location { get; set; }
         public Guid AuthorId { get; set; }
-        public ICollection<ImageReadDto> Images { get; set; }
+        public ICollection<Guid>? ImagesId { get; set; }
     }
 }

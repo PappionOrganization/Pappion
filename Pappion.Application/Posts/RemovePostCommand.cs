@@ -27,7 +27,7 @@ namespace Pappion.Application.Posts
             {
                 throw new AccessDeniedExeption(_userContext.Id);
             }
-            await _postRepository.RemoveAsync(request.Id);
+            await _postRepository.RemoveAsync(p => p.Id.Equals(request.Id));
             await _postRepository.SaveChangesAsync();
             return Unit.Value;
         }

@@ -31,14 +31,20 @@ namespace Pappion.Infrastructure.Repository
             return entity ?? throw new EntityNotFoundException(nameof(T), id);
         }
 
-        public async Task RemoveAsync(Guid id)
+        public async Task RemoveAsync(Expression<Func<T, bool>> predicate)
         {
-            _table.Remove(await GetByIdAsync(id));
+            var entity =  _table.Where(predicate).FirstOrDefaultAsync().Result;
+            if(entity != null)
+            {
+               _table.Remove(entity);
+            }
+            await Task.CompletedTask;
         }
 
         public async Task RemoveRangeAsync(IEnumerable<T> entities)
         {
             _table.RemoveRange(entities);
+            await Task.CompletedTask;
         }
 
         public Task UpdateAsync(T entity)
