@@ -1,4 +1,6 @@
-﻿namespace Pappion.Application.Dto.User
+﻿using Pappion.Domain.Constants;
+
+namespace Pappion.Application.Dto.User
 {
     public class UserReadDto
     {
@@ -9,7 +11,6 @@
         public decimal Rating { get; set; }
         public DateTime CreatedDate { get; set; }
         public string? Location { get; set; }
-        public Guid RoleId { get; set; }
-        public Guid ImageId { get; set; }
+        public UserRoles Role { get; set; }
     }
 }

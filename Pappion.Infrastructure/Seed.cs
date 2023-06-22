@@ -14,14 +14,6 @@ namespace Pappion.Infrastructure
         public static void SeedData(ModelBuilder modelBuilder)
         {
             List<Image> images = new();
-            List<Tag> tags = new List<Tag>
-        {
-            new Tag{Id = Guid.NewGuid(), Name = "Лижі"},
-            new Tag{Id = Guid.NewGuid(), Name = "Сноуборд"},
-            new Tag{Id = Guid.NewGuid(), Name = "Настільні ігри"},
-            new Tag{Id = Guid.NewGuid(), Name = "Велосипед"},
-            new Tag{Id = Guid.NewGuid(), Name = "Кемпінг"}
-        };
             List<User> users = new()
         {
                 new User{
@@ -31,7 +23,6 @@ namespace Pappion.Infrastructure
                     Email= "harrypotter@gmail.com",
                     Password = passwordService.Hash("password"),
                     PhoneNumber = "+38000000000",
-                    Rating = 3.5M,
                     Role = UserRoles.User
                 },
                 new User{
@@ -41,7 +32,6 @@ namespace Pappion.Infrastructure
                     Email= "tatakae@gmail.com",
                     PhoneNumber = "+38000000000",
                     Password = passwordService.Hash("password"),
-                    Rating = 1.5M,
                     Role = UserRoles.User
                 },
                 new User{
@@ -51,7 +41,6 @@ namespace Pappion.Infrastructure
                     Email= "killing.monsters@gmail.com",
                     PhoneNumber = "+38000000000",
                     Password = passwordService.Hash("password"),
-                    Rating = 4.5M,
                     Role = UserRoles.User
                 },
                 new User{
@@ -61,7 +50,6 @@ namespace Pappion.Infrastructure
                     Email= "not.exist@gmail.com",
                     PhoneNumber = "+38000000000",
                     Password = passwordService.Hash("password"),
-                    Rating = 5.0M,
                     Role = UserRoles.User
                 },
                 new User{
@@ -71,13 +59,10 @@ namespace Pappion.Infrastructure
                     Email= "bossofthegym@gmail.com",
                     PhoneNumber = "+38000000000",
                     Password = passwordService.Hash("password"),
-                    Rating = 2.5M,
                     Role = UserRoles.User
                 },
 
             };
-            List<UserTags> userTags = new();
-            List<PostTags> postTags = new();
             List<Post> posts = new()
         {
                 new Post
@@ -163,7 +148,6 @@ namespace Pappion.Infrastructure
                     AuthorId = users[0 ].Id
                 },
             };
-            List<FavorTags> favorTags = new();
             List<Party> parties = new List<Party>
             {
                 new Party
@@ -208,7 +192,6 @@ namespace Pappion.Infrastructure
                 }
 
             };
-            List<PartyTags> partyTags = new();
             List<PartyUsers> partyUsers = new();
             List<Like> likes = new();
             List<Comment> comments = new();
@@ -288,48 +271,28 @@ namespace Pappion.Infrastructure
                     {
                         Id = Guid.NewGuid(),
                         Path = $"{Guid.NewGuid()}.png",
-                        UserId = users[0].Id
+                        UserId = users[i].Id
                     },
                     new Image
                     {
                         Id = Guid.NewGuid(),
                         Path = $"{Guid.NewGuid()}.png",
-                        PostId = posts[0].Id
+                        PostId = posts[i].Id
                     },
                     new Image
                     {
                         Id = Guid.NewGuid(),
                         Path = $"{Guid.NewGuid()}.png",
-                        PartyId = parties[0].Id   
+                        PartyId = parties[i].Id   
                     },
                     new Image
                     {
                         Id = Guid.NewGuid(),
                         Path = $"{Guid.NewGuid()}.png",
-                        FavorId = favors[0].Id
+                        FavorId = favors[i].Id
                     },
                 });
-                userTags.Add(new UserTags
-                {
-                    UserId = users[i].Id,
-                    TagId = tags[i].Id
-                });
-                
-                postTags.Add(new PostTags
-                {
-                    PostId = posts[i].Id,
-                    TagId = tags[i].Id
-                });
-                favorTags.Add(new FavorTags
-                {
-                    FavorId = favors[i].Id,
-                    TagId = tags[i].Id
-                });
-                partyTags.Add(new PartyTags
-                {
-                    PartyId = parties[i].Id,
-                    TagId = tags[i].Id
-                });
+    
                 partyUsers.Add(new PartyUsers
                 {
                     PartyId = parties[i].Id,
@@ -350,16 +313,6 @@ namespace Pappion.Infrastructure
                 .HasData(likes);
             modelBuilder.Entity<Comment>()
                .HasData(comments);
-            modelBuilder.Entity<Tag>()
-               .HasData(tags);
-            modelBuilder.Entity<PostTags>()
-                .HasData(postTags);
-            modelBuilder.Entity<UserTags>()
-                .HasData(userTags);
-            modelBuilder.Entity<FavorTags>()
-                .HasData(favorTags);
-            modelBuilder.Entity<PartyTags>()
-                .HasData(partyTags);
             modelBuilder.Entity<PartyUsers>()
                 .HasData(partyUsers);
 

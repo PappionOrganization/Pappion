@@ -11,7 +11,6 @@ namespace Pappion.Infrastructure.MapProfiles
         {
             CreateMap<User, UserReadDto>();
             CreateMap<UserReadDto, User>();
-            CreateMap<UserAddDto, User>();
             CreateMap<RegisterCommand, User>();
         }
     }
