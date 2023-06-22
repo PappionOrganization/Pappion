@@ -8,7 +8,7 @@ using Pappion.Domain.Entities;
 
 namespace Pappion.Application.Posts
 {
-    public record AddPostCommand(string Title, string Description, string? Location, ICollection<Guid> ImagesId) : ICommand<Unit>;
+    public record AddPostCommand(string Title, string Description, string? Location, ICollection<Guid> ImagesId, string? TagNames) : ICommand<Unit>;
     public class AddPostCommandValidator : AbstractValidator<AddPostCommand>
     {
         public AddPostCommandValidator()
@@ -41,6 +41,7 @@ namespace Pappion.Application.Posts
                 Description = request.Description,
                 Location = request.Location,
                 Images = postImages,
+                Tags = request.TagNames,
                 AuthorId = _userContext.Id
             };
             await _postRepository.AddAsync(post);

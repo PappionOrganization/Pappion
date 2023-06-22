@@ -24,11 +24,28 @@ namespace Pappion.API.Controllers
         public async Task<ActionResult<string>> Login([FromBody] LoginRequest request) => Ok(await _mediator.Send(new LoginCommand(request.Email, request.Password)));
 
         [HttpPost("register")]
-        public async Task<ActionResult<string>> Register(RegisterCommand registerCommand) => await _mediator.Send(registerCommand);
+        public async Task<ActionResult<string>> Register([FromForm]RegisterCommand registerCommand) => await _mediator.Send(registerCommand);
 
         [Authorize]
         [HttpPost("like/{id}")]
         public async Task<IActionResult> Like(Guid id) => Ok(await _mediator.Send(new LikeUserCommand(id)));
+
+        [Authorize]
+        [HttpPost("comment")]
+        public async Task<IActionResult> CommentUser(CommentUserCommand commentUserCommand) => Ok(await _mediator.Send(commentUserCommand));
+
+        [HttpGet("like/{id}")]
+        public async Task<IActionResult> GetLikes(Guid id) => Ok(await _mediator.Send(new GetUserLikesQuery(id)));
+
+        [HttpGet("comment/{id}")]
+        public async Task<IActionResult> GetComments(Guid id) => Ok(await _mediator.Send(new GetUserCommentsQuery(id)));
+
+        [Authorize]
+        [HttpGet("current")]
+        public async Task<IActionResult> GetCurrentUser() => Ok(await _mediator.Send(new GetCurrentUserQuery()));
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById(Guid id) => Ok(await _mediator.Send(new GetUserByIdQuery(id)));
 
         [HttpPut("image/{id}")]
         public async Task<IActionResult> SetImage(Guid id) => Ok(await _mediator.Send(new SetProfileImageCommand(id)));

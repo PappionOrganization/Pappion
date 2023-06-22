@@ -11,15 +11,8 @@ namespace Pappion.Infrastructure
         public DbSet<Post> Posts { get; set; }
         public DbSet<Favor> Favors { get; set; }
         public DbSet<Image> Images { get; set; }
-        public DbSet<Tag> Tags { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
-        public DbSet<PartyTags> PartyTags { get; set; }
-        public DbSet<PostTags> PostTags { get; set; }
-        public DbSet<UserTags> UserTags { get; set; }
-        public DbSet<FavorTags> FavorTags { get; set; }
-
         public DbSet<PartyUsers> PartyUsers { get; set; }
 
 
@@ -80,7 +73,6 @@ namespace Pappion.Infrastructure
                 entity.Property(f => f.Title).IsRequired().HasMaxLength(100);
                 entity.Property(f => f.Description).IsRequired();
                 entity.Property(f => f.Price).IsRequired();
-                entity.Property(f => f.Rating).IsRequired();
 
                 entity.HasOne(f => f.Author)
                 .WithMany(a => a.Favors)
@@ -170,13 +162,6 @@ namespace Pappion.Infrastructure
                .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity<Tag>(entity =>
-            {
-                entity.HasKey(t => t.Id);
-                entity.Property(t => t.Id).HasDefaultValueSql("(uuid())");
-                entity.Property(t => t.Name).IsRequired();
-            });
-
             modelBuilder.Entity<Image>(entity =>
             {
                 entity.HasKey(im => im.Id);
@@ -207,67 +192,6 @@ namespace Pappion.Infrastructure
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Cascade);
             });
-
-            modelBuilder.Entity<FavorTags>(entity =>
-            {
-                entity.HasKey(ft => new { ft.FavorId, ft.TagId });
-
-                entity.HasOne(ft => ft.Favor)
-                .WithMany(f => f.FavorTags)
-                .HasForeignKey(ft => ft.FavorId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-                entity.HasOne(ft => ft.Tag)
-                .WithMany(t => t.FavorTags)
-                .HasForeignKey(ft => ft.TagId)
-                .OnDelete(DeleteBehavior.Cascade);
-            });
-
-            modelBuilder.Entity<PartyTags>(entity =>
-            {
-                entity.HasKey(pt => new { pt.PartyId, pt.TagId });
-
-                entity.HasOne(pt => pt.Party)
-                .WithMany(p => p.PartyTags)
-                .HasForeignKey(pt => pt.PartyId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-                entity.HasOne(pt => pt.Tag)
-                .WithMany(t => t.PartyTags)
-                .HasForeignKey(pt => pt.TagId)
-                .OnDelete(DeleteBehavior.Cascade);
-            });
-
-            modelBuilder.Entity<PostTags>(entity =>
-            {
-                entity.HasKey(pt => new { pt.PostId, pt.TagId });
-
-                entity.HasOne(pt => pt.Post)
-                .WithMany(p => p.PostTags)
-                .HasForeignKey(pt => pt.PostId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-                entity.HasOne(pt => pt.Tag)
-                .WithMany(t => t.PostTags)
-                .HasForeignKey(pt => pt.TagId)
-                .OnDelete(DeleteBehavior.Cascade);
-            });
-
-            modelBuilder.Entity<UserTags>(entity =>
-            {
-                entity.HasKey(ut => new { ut.UserId, ut.TagId });
-
-                entity.HasOne(ut => ut.User)
-                .WithMany(u => u.UserTags)
-                .HasForeignKey(ut => ut.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-                entity.HasOne(ut => ut.Tag)
-                .WithMany(t => t.UserTags)
-                .HasForeignKey(ut => ut.TagId)
-                .OnDelete(DeleteBehavior.Cascade);
-            });
-
 
             modelBuilder.Entity<PartyUsers>(entity =>
             {

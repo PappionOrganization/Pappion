@@ -22,17 +22,22 @@ namespace Pappion.Application.Posts
     {
         private readonly IGenericRepository<Like> _likeRepository;
         private readonly IUserContext _userContext;
+        private readonly IGenericRepository<Post> _postRepository;
 
-        public LikePostHandler(IGenericRepository<Like> likeRepository, IUserContext userContext)
+        public LikePostHandler(IGenericRepository<Like> likeRepository, IUserContext userContext, IGenericRepository<Post> postRepository)
         {
             _likeRepository = likeRepository;
             _userContext = userContext;
+            _postRepository = postRepository;
         }
 
         public async Task<Unit> Handle(LikePostCommand request, CancellationToken cancellationToken)
         {
+            if (!await _postRepository.ExistsAsync(p => p.Id.Equals(request.postId)))
+            {
+                throw new EntityNotFoundException(nameof(Post), $"Post '{request.postId}' not found");
+            }
             var like = new Like { PostId = request.postId, SenderId = _userContext.Id };
-
             if (_likeRepository.ExistsAsync(l => l.SenderId.Equals(like.SenderId) && l.PostId.Equals(like.PostId)).Result)
             {
                 throw new EntityAlreadyExistsException(nameof(like), $"Like is already " +

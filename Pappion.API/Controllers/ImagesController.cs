@@ -19,6 +19,10 @@ namespace Pappion.API.Controllers
 
         [HttpPost]
         public async Task<Guid> UploadImage([FromForm] UploadImageCommand uploadImageCommand) => await _mediator.Send(uploadImageCommand);
+
+        [HttpGet]
+        public async Task<IActionResult> DownloadImage(Guid id) => new FileStreamResult(await _mediator.Send(new DownloadImageCommand(id)), "image/png");
+
         [HttpDelete]
         public async Task DeleteImage() => await _mediator.Send(new ClearUnusedImagesCommand());
 

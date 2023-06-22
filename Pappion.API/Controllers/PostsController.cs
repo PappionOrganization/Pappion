@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Pappion.Application.Dto.Post;
+using Pappion.Application.Parties;
 using Pappion.Application.Posts;
 using Pappion.Domain.Entities;
 
@@ -43,10 +44,23 @@ namespace Pappion.API.Controllers
         [HttpPost]
         public async Task Add(AddPostCommand addPostCommand) => await _mediator.Send(addPostCommand);
 
+        [Authorize]
+        [HttpPut]
+        public async Task Update(UpdatePostCommand updatePostCommand) => await _mediator.Send(updatePostCommand);
 
         [Authorize]
         [HttpPost("like/{id}")]
         public async Task<IActionResult> Like(Guid id) => Ok(await _mediator.Send(new LikePostCommand(id)));
+
+        [Authorize]
+        [HttpPost("comment")]
+        public async Task<IActionResult> Comment(CommentPostCommand commentPostCommand) => Ok(await _mediator.Send(commentPostCommand));
+
+        [HttpGet("likes/{id}")]
+        public async Task<IActionResult> GetLikes(Guid id) => Ok(await _mediator.Send(new GetPostLikesQuery(id)));
+
+        [HttpGet("comments/{id}")]
+        public async Task<IActionResult> GetComments(Guid id) => Ok(await _mediator.Send(new GetPostCommentsQuery(id)));
 
         [Authorize]
         [HttpDelete("unlike/{id}")]

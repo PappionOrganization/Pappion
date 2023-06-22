@@ -8,7 +8,7 @@ namespace Pappion.Domain.Entities
 {
     public class Comment
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string Text { get; set; } = string.Empty;
         public decimal Grade { get; set; }
         public DateTime CreatedDate { get; set; }

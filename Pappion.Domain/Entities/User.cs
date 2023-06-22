@@ -11,7 +11,7 @@ namespace Pappion.Domain.Entities
         public string Password { get; set; } = string.Empty;
         public string PhoneNumber { get; set; } = string.Empty;
         public string? PhoneNumber2 { get; set; }
-        public decimal Rating { get; set; }
+        public string? Tags { get; set; }
         public DateTime CreatedDate { get; set; }
         public string? Location { get; set; }
         public UserRoles Role { get; set; }
@@ -23,8 +23,7 @@ namespace Pappion.Domain.Entities
         public ICollection<Party> Parties { get; set; }
         public ICollection<Favor> Favors { get; set; }
         public ICollection<Post> Posts { get; set; }
-
-        public ICollection<UserTags> UserTags { get; set; }
+        
         public ICollection<PartyUsers> PartyUsers { get; set; }
     }
 }
