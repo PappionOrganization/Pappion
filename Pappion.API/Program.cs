@@ -72,7 +72,8 @@ builder.Services.AddDbContext<PappionDbContext>(options =>
 });
 
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped<IPasswordService, PasswordService>(); 
+builder.Services.AddScoped<IPasswordService, PasswordService>();
+builder.Services.AddScoped<IImageService, ImageService>();
 
 builder.Services.AddValidatorsFromAssembly(typeof(IGenericRepository<>).Assembly);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
