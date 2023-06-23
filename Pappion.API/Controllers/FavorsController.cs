@@ -41,7 +41,7 @@ namespace Pappion.API.Controllers
         [HttpDelete("{id}")]
         public async Task Remove(Guid id) => await _mediator.Send(new RemoveFavorCommand(id));
 
-        [Authorize(Policy = "Resident")]
+        [Authorize]
         [HttpPost]
         public async Task Add(AddFavorCommand addFavorCommand) => await _mediator.Send(addFavorCommand);
 
@@ -56,6 +56,9 @@ namespace Pappion.API.Controllers
         [Authorize]
         [HttpPost("comment")]
         public async Task<IActionResult> Comment(CommentFavorCommand commentFavorCommand) => Ok(await _mediator.Send(commentFavorCommand));
+
+        [HttpGet("comment")]
+        public async Task<IActionResult> GetComments(GetFavorCommentsQuery getFavorCommentsQuery) => Ok(await _mediator.Send(getFavorCommentsQuery));
 
         [HttpGet("likes/{id}")]
         public async Task<IActionResult> GetLikes(Guid id) => Ok(await _mediator.Send(new GetFavorLikesQuery(id)));

@@ -36,6 +36,13 @@ namespace Pappion.API.Controllers
             return _mapper.Map<PartyReadDto>(party);
         }
 
+        [HttpGet("images/{id}")]
+        public async Task<PartyReadDto> GetImages(Guid id)
+        {
+            Party party = await _mediator.Send(new GetPartyQuery(id));
+            return _mapper.Map<PartyReadDto>(party);
+        }
+
         [HttpGet("subscribers/{id}")]
         public async Task<List<Guid>> GetSubscribers(Guid id) => await _mediator.Send(new GetPartySubscribersQuery(id));
 
@@ -43,9 +50,11 @@ namespace Pappion.API.Controllers
         [HttpDelete("{id}")]
         public async Task Remove(Guid id) => await _mediator.Send(new RemovePartyCommand(id));
 
+
         [Authorize]
         [HttpPost("comment")]
         public async Task<IActionResult> Comment(CommentPostCommand commentPostCommand) => Ok(await _mediator.Send(commentPostCommand));
+
 
         [HttpGet("comments/{id}")]
         public async Task<IActionResult> GetComments(Guid id) => Ok(await _mediator.Send(new GetPartyCommentsQuery(id)));

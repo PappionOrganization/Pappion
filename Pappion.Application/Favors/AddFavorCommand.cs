@@ -8,13 +8,14 @@ using Pappion.Domain.Entities;
 
 namespace Pappion.Application.Favors
 {
-    public record AddFavorCommand(string Title, string Description, string? Location, ICollection<Guid> ImagesId, string? TagNames, decimal Price) : ICommand<Unit>;
+    public record AddFavorCommand(string Title, string Description, string? Location, ICollection<Guid>? ImagesId, string? TagNames, decimal Price) : ICommand<Unit>;
     public class AddFavorCommandValidator : AbstractValidator<AddFavorCommand>
     {
         public AddFavorCommandValidator()
         {
             RuleFor(command => command.Title).NotEmpty();
             RuleFor(command => command.Description).NotEmpty();
+            RuleFor(command => command.Price).NotEmpty();
         }
     }
     public class AddFavorHandler : ICommandHandler<AddFavorCommand, Unit>

@@ -22,27 +22,16 @@ namespace Pappion.Application.Images
 
     public class UploadImageHandler : ICommandHandler<UploadImageCommand, Guid>
     {
-        private readonly IGenericRepository<Image> _imageRepository;
+        private readonly IImageService _imageService;
 
-        public UploadImageHandler(IGenericRepository<Image> imageRepository)
+        public UploadImageHandler(IImageService imageService)
         {
-            _imageRepository = imageRepository;
+            _imageService = imageService;
         }
 
         async Task<Guid> IRequestHandler<UploadImageCommand, Guid>.Handle(UploadImageCommand request, CancellationToken cancellationToken)
         {
-            var newImage = new Image
-            {
-                Id = Guid.NewGuid(),
-                Path = $"Res\\Images\\{Guid.NewGuid()}.{Path.GetExtension(request.Image.FileName).ToLowerInvariant()}"
-            };
-            using (var stream = new FileStream(newImage.Path, FileMode.Create))
-            {
-                await request.Image.CopyToAsync(stream);
-            }
-            await _imageRepository.AddAsync(newImage);
-            await _imageRepository.SaveChangesAsync();
-            return newImage.Id;
+            return await _imageService.UploadAsync(request.Image);
         }
         
     }
