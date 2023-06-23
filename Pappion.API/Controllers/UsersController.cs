@@ -24,7 +24,7 @@ namespace Pappion.API.Controllers
         public async Task<ActionResult<string>> Login([FromBody] LoginRequest request) => Ok(await _mediator.Send(new LoginCommand(request.Email, request.Password)));
 
         [HttpPost("register")]
-        public async Task<ActionResult<string>> Register([FromForm]RegisterCommand registerCommand) => await _mediator.Send(registerCommand);
+        public async Task<ActionResult<string>> Register(RegisterCommand registerCommand) => await _mediator.Send(registerCommand);
 
         [Authorize]
         [HttpPost("like/{id}")]

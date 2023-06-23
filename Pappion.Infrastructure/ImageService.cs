@@ -38,7 +38,7 @@ namespace Pappion.Infrastructure
             return fileStreams;
         }
 
-        public async Task<Image> UploadAsync(IFormFile image)
+        public async Task<Guid> UploadAsync(IFormFile image)
         {
             var newImage = new Image
             {
@@ -51,7 +51,7 @@ namespace Pappion.Infrastructure
             }
             await _imageRepository.AddAsync(newImage);
             await _imageRepository.SaveChangesAsync();
-            return newImage;
+            return newImage.Id;
         }
 
         public async Task<IEnumerable<Image>> UploadRangeAsync(IEnumerable<IFormFile> images)

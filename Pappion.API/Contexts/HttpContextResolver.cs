@@ -19,7 +19,7 @@ namespace Pappion.API.Contexts
             var httpContext = _httpContextAccessor.HttpContext;
             if (httpContext is null)
             {
-                this._logger.LogWarning($"Cannot resolver user context. missing {nameof(httpContext)}");
+                _logger.LogWarning($"Cannot resolver user context. missing {nameof(httpContext)}");
                 return null;
             }
 

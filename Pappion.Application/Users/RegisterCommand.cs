@@ -9,7 +9,7 @@ using Pappion.Domain.Entities;
 
 namespace Pappion.Application.Users
 {
-    public record RegisterCommand(string FirstName, string LastName, string Email, string PhoneNumber, string? PhoneNumber2,  UserRoles Role, string Password, string PasswordConfirmation, IFormFile image) : ICommand<string>;
+    public record RegisterCommand(string FirstName, string LastName, string Email, string PhoneNumber, string? PhoneNumber2,  UserRoles Role, string Password, string PasswordConfirmation) : ICommand<string>;
 
     public class RegisterCommandValidator : AbstractValidator<RegisterCommand>
     {
